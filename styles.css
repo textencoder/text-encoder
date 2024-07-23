@@ -99,6 +99,11 @@ nav {
     font-size: 1.25rem;
 }
 
+#dropdown-menus p:hover {
+    cursor: pointer;
+    color: var(--color-dark-blue);
+}
+
 body {
     background-color: var(--color-bg);
     display: grid;
@@ -172,6 +177,9 @@ body {
     position: relative;
     width: 100%;
     height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #color-pickers {
@@ -180,29 +188,40 @@ body {
     left: 0;
     border-right: 3px solid var(--color-black);
     border-bottom: 3px solid var(--color-black);
-    width: 10%;
-    height: 30%;
+    width: 9%;
+    height: 27%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
     font-size: 2rem;
 }
 
-#primary-color {
+#primary-color-container {
     border-bottom: 3px solid var(--color-black);
     display: grid;
     place-items: center;
+    background-color: var(--color-white);
 }
 
-#secondary-color {
+#secondary-color-container {
     border-bottom: 3px solid var(--color-black);
     display: grid;
     place-items: center;
+    background-color: var(--color-white);
 }
 
-#background-color {
+#background-color-container {
     display: grid;
     place-items: center;
+    background-color: var(--color-white);
+}
+
+input {
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 50%;
+    height: 60%;   
 }
 
 #zoom {
@@ -211,12 +230,21 @@ body {
     right: 0;
     border-left: 3px solid var(--color-black);
     border-top: 3px solid var(--color-black);
-    width: 10%;
-    height: 20%;
+    width: 8%;
+    height: 16%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
+    
+}
+
+#zoom button {
+    border: none;
     font-size: 2rem;
+}
+
+#zoom button:last-of-type {
+    border-top: 3px solid var(--color-black);
 }
 
 #zoom-in {
@@ -227,7 +255,6 @@ body {
 #zoom-out {
     display: grid;
     place-items: center;
-    border-top: 3px solid var(--color-black);
 }
 
 .hover-style:hover {
