@@ -4,13 +4,14 @@
     --color-dark-blue: #5150fd;
     --color-light-blue: #57f3f5;
     --color-black: #000;
+    --color-white: #fff;
 }
 
 * {
     margin: 0;
     padding: 0;
     font-family: var(--font-main);
-   
+    box-sizing: border-box;
 }
 
 header {
@@ -35,7 +36,7 @@ nav {
     height: 100%;
     display: grid;
     place-items: center;
-    background-color: white;
+    
 }
 
 #toggle-icon {
@@ -56,7 +57,7 @@ nav {
 
 #textencoder {
     background-color: var(--color-black);
-    color: white;
+    color: var(--color-white);
     width: 30%;
     height: 100%;
     display: grid;
@@ -71,7 +72,11 @@ nav {
     display: grid;
     place-items: center;
     font-size: 1.5rem;
-    background-color: white;
+    
+}
+
+.nav-icon-container {
+    background-color: var(--color-white);
 }
 
 #nav-2 {
@@ -102,12 +107,13 @@ body {
 
 #editor-window {
     border: 3px solid var(--color-black);
-    box-sizing: border-box;
+    
     width: 80vw;
     height: 80vh;
     margin-top: 39px;
     position: relative;
-    background-color: white;
+    background-color: var(--color-white);
+    
 }
 
 #editor-header {
@@ -121,11 +127,12 @@ body {
     align-items: center;
     background-color: var(--color-dark-blue);
     position: relative;
+    
 }
 
 #file-name {
     background-color: var(--color-black);
-    color: white;
+    color: var(--color-white);
     width: 20%;
     height: 100%;
     display: grid;
@@ -140,7 +147,7 @@ body {
     align-items: center;
     width: 10%;
     height: 100%;
-    background-color: white;
+    background-color: var(--color-white);
     font-size: 30px;
 }
 
@@ -220,4 +227,9 @@ body {
     display: grid;
     place-items: center;
     border-top: 3px solid var(--color-black);
+}
+
+.hover-style:hover {
+    background-color: var(--color-light-blue);
+    cursor: pointer;
 }
