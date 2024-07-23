@@ -1,5 +1,5 @@
 :root {
-    --font-main: "lores-21-serif", sans-serif;
+    --font-main: "lores-9-plus-narrow", sans-serif;
     --color-bg: #808080;
     --color-dark-blue: #5150fd;
     --color-light-blue: #57f3f5;
@@ -62,7 +62,7 @@ nav {
     height: 100%;
     display: grid;
     place-items: center;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 #help {
@@ -137,6 +137,7 @@ body {
     height: 100%;
     display: grid;
     place-items: center;
+    font-size: 0.8rem;
 }
 
 #prev-next {
@@ -148,7 +149,7 @@ body {
     width: 10%;
     height: 100%;
     background-color: var(--color-white);
-    font-size: 30px;
+    font-size: 1rem;
 }
 
 #prev {
@@ -184,7 +185,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 #primary-color {
@@ -215,7 +216,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
-    font-size: 40px;
+    font-size: 2rem;
 }
 
 #zoom-in {
