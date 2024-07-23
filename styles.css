@@ -1,0 +1,223 @@
+:root {
+    --font-main: "lores-21-serif", sans-serif;
+    --color-bg: #808080;
+    --color-dark-blue: #5150fd;
+    --color-light-blue: #57f3f5;
+    --color-black: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+   
+}
+
+header {
+    width: 100vw;
+    height: 10vh;
+}
+
+nav {
+    width: 100%;
+    height: 50%;
+    border-bottom: 3px solid var(--color-black);
+    box-sizing: border-box;
+    background-color: var(--color-dark-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#toggle-view {
+    border-right: 3px solid var(--color-black);
+    width: 5%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background-color: white;
+}
+
+#toggle-icon {
+    border: 3px solid var(--color-black);
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#toggle-icon div {
+    background-color: var(--color-black);
+    width: 70%;
+    height: 15%;
+}
+
+#textencoder {
+    background-color: var(--color-black);
+    color: white;
+    width: 30%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+}
+
+#help {
+    border-left: 3px solid var(--color-black);
+    width: 5%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    background-color: white;
+}
+
+#nav-2 {
+    width: 100%;
+    height: 50%;
+    border-bottom: 3px solid var(--color-black);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: var(--color-light-blue);
+}
+
+#dropdown-menus {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;    
+    width: 40%;
+    height: 100%;
+    font-size: 1.25rem;
+}
+
+body {
+    background-color: var(--color-bg);
+    display: grid;
+    place-items: center;
+}
+
+#editor-window {
+    border: 3px solid var(--color-black);
+    box-sizing: border-box;
+    width: 80vw;
+    height: 80vh;
+    margin-top: 39px;
+    position: relative;
+    background-color: white;
+}
+
+#editor-header {
+    position: absolute;
+    top: 0;
+    height: 5%;
+    width: 100%;
+    border-bottom: 3px solid var(--color-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-dark-blue);
+    position: relative;
+}
+
+#file-name {
+    background-color: var(--color-black);
+    color: white;
+    width: 20%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+#prev-next {
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+    background-color: white;
+    font-size: 30px;
+}
+
+#prev {
+    width: 50%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-left: 3px solid black;
+}
+
+#next {
+    width: 50%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-left: 3px solid black;
+}
+
+#editor-viewport {
+    position: relative;
+    width: 100%;
+    height: 95%;
+}
+
+#color-pickers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-right: 3px solid var(--color-black);
+    border-bottom: 3px solid var(--color-black);
+    width: 10%;
+    height: 30%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    font-size: 30px;
+}
+
+#primary-color {
+    border-bottom: 3px solid var(--color-black);
+    display: grid;
+    place-items: center;
+}
+
+#secondary-color {
+    border-bottom: 3px solid var(--color-black);
+    display: grid;
+    place-items: center;
+}
+
+#background-color {
+    display: grid;
+    place-items: center;
+}
+
+#zoom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-left: 3px solid var(--color-black);
+    border-top: 3px solid var(--color-black);
+    width: 10%;
+    height: 20%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    font-size: 40px;
+}
+
+#zoom-in {
+    display: grid;
+    place-items: center;
+}
+
+#zoom-out {
+    display: grid;
+    place-items: center;
+    border-top: 3px solid var(--color-black);
+}
