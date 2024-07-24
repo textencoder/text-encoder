@@ -3,15 +3,36 @@ const primaryColor = document.getElementById('primary-color');
 const secondaryColor = document.getElementById('secondary-color');
 const backgroundColor = document.getElementById('background-color');
 const background = document.getElementById('editor-viewport');
-const secondaryTarget = document.getElementById('second');
+const secondaryTarget = document.getElementById('c');
 const zoomIn = document.getElementById('zoom-in');
 const zoomOut = document.getElementById('zoom-out');
+const toggleView = document.getElementById('toggle-view');
+const editorWindow = document.getElementById('editor-window');
+const svgSelectWindow = document.getElementById('svg-select');
+const svgSelectDivTitle = document.getElementById('svg-select-div-title');
+const helpWindow = document.getElementById('help-window');
+const helpButton = document.getElementById('help-button');
 
+//wait for editor to load
 window.addEventListener("load", primarySelect, false);
 window.addEventListener("load", secondarySelect, false);
 window.addEventListener("load", backgroundSelect, false);
 
+//toggle editor/select
+toggleView.addEventListener("click", () => {
+  editorWindow.style.display = editorWindow.style.display == "none" ? "block" : "none";
+  svgSelectWindow.style.display = svgSelectWindow.style.display == "grid" ? "none" : "grid";
+  helpWindow.style.display = 'none';
+})
 
+//toggle editor/help
+helpButton.addEventListener("click", () => {
+  editorWindow.style.display = editorWindow.style.display == "none" ? "block" : "none";
+  helpWindow.style.display = helpWindow.style.display == "block" ? "none" : "block";
+  svgSelectWindow.style.display = "none";
+})
+
+//zoom features
 let zoom = 0.9;
 let zoomStep = 0.2;
 
@@ -34,7 +55,8 @@ zoomOut.addEventListener("click", () => {
     console.log(zoom);
   }
 })
-  
+
+//color select
 function primarySelect() {
     let defaultColor = "#000000";
     primaryColor.value = defaultColor;
