@@ -1,9 +1,7 @@
-const svgTarget = document.getElementById('svg');
 const primaryColor = document.getElementById('primary-color');
 const secondaryColor = document.getElementById('secondary-color');
 const backgroundColor = document.getElementById('background-color');
 const background = document.getElementById('editor-viewport');
-const secondaryTarget = document.getElementById('c');
 const zoomIn = document.getElementById('zoom-in');
 const zoomOut = document.getElementById('zoom-out');
 const toggleView = document.getElementById('toggle-view');
@@ -35,18 +33,23 @@ const svgArray = [
                 </svg>`,
   },
 ]
+
 //wait for editor to load
 window.addEventListener("load", primarySelect, false);
 window.addEventListener("load", secondarySelect, false);
 window.addEventListener("load", backgroundSelect, false);
 
-// //insert inline svg on load
-// window.addEventListener("load", loadSvg(0), false);
+//insert inline svg on load
+window.addEventListener("load", loadSvg(0), false);
 
-// function loadSvg(index) {
-//     fileNameContainer.innerText = svgArray[index].name;
-//     inlineContainer.innerHTML = svgArray[index].inline;
-//   }
+function loadSvg(index) {
+     fileNameContainer.innerText = svgArray[index].name;
+     inlineContainer.innerHTML = svgArray[index].inline;
+  }
+
+//declare svg selectors after functions
+const svgTarget = document.getElementById('svg');
+const secondaryTarget = document.getElementById('c');
 
 //toggle editor/select
 toggleView.addEventListener("click", () => {
@@ -131,6 +134,7 @@ function updateSVGFirst(event) {
     }
   }
 
+//DOES NOT WORK - RETURNS NOT A FUNCTION
   // function updateSVGAll(event) {
 //     svgTarget.forEach((g) => {
 //       g.style.fill = event.target.value;
