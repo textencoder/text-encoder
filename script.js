@@ -20,14 +20,14 @@ window.addEventListener("load", backgroundSelect, false);
 
 //toggle editor/select
 toggleView.addEventListener("click", () => {
-  editorWindow.style.display = editorWindow.style.display == "none" ? "block" : "none";
-  svgSelectWindow.style.display = svgSelectWindow.style.display == "grid" ? "none" : "grid";
-  helpWindow.style.display = 'none';
+  editorWindow.style.display = editorWindow.style.display == "none" ? "block" : "none"; 
+  svgSelectWindow.style.display = svgSelectWindow.style.display == "grid" ? "none" : helpWindow.style.display == "block" ? 'none' : "grid";
+  helpWindow.style.display = "none";
 })
 
 //toggle editor/help
 helpButton.addEventListener("click", () => {
-  editorWindow.style.display = editorWindow.style.display == "none" ? "block" : "none";
+  editorWindow.style.display = editorWindow.style.display == "none" && svgSelectWindow.style.display == "none" ? "block" : "none";
   helpWindow.style.display = helpWindow.style.display == "block" ? "none" : "block";
   svgSelectWindow.style.display = "none";
 })
