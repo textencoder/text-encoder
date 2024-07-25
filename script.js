@@ -12,6 +12,7 @@ const svgSelectWindow = document.getElementById('svg-select');
 const svgSelectDivTitle = document.getElementById('svg-select-div-title');
 const helpWindow = document.getElementById('help-window');
 const helpButton = document.getElementById('help-button');
+const homeButton = document.getElementById('textencoder');
 
 //wait for editor to load
 window.addEventListener("load", primarySelect, false);
@@ -23,6 +24,10 @@ toggleView.addEventListener("click", () => {
   editorWindow.style.display = editorWindow.style.display == "none" ? "block" : "none"; 
   svgSelectWindow.style.display = svgSelectWindow.style.display == "grid" ? "none" : helpWindow.style.display == "block" ? 'none' : "grid";
   helpWindow.style.display = "none";
+})
+
+homeButton.addEventListener("click", () => {
+  window.location.reload();
 })
 
 //toggle editor/help

@@ -14,6 +14,14 @@
     box-sizing: border-box;
 }
 
+button {
+    cursor: pointer;
+}
+
+a:visited {
+    color: var(--color-dark-blue);
+}
+
 .red-text {
     color: red;
 }
@@ -76,6 +84,7 @@ nav {
     display: grid;
     place-items: center;
     font-size: 1.25rem;
+    border: none;
 }
 
 #help-button {
@@ -165,8 +174,7 @@ svg {
     margin-top: 35px;
     position: relative;
     background-color: var(--color-white); 
-    display: none;
-    
+    display: none;  
 }
 
 #help-header {
