@@ -124,7 +124,7 @@ nav {
     font-size: 1.25rem;
 }
 
-#dropdown-menus p:hover {
+#dropdown-menus a:hover {
     cursor: pointer;
     color: var(--color-dark-blue);
 }
