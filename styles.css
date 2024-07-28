@@ -33,6 +33,10 @@ a:visited {
     color: blue;
 }
 
+.large-text {
+    font-size: 1.5rem;
+}
+
 header {
     width: 100vw;
     height: 10vh;
@@ -292,6 +296,13 @@ svg {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#inline-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
 }
 
 #color-pickers {

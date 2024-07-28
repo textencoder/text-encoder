@@ -128,7 +128,7 @@ zoomIn.addEventListener("click", () => {
   if (zoom > 1.3) {
     return;
   }
-  svgTarget.style.transform = "scale(" + zoom + ")";
+  inlineContainer.style.transform = "scale(" + zoom + ")";
 })
 
 zoomOut.addEventListener("click", () => {
@@ -137,7 +137,7 @@ zoomOut.addEventListener("click", () => {
     if (zoom < 0.5) {
       return;
     }
-    svgTarget.style.transform = "scale(" + zoom + ")";
+    inlineContainer.style.transform = "scale(" + zoom + ")";
   }
 })
 
@@ -151,16 +151,16 @@ function primarySelect() {
   }
 
 function secondarySelect() {
-    let defaultColor = "#000000";
-    secondaryColor.value = defaultColor;
+    //let defaultColor = "#000000";
+    secondaryColor.value = "#ffffff";
     secondaryColor.addEventListener("input", updateSecondFirst, false);
     //secondaryColor.addEventListener("change", updateSecondAll, false);
     secondaryColor.select();
   }
 
 function backgroundSelect() {
-    let defaultColor = "#000000";
-    backgroundColor.value = defaultColor;
+    //let defaultColor = "#000000";
+    backgroundColor.value = "#ffffff";
     backgroundColor.addEventListener("input", updateBackgroundFirst, false);
     //backgroundColor.addEventListener("change", updateBackgroundAll, false);
     backgroundColor.select();
