@@ -304,6 +304,10 @@ svg {
     align-items: center;
 }
 
+.a {
+    fill: #000000;
+}
+
 .c {
     fill: #ffffff;
 }

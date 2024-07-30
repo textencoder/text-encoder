@@ -78,6 +78,20 @@ function loadSvg(index) {
 //load first svg in array
 loadSvg(0);
 
+//default color variables
+let defaultBlack = "#000000";
+let defaultWhite = "#ffffff";
+
+//reset color picker and fill values
+const resetColors = () => {
+  primaryColor.value = defaultBlack;
+  svgTarget.style.fill = defaultBlack;
+  secondaryColor.value = defaultWhite;
+  secondaryTarget.style.fill = defaultWhite;
+  background.style.background = defaultWhite;
+  backgroundColor.value = defaultWhite;
+}
+
 //previous and next buttons
 let i = 0;
 
@@ -91,6 +105,7 @@ nextButton.addEventListener("click", () => {
     i = 0;
     console.log(i);
   }
+  resetColors();
 })
 
 previousButton.addEventListener("click", () => {
@@ -103,6 +118,7 @@ previousButton.addEventListener("click", () => {
     i = 2;
     console.log(i);
   }
+  resetColors();
 })
 
 //declare svg selectors after functions
@@ -156,8 +172,8 @@ zoomOut.addEventListener("click", () => {
 
 //color select
 function primarySelect() {
-    let defaultColor = "#000000";
-    primaryColor.value = defaultColor;
+    //let defaultColor = "#000000";
+    primaryColor.value = defaultBlack;
     primaryColor.addEventListener("input", updateSVGFirst, false);
     //primaryColor.addEventListener("change", updateSVGAll, false);
     primaryColor.select();
@@ -166,7 +182,7 @@ function primarySelect() {
 
 function secondarySelect() {
     //let defaultColor = "#000000";
-    secondaryColor.value = "#ffffff";
+    secondaryColor.value = defaultWhite;
     secondaryColor.addEventListener("input", updateSecondFirst, false);
     //secondaryColor.addEventListener("change", updateSecondAll, false);
     secondaryColor.select();
@@ -175,7 +191,7 @@ function secondarySelect() {
 
 function backgroundSelect() {
     //let defaultColor = "#000000";
-    backgroundColor.value = "#ffffff";
+    backgroundColor.value = defaultWhite;
     backgroundColor.addEventListener("input", updateBackgroundFirst, false);
     //backgroundColor.addEventListener("change", updateBackgroundAll, false);
     backgroundColor.select();
@@ -185,18 +201,21 @@ function backgroundSelect() {
 function updateSVGFirst(event) {
     if (svgTarget) {
       svgTarget.style.fill = event.target.value;
+      console.log('change detected - primary color')
     }
   }
   
   function updateSecondFirst(event) {
     if (secondaryTarget) {
       secondaryTarget.style.fill = event.target.value;
+      console.log('change detected - secondary color')
     }
   }
   
   function updateBackgroundFirst(event) {
     if (backgroundColor) {
       background.style.background = event.target.value;
+      console.log('change detected - background color')
     }
   }
 
@@ -229,7 +248,7 @@ function updateSVGFirst(event) {
 function printSvg() {
   svgArray.forEach(element => {
     (element.inline).includes('class="a"') ?
-    console.log("success") : 
+    console.log(element.name) : 
     console.log('error');
   })
 }
