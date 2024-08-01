@@ -1,9 +1,13 @@
+//color picker variables
 const primaryColor = document.getElementById('primary-color');
 const secondaryColor = document.getElementById('secondary-color');
 const backgroundColor = document.getElementById('background-color');
+//background color
 const background = document.getElementById('editor-viewport');
+//zoom buttons
 const zoomIn = document.getElementById('zoom-in');
 const zoomOut = document.getElementById('zoom-out');
+
 const toggleView = document.getElementById('toggle-view');
 const editorWindow = document.getElementById('editor-window');
 const svgSelectWindow = document.getElementById('svg-select');
@@ -70,6 +74,7 @@ window.addEventListener("load", backgroundSelect, false);
 function loadSvg(index) {
      fileNameContainer.innerText = svgArray[index].name;
      inlineContainer.innerHTML = svgArray[index].inline;
+     console.log('SVG LOADED')
   }
 
 //load random svg
@@ -105,6 +110,7 @@ nextButton.addEventListener("click", () => {
     i = 0;
     console.log(i);
   }
+  console.log(svgTarget);
   resetColors();
 })
 
@@ -115,9 +121,10 @@ previousButton.addEventListener("click", () => {
   console.log(i);
   } else {
     loadSvg(svgArray.length - 1);
-    i = 2;
+    i = svgArray.length - 1;
     console.log(i);
   }
+  console.log(svgTarget);
   resetColors();
 })
 
@@ -153,21 +160,27 @@ let zoom = 0.9;
 let zoomStep = 0.2;
 
 zoomIn.addEventListener("click", () => {
-  zoom += zoomStep;
-  if (zoom > 1.3) {
+  if (zoom >= 1.2) {
     return;
   }
+  zoom += zoomStep;
+  
   inlineContainer.style.transform = "scale(" + zoom + ")";
+
+  console.log(zoom)
 })
 
 zoomOut.addEventListener("click", () => {
+  if (zoom <= 0.5) {
+    return;
+  }
+
   if (zoom > zoomStep) {
-    zoom -= zoomStep;
-    if (zoom < 0.5) {
-      return;
-    }
+    zoom -= zoomStep; 
     inlineContainer.style.transform = "scale(" + zoom + ")";
   }
+
+  console.log(zoom)
 })
 
 //color select
@@ -213,7 +226,7 @@ function updateSVGFirst(event) {
   }
   
   function updateBackgroundFirst(event) {
-    if (backgroundColor) {
+    if (background) {
       background.style.background = event.target.value;
       console.log('change detected - background color')
     }
@@ -252,3 +265,9 @@ function printSvg() {
     console.log('error');
   })
 }
+
+function printTarget() {
+  console.log(svgTarget);
+}
+
+//research addEventListener "events"
