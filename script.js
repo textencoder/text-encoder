@@ -20,6 +20,8 @@ const inlineContainer = document.getElementById('inline-container');
 const previousButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 
+let i = 0;
+
 //inline svg code array
 const svgArray = [
   {
@@ -65,27 +67,49 @@ const svgArray = [
   
 ]
 
+//default color variables
+let defaultBlack = "#000000";
+let defaultWhite = "#ffffff";
+
 //wait for editor to load
 window.addEventListener("load", primarySelect, false);
 window.addEventListener("load", secondarySelect, false);
 window.addEventListener("load", backgroundSelect, false);
 
-//insert inline svg on load
+//mutation observer
+
+const targetNode = inlineContainer; // Or any other parent element where SVGs might be injected
+const config = { childList: true, subtree: true }; // Observe child list and subtrees
+
+const callback = function(mutationsList, observer) {
+  for(const mutation of mutationsList) {
+    if (mutation.type === 'childList') {
+      for(const node of mutation.addedNodes) {
+        if (node.nodeName === 'svg') {
+          // Handle the newly injected SVG element here
+          console.log('New SVG element:', node);
+          // logic to process the SVG
+        }
+      }
+    }
+  }
+};
+
+const observer = new MutationObserver(callback);
+observer.observe(targetNode, config);
+
+//insert inline svg
 function loadSvg(index) {
      fileNameContainer.innerText = svgArray[index].name;
      inlineContainer.innerHTML = svgArray[index].inline;
-     console.log('SVG LOADED')
+     console.log('SVG LOADED');
   }
 
 //load random svg
 //loadSvg(Math.floor(Math.random() * 2));
 
-//load first svg in array
-loadSvg(0);
-
-//default color variables
-let defaultBlack = "#000000";
-let defaultWhite = "#ffffff";
+//load svg from array on load
+loadSvg(i);
 
 //reset color picker and fill values
 const resetColors = () => {
@@ -98,7 +122,7 @@ const resetColors = () => {
 }
 
 //previous and next buttons
-let i = 0;
+// let i = 0;
 
 nextButton.addEventListener("click", () => {
   if (i < svgArray.length - 1) {
@@ -110,7 +134,6 @@ nextButton.addEventListener("click", () => {
     i = 0;
     console.log(i);
   }
-  console.log(svgTarget);
   resetColors();
 })
 
@@ -124,17 +147,16 @@ previousButton.addEventListener("click", () => {
     i = svgArray.length - 1;
     console.log(i);
   }
-  console.log(svgTarget);
   resetColors();
 })
 
 //declare svg selectors after functions
-// const svgTarget = document.getElementById('a');
+//const svgTarget = document.getElementById('a');
 // const secondaryTarget = document.getElementById('c');
 
 //alternate declarations
-const svgTarget = document.getElementsByClassName('a')[i];
-const secondaryTarget = document.getElementsByClassName('c')[i];
+let svgTarget = document.querySelectorAll('.a')[i];
+let secondaryTarget = document.querySelectorAll('.c')[i];
 
 //toggle editor/select
 toggleView.addEventListener("click", () => {
@@ -258,6 +280,8 @@ function updateSVGFirst(event) {
 //   })
 // }
 
+//test functions
+
 function printSvg() {
   svgArray.forEach(element => {
     (element.inline).includes('class="a"') ?
@@ -267,7 +291,16 @@ function printSvg() {
 }
 
 function printTarget() {
-  console.log(svgTarget);
+  console.log(svgTarget)
+}
+
+function printLength() {
+  console.log(svgArray)
+}
+
+function printInline() {
+  console.log(svgArray[0].inline)
 }
 
 //research addEventListener "events"
+//event delegation
