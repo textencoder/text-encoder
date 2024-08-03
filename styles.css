@@ -1,8 +1,8 @@
 :root {
     --font-main: "lores-9-plus-narrow", sans-serif;
     --color-bg: #808080;
-    --color-dark-blue: #5150fd;
-    --color-light-blue: #57f3f5;
+    --color-dark-blue: #774289;
+    --color-light-blue: #b59cc4;
     --color-black: #000;
     --color-white: #fff;
 }
@@ -289,6 +289,24 @@ svg {
     border: none;
 }
 
+#mobile-prev {
+    width: 40%;
+    height: 100%;
+    display: none;
+    place-items: center;
+    border: none;
+    background-color: var(--color-light-blue);
+}
+
+#mobile-next {
+    width: 40%;
+    height: 100%;
+    display: none;
+    place-items: center;
+    border: none;
+    background-color: var(--color-light-blue);
+}
+
 #editor-viewport {
     position: relative;
     width: 100%;
@@ -326,13 +344,7 @@ svg {
     font-size: 2rem;
 }
 
-#primary-color-container {
-    border-bottom: 3px solid var(--color-black);
-    display: grid;
-    place-items: center;
-    background-color: var(--color-white);
-}
-
+#primary-color-container,
 #secondary-color-container {
     border-bottom: 3px solid var(--color-black);
     display: grid;
@@ -431,5 +443,114 @@ input {
 
     #file-name {
         width: 15%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    nav {
+        height: 6vh;
+    }
+
+    #editor-window {
+        width: 90vw;
+        height: 85vh;
+        margin-top: 0;
+    }
+
+    #editor-header {
+        height: 10%;
+    }
+
+    #prev-next {
+        display: none;
+    }
+
+    #mobile-prev,
+    #mobile-next {
+        display: grid;
+    }
+
+    #svg-select {
+        width: 90vw;
+    }
+
+    #help-window {
+        width: 90vw;
+    }
+
+    #zoom {
+        position: absolute;
+        bottom: 35px;
+        border: none;
+        width: 100%;
+        height: 15%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        border-top: 3px solid var(--color-black);
+    }
+
+    #zoom button:last-of-type {
+        border-top: none;
+        border-left: 3px solid var(--color-black);
+    }
+
+    #toggle-view {
+        width: 12%;
+    }
+
+    #help-button {
+        width: 12%;
+    }
+
+    #dropdown-menus {
+        width: 25%;
+    }
+
+    #textencoder {
+        width: 45%;
+    }
+
+    #file-name {
+        width: 35%;
+    }
+
+    svg {
+        width: 250px;
+    }
+
+    #nav-2 {
+        display: none;
+    }
+
+    #color-pickers {
+        position: absolute;
+        top: 0;
+        border-right: none;
+        border-bottom: 3px solid var(--color-black);
+        width: 100%;
+        height: 15%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        font-size: 2rem;
+    }
+
+    #primary-color-container,
+    #secondary-color-container {
+    border-right: 3px solid var(--color-black);
+    border-bottom: none;
+    display: grid;
+    place-items: center;
+    background-color: var(--color-white);
+    }
+
+    input {
+        cursor: pointer;
+        border: none;
+        background: none;
+        width: 50%;
+        height: 60%;   
     }
 }

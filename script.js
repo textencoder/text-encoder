@@ -20,6 +20,9 @@ const inlineContainer = document.getElementById('inline-container');
 const previousButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 
+const mobilePreviousButton = document.getElementById('mobile-prev');
+const mobileNextButton = document.getElementById('mobile-next');
+
 let i = 0;
 
 //inline svg code array
@@ -138,6 +141,32 @@ nextButton.addEventListener("click", () => {
 })
 
 previousButton.addEventListener("click", () => {
+  if (i > 0) {
+  i--;
+  loadSvg(i);
+  console.log(i);
+  } else {
+    loadSvg(svgArray.length - 1);
+    i = svgArray.length - 1;
+    console.log(i);
+  }
+  resetColors();
+})
+
+mobileNextButton.addEventListener("click", () => {
+  if (i < svgArray.length - 1) {
+  i++;
+  loadSvg(i);
+  console.log(i);
+  } else {
+    loadSvg(0);
+    i = 0;
+    console.log(i);
+  }
+  resetColors();
+})
+
+mobilePreviousButton.addEventListener("click", () => {
   if (i > 0) {
   i--;
   loadSvg(i);
