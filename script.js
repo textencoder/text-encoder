@@ -26,7 +26,7 @@ const mobileNextButton = document.getElementById('mobile-next');
 let i = 0;
 
 //inline svg code array
-const svgArray = [
+let svgArray = [
   {
     name: "rodeo.svg",
     inline: `<?xml version="1.0" encoding="UTF-8"?>

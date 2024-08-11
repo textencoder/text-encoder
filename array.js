@@ -1,1 +1,1 @@
-const arrayTest = [1, 2, 3];
+let arrayTest = [1, 2, 3];
