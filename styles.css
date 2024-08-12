@@ -1,10 +1,10 @@
 :root {
-    --font-main: "lores-9-plus-narrow", sans-serif;
-    --color-bg: #595959;
+    --font-main: "lores-9-plus-narrow",monospace, sans-serif;
+    --color-bg: #141414;
     --color-dark-blue: #774289;
     --color-light-blue: #b59cc4;
     --color-black: #000;
-    --color-white: #fff;
+    --color-white: #cbcbcb;
 }
 
 * {
@@ -16,17 +16,7 @@
 }
 
 html {
-     /* background-image: url(/ui-images/Cavern_of_Remembrance_-_Depths_KHIIFM\ -\ Copy.png);
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position-y: 40%;
-    background-blend-mode:multiply;  */
     background-color: var(--color-bg);
-}
-
-.hover-style:hover {
-    background-color: var(--color-light-blue);
-    cursor: pointer;
 }
 
 button {
@@ -67,7 +57,8 @@ nav {
 }
 
 #toggle-view {
-    border: 3px solid var(--color-black);
+    border: none;
+    background: none;
     width: 10%;
     height: 80%;
     display: grid;
@@ -77,54 +68,58 @@ nav {
 }
 
 #toggle-icon {
-    border: 3px solid var(--color-black);
+    
     width: 50%;
-    height: 60%;
+    height: 65%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center; 
-    border-radius:9px;  
+    align-items: center;   
 }
 
 #toggle-icon div {
-    background-color: var(--color-black);
-    width: 70%;
+    background-color: var(--color-white);
+    width: 100%;
     height: 15%;
    
 }
 
 #textencoder {
-    background-color: var(--color-black);
-    color: var(--color-white);
     width: 30%;
     height: 70%;
     display: grid;
     place-items: center;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     border: none;
-    border-radius: 30px;
+    background: none;
+    color: var(--color-white);
 }
 
 #textencoder:hover {
-    background-color: var(--color-light-blue);
-    color: black;
+    color: var(--color-dark-blue);
 }
 
 #help-button {
-    border: 3px solid var(--color-black);
+    border: none;
+    color: var(--color-white);
+    background: none;
     border-radius: 50px;
     width: 10%;
     height: 80%;
     display: grid;
     place-items: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-right: 20px;
 }
 
-.nav-icon-container {
-    background-color: var(--color-white);
+#toggle-icon:hover {
+    background-color: var(--color-dark-blue);
 }
+
+#help-button:hover {
+    color: var(--color-dark-blue);
+}
+
 
 /* #nav-2 {
     width: 100%;
@@ -182,7 +177,7 @@ svg {
 }
 
 .svg-select-div {
-    border: 4px solid var(--color-black);
+    border: 5px solid var(--color-bg);
     border-radius: 10px;
     background-color: var(--color-white);
     position: relative;
@@ -200,11 +195,11 @@ svg {
     height: 25%;
     position: absolute;
     background-color: var(--color-dark-blue);
-    border-bottom: 4px solid black;
-    color: var(--color-white);
+    border-bottom: 5px solid black;
+    color: var(--color-bg);
     display: grid;
     place-items: center;
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 .svg-select-div-title:hover {
@@ -213,40 +208,41 @@ svg {
 }
 
 #help-window {
-    border: 4px solid var(--color-black);  
+    border: 5px solid var(--color-bg);  
     width: 80vw;
     height: 80vh;
     margin-top: 35px;
     position: relative;
     background-color: var(--color-white); 
-    border-radius: 30px 30px 20px 20px;
+    border-radius: 15px;
     display: none;
 }
 
 #help-header {
     position: absolute;
     top: 0;
-    height: 9%;
+    height: 10%;
     width: 100%;
-    border-bottom: 4px solid var(--color-black);
+    border-bottom: 5px solid var(--color-bg);
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: var(--color-dark-blue);
+    background-color: var(--color-light-blue);
     position: relative;
     
 }
 
 #help-title {
-    background-color: var(--color-black);
     color: var(--color-white);
-    width: 20%;
+    width: 10%;
     height: 70%;
     display: grid;
     place-items: center;
-    font-size: 0.8rem;
+    font-size: 1.25rem;
     border-radius: 50px;
     margin-left: 20px;
+    color: black;
+    font-weight: 900;
 }
 
 #help-text {
@@ -267,44 +263,43 @@ svg {
 }
 
 #editor-window {
-    border: 4px solid var(--color-black);  
+    border: 5px solid var(--color-bg);  
     width: 80vw;
     height: 80vh;
     margin-top: 35px;
     position: relative;
     background-color: var(--color-white); 
-    border-radius: 30px 30px 20px 20px;
+    border-radius: 15px;
 }
 
 #editor-header {
     position: absolute;
     top: 0;
-    height: 9%;
+    height: 10%;
     width: 100%;
-    border-bottom: 4px solid var(--color-black);
+    border-bottom: 5px solid var(--color-bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-dark-blue);
+    background-color: var(--color-white);
     z-index: 1;
 }
 
 #file-name {
-    background-color: var(--color-light-blue);
+  
     color: var(--color-black);
     border-radius: 20px;
-    width: 30%;
+    width: 20%;
     height: 70%;
     display: grid;
     place-items: center;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 900;
     margin-left: 15px;
 }
 
 #file-name:hover {
-    background-color: var(--color-black);
-    color: var(--color-white);
+    color: var(--color-dark-blue);
     cursor: pointer;
 }
 
@@ -319,9 +314,16 @@ svg {
 }
 
 #prev-next button {
-    border: 3px solid black;
-    border-radius: 20px;
+    border: 3px solid var(--color-bg);
+    background-color: var(--color-light-blue);
+    color: var(--color-bg);
+    border-radius: 10px;
     font-weight: 900;
+}
+
+#prev-next button:hover {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white)
 }
 
 #prev {
@@ -428,11 +430,12 @@ input {
     position: absolute;
     bottom: 20px;
     right: 20px;   
-    width: 7%;
+    width: 9%;
     height: 20%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 0.5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
     
 }
 
@@ -440,15 +443,15 @@ input {
     border: none;
     font-size: 2rem;
     font-weight: bold;
-    border-radius: 60px;
-    background-color: var(--color-dark-blue);
-    color: var(--color-white);
-    border: 3px solid black;
+    border-radius: 10px;
+    background-color: var(--color-light-blue);
+    color: var(--color-bg);
+  
 }
 
 #zoom button:hover {
-    background-color: var(--color-light-blue);
-    color: var(--color-black);
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
 }
 
 #zoom-in {

@@ -114,6 +114,21 @@ function loadSvg(index) {
 //load svg from array on load
 loadSvg(i);
 
+//get random hex 
+const randomHex = () => {
+  const characters = 'ABCDEF0123456789';
+  const hexArray = ['#'];
+  const randomHexCode = () => {
+    let randomNumber = Math.floor(Math.random() * 16);
+    return characters.charAt(randomNumber)
+}
+  for (let i = 0; i < 6; i++) {
+    hexArray.push(randomHexCode())
+}
+  const finalHex = hexArray.join('');
+  return finalHex;
+}
+
 //reset color picker and fill values
 const resetColors = () => {
   primaryColor.value = defaultBlack;
@@ -237,7 +252,8 @@ zoomOut.addEventListener("click", () => {
 //color select
 function primarySelect() {
     //let defaultColor = "#000000";
-    primaryColor.value = defaultBlack;
+    primaryColor.value = randomHex();
+    svgTarget.style.fill = primaryColor.value;
     primaryColor.addEventListener("input", updateSVGFirst, false);
     //primaryColor.addEventListener("change", updateSVGAll, false);
     primaryColor.select();
@@ -246,7 +262,8 @@ function primarySelect() {
 
 function secondarySelect() {
     //let defaultColor = "#000000";
-    secondaryColor.value = defaultWhite;
+    secondaryColor.value = randomHex();
+    secondaryTarget.style.fill = secondaryColor.value;
     secondaryColor.addEventListener("input", updateSecondFirst, false);
     //secondaryColor.addEventListener("change", updateSecondAll, false);
     secondaryColor.select();
@@ -255,7 +272,8 @@ function secondarySelect() {
 
 function backgroundSelect() {
     //let defaultColor = "#000000";
-    backgroundColor.value = defaultWhite;
+    backgroundColor.value = randomHex();
+    background.style.background = backgroundColor.value
     backgroundColor.addEventListener("input", updateBackgroundFirst, false);
     //backgroundColor.addEventListener("change", updateBackgroundAll, false);
     backgroundColor.select();
