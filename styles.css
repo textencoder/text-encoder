@@ -1,6 +1,6 @@
 :root {
     --font-main: "lores-9-plus-narrow",monospace, sans-serif;
-    --color-bg: #141414;
+    --color-bg: #161616;
     --color-dark-blue: #774289;
     --color-light-blue: #b59cc4;
     --color-black: #000;
@@ -23,8 +23,13 @@ button {
     cursor: pointer;
 }
 
+a,
 a:visited {
-    color: var(--color-dark-blue);
+    color:lawngreen;
+}
+
+i {
+    color: lawngreen;
 }
 
 .red-text {
@@ -46,11 +51,13 @@ a:visited {
     height: 10vh;
 } */
 
+
+/*
 nav {
     width: 100vw;
     height: 8vh;
     box-sizing: border-box;
-    /* background-color: var(--color-dark-blue); */
+    /* background-color: var(--color-dark-blue);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,6 +127,8 @@ nav {
     color: var(--color-dark-blue);
 }
 
+*/
+
 
 /* #nav-2 {
     width: 100%;
@@ -147,9 +156,50 @@ nav {
 } */
 
 body {
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
+}
+
+#main-menu {
+    width: 25%;
+    height: 100vh;
+    color: var(--color-white);
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+}
+
+#logo {
+    background-color: var(--color-white);
+    width: 20%;
+    height: 10%;
+    border-radius: 10px; 
+}
+
+#logo:hover {
+    background-color: lawngreen;
+    cursor: pointer;
+}
+
+
+
+#information-block {
+    width: 25%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 30px;
+    line-height: 40px;
 }
 
 svg {
@@ -264,9 +314,9 @@ svg {
 
 #editor-window {
     border: 5px solid var(--color-bg);  
-    width: 80vw;
-    height: 80vh;
-    margin-top: 35px;
+    width: 50vw;
+    height: 90vh;
+    margin-top: 10px;
     position: relative;
     background-color: var(--color-white); 
     border-radius: 15px;
@@ -286,20 +336,20 @@ svg {
 }
 
 #file-name {
-  
     color: var(--color-black);
-    border-radius: 20px;
-    width: 20%;
+    border-radius: 10px;
+    width: 30%;
     height: 70%;
     display: grid;
     place-items: center;
     font-size: 1.3rem;
     font-weight: 900;
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 #file-name:hover {
-    color: var(--color-dark-blue);
+    color: var(--color-white);
+    background-color: var(--color-bg);
     cursor: pointer;
 }
 
@@ -315,15 +365,16 @@ svg {
 
 #prev-next button {
     border: 3px solid var(--color-bg);
-    background-color: var(--color-light-blue);
+    background-color: dodgerblue;
     color: var(--color-bg);
     border-radius: 10px;
     font-weight: 900;
+    font-size: 1.1rem;
 }
 
 #prev-next button:hover {
-    background-color: var(--color-dark-blue);
-    color: var(--color-white)
+    background-color: var(--color-bg);
+    color: var(--color-white);
 }
 
 #prev {
@@ -387,7 +438,7 @@ svg {
 
 #color-pickers {
     position: absolute;
-    top: 70px;
+    top: 85px;
     left: 20px;
 
     width: 9%;
@@ -404,8 +455,10 @@ svg {
 #background-color-container {
     display: grid;
     place-items: center;
-    background-color: var(--color-light-blue);
+    background-color: var(--color-white);
+    border: 3px solid var(--color-bg);
     border-radius: 10px;
+    cursor: pointer;
 }
 
 #primary-color-container:hover ,
@@ -413,7 +466,7 @@ svg {
 #background-color-container:hover {
     display: grid;
     place-items: center;
-    background-color: var(--color-dark-blue);
+    background-color: var(--color-bg);
     border-radius: 10px;
 }
 
@@ -444,19 +497,21 @@ input {
     font-size: 2rem;
     font-weight: bold;
     border-radius: 10px;
-    background-color: var(--color-light-blue);
+    background-color: var(--color-white);
+    border: 3px solid var(--color-bg);
     color: var(--color-bg);
   
 }
 
 #zoom button:hover {
-    background-color: var(--color-dark-blue);
+    background-color: var(--color-bg);
     color: var(--color-white);
 }
 
 #zoom-in {
     display: grid;
     place-items: center;
+    background-color: green;
 }
 
 #zoom-out {
@@ -464,60 +519,56 @@ input {
     place-items: center;
 }
 
+footer {
+    display: none;
+    color: white;
+    position: fixed;
+}
 
+@media screen and (min-width: 500px) and (max-width: 1375px) {
+    #main-menu {
+        display: none;
+    }
 
-@media screen and (min-width: 1080px) {
+    #information-block {
+        display: none;
+    }
+
     #editor-window {
-        width: 50vw;
+        width: 80vw;
     }
 
     #svg-select {
-        width: 50vw;
+        width: 80vw;
     }
 
     #help-window {
-        width: 50vw;
-    }
-
-    #color-pickers {
-        width: 7%;
-    }
-
-    #zoom {
-        width: 7%;
-    }
-
-    #toggle-view {
-        width: 3%;
-    }
-
-    #help-button {
-        width: 3%;
-    }
-
-    #dropdown-menus {
-        width: 25%;
-    }
-
-    #textencoder {
-        width: 20%;
+        width: 80vw;
     }
 
     #file-name {
-        width: 15%;
+        width: 25%;
+    }
+
+    footer {
+        display: block;
+        bottom: 25px;
     }
 }
 
 @media screen and (max-width: 500px) {
+    #main-menu {
+        display: none;
+    }
 
-    nav {
-        height: 6vh;
+    #information-block {
+        display: none;
     }
 
     #editor-window {
         width: 90vw;
-        height: 85vh;
-        margin-top: 0;
+        height: 90vh;
+        
     }
 
     #editor-header {

@@ -23,7 +23,7 @@ const nextButton = document.getElementById('next');
 const mobilePreviousButton = document.getElementById('mobile-prev');
 const mobileNextButton = document.getElementById('mobile-next');
 
-let i = 0;
+
 
 //inline svg code array
 let svgArray = [
@@ -70,17 +70,18 @@ let svgArray = [
   
 ]
 
+let i = 0;
+
 //default color variables
 let defaultBlack = "#000000";
 let defaultWhite = "#ffffff";
 
 //wait for editor to load
-window.addEventListener("load", primarySelect, false);
-window.addEventListener("load", secondarySelect, false);
-window.addEventListener("load", backgroundSelect, false);
+// window.addEventListener("load", primarySelect, false);
+// window.addEventListener("load", secondarySelect, false);
+// window.addEventListener("load", backgroundSelect, false);
 
 //mutation observer
-
 const targetNode = inlineContainer; // Or any other parent element where SVGs might be injected
 const config = { childList: true, subtree: true }; // Observe child list and subtrees
 
@@ -90,8 +91,13 @@ const callback = function(mutationsList, observer) {
       for(const node of mutation.addedNodes) {
         if (node.nodeName === 'svg') {
           // Handle the newly injected SVG element here
+          // document.querySelector('.a').style.fill = primaryColor.value;
+          // document.querySelector('.c').style.fill = secondaryColor.value;
           console.log('New SVG element:', node);
           // logic to process the SVG
+          primarySelect();
+          backgroundSelect();
+          secondarySelect();       
         }
       }
     }
@@ -100,6 +106,8 @@ const callback = function(mutationsList, observer) {
 
 const observer = new MutationObserver(callback);
 observer.observe(targetNode, config);
+//interesting but don't know if useful
+
 
 //insert inline svg
 function loadSvg(index) {
@@ -152,7 +160,6 @@ nextButton.addEventListener("click", () => {
     i = 0;
     console.log(i);
   }
-  resetColors();
 })
 
 previousButton.addEventListener("click", () => {
@@ -165,7 +172,6 @@ previousButton.addEventListener("click", () => {
     i = svgArray.length - 1;
     console.log(i);
   }
-  resetColors();
 })
 
 mobileNextButton.addEventListener("click", () => {
@@ -199,34 +205,34 @@ mobilePreviousButton.addEventListener("click", () => {
 // const secondaryTarget = document.getElementById('c');
 
 //alternate declarations
-let svgTarget = document.querySelectorAll('.a')[i];
-let secondaryTarget = document.querySelectorAll('.c')[i];
+// let svgTarget = document.querySelector('.a');
+// let secondaryTarget = document.querySelector('.c');
 
 //toggle editor/select
-toggleView.addEventListener("click", () => {
-  editorWindow.style.display = editorWindow.style.display == "none" ? "block" : "none"; 
-  svgSelectWindow.style.display = svgSelectWindow.style.display == "grid" ? "none" : helpWindow.style.display == "block" ? 'none' : "grid";
-  helpWindow.style.display = "none";
-})
+// toggleView.addEventListener("click", () => {
+//   editorWindow.style.display = editorWindow.style.display == "none" ? "block" : "none"; 
+//   svgSelectWindow.style.display = svgSelectWindow.style.display == "grid" ? "none" : helpWindow.style.display == "block" ? 'none' : "grid";
+//   helpWindow.style.display = "none";
+// })
 
-//refresh page when home button is clicked
-homeButton.addEventListener("click", () => {
-  window.location.reload();
-})
+// //refresh page when home button is clicked
+// homeButton.addEventListener("click", () => {
+//   window.location.reload();
+// })
 
-//toggle editor/help
-helpButton.addEventListener("click", () => {
-  editorWindow.style.display = editorWindow.style.display == "none" && svgSelectWindow.style.display == "none" ? "block" : "none";
-  helpWindow.style.display = helpWindow.style.display == "block" ? "none" : "block";
-  svgSelectWindow.style.display = "none";
-})
+// //toggle editor/help
+// helpButton.addEventListener("click", () => {
+//   editorWindow.style.display = editorWindow.style.display == "none" && svgSelectWindow.style.display == "none" ? "block" : "none";
+//   helpWindow.style.display = helpWindow.style.display == "block" ? "none" : "block";
+//   svgSelectWindow.style.display = "none";
+// })
 
 //zoom features for inline container
-let zoom = 0.9;
-let zoomStep = 0.2;
+let zoom = 0.8;
+let zoomStep = 0.4;
 
 zoomIn.addEventListener("click", () => {
-  if (zoom >= 1.2) {
+  if (zoom >= 1.5) {
     return;
   }
   zoom += zoomStep;
@@ -237,7 +243,7 @@ zoomIn.addEventListener("click", () => {
 })
 
 zoomOut.addEventListener("click", () => {
-  if (zoom <= 0.5) {
+  if (zoom <= 0.6) {
     return;
   }
 
@@ -253,8 +259,8 @@ zoomOut.addEventListener("click", () => {
 function primarySelect() {
     //let defaultColor = "#000000";
     primaryColor.value = randomHex();
-    svgTarget.style.fill = primaryColor.value;
-    primaryColor.addEventListener("input", updateSVGFirst, false);
+    document.querySelector('.a').style.fill = primaryColor.value;
+    primaryColor.addEventListener("input", updateContinue, false);
     //primaryColor.addEventListener("change", updateSVGAll, false);
     primaryColor.select();
     console.log("primary select activated");
@@ -263,8 +269,8 @@ function primarySelect() {
 function secondarySelect() {
     //let defaultColor = "#000000";
     secondaryColor.value = randomHex();
-    secondaryTarget.style.fill = secondaryColor.value;
-    secondaryColor.addEventListener("input", updateSecondFirst, false);
+    document.querySelector('.c').style.fill = secondaryColor.value;
+    secondaryColor.addEventListener("input", updateContinueSecond, false);
     //secondaryColor.addEventListener("change", updateSecondAll, false);
     secondaryColor.select();
     console.log("secondary select activated");
@@ -280,25 +286,35 @@ function backgroundSelect() {
     console.log("background select activated");
   }
 
-function updateSVGFirst(event) {
-    if (svgTarget) {
-      svgTarget.style.fill = event.target.value;
-      console.log('change detected - primary color')
-    }
-  }
+// function updateSVGFirst(event) {
+//     if (svgTarget) {
+//       svgTarget.style.fill = event.target.value;
+//       console.log('change detected - primary color')
+//     }
+//   }
   
-  function updateSecondFirst(event) {
-    if (secondaryTarget) {
-      secondaryTarget.style.fill = event.target.value;
-      console.log('change detected - secondary color')
-    }
-  }
+//   function updateSecondFirst(event) {
+//     if (secondaryTarget) {
+//       secondaryTarget.style.fill = event.target.value;
+//       console.log('change detected - secondary color')
+//     }
+//   }
   
   function updateBackgroundFirst(event) {
     if (background) {
       background.style.background = event.target.value;
       console.log('change detected - background color')
     }
+  }
+
+  function updateContinue(event) {
+    document.querySelector('.a').style.fill = event.target.value;
+      console.log('change detected - special color')
+  }
+
+  function updateContinueSecond(event) {
+    document.querySelector('.C').style.fill = event.target.value;
+      console.log('change detected - special color')
   }
 
 //DOES NOT WORK - RETURNS NOT A FUNCTION

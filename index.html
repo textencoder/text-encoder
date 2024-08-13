@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TextEncoder</title>
 </head>
-<header>
-    <nav>
-        <button id="toggle-view" class="hover-style nav-icon-container">
+<!-- <header>
+    <nav> -->
+        <!-- <button id="toggle-view" class="hover-style nav-icon-container">
             <div id="toggle-icon">
                 <div></div>
                 <div></div>
@@ -18,13 +18,13 @@
         </button>
         
         <button id="textencoder" class="hover-style">
-            TEXTENCODER
+           
         </button>
 
         <button id="help-button" class="hover-style nav-icon-container">
                 ?
-        </button>
-    </nav>
+        </button> -->
+    <!-- </nav>
 <!-- <div id="nav-2">
     <div id="dropdown-menus">
         <a><u>F</u>ile</a>
@@ -33,7 +33,18 @@
         <a><u>A</u>bout</a>
     </div>
 </div> -->
-</header>
+</header>-->
+
+<div id="main-menu">
+    <div id="logo">
+
+    </div>
+    
+    <p>
+        The <i>TextEncoder</i> is an interactive sandbox 
+        for viewing and modifying <u class="red-text">S</u>calable <u class="green-text">V</u>ector <u class="blue-text">G</u>raphics
+    </p>
+</div>
 
 <body>
     <div id="editor-window">
@@ -42,9 +53,11 @@
                 < prev
             </button>
             
-            <div id="file-name">
-                
+        
+            <div id="file-name" class="spc-button">
+              
             </div>
+        
 
             <button id="mobile-next" class="hover-style">
                 next >
@@ -92,15 +105,21 @@
 
             <div id="zoom">
                 <button id="zoom-in" class="hover-style">
-                    <!-- <img src="./ui-images/zoom-in.png" width="24px"> -->
                      +
                 </button>
                 <button id="zoom-out" class="hover-style">
-                    <!-- <img src="./ui-images/zoom-out.png" width="24px"> -->
                      -
                 </button> 
             </div>
         </div>
+    </div>
+
+    <div id="information-block">
+        <p>Cycle through SVG files with the prev/next buttons</p>
+        
+        <p>
+            Zoom in or out to focus
+        </p>
     </div>
 
     <div id="svg-select">
@@ -174,5 +193,8 @@
         </div>
     </div>
 </body>
+<footer>
+    <a href="https://www.github.com/textencoder">@textencoder</a>
+</footer>
 <script src="script.js"></script>
 </html>
