@@ -7,19 +7,13 @@ const background = document.getElementById('editor-viewport');
 //zoom buttons
 const zoomIn = document.getElementById('zoom-in');
 const zoomOut = document.getElementById('zoom-out');
-
-const toggleView = document.getElementById('toggle-view');
+//editor components
 const editorWindow = document.getElementById('editor-window');
-const svgSelectWindow = document.getElementById('svg-select');
-const svgSelectDivTitle = document.getElementById('svg-select-div-title');
-const helpWindow = document.getElementById('help-window');
-const helpButton = document.getElementById('help-button');
-const homeButton = document.getElementById('textencoder');
 const fileNameContainer = document.getElementById('file-name');
 const inlineContainer = document.getElementById('inline-container');
+// prev/next buttons
 const previousButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
-
 const mobilePreviousButton = document.getElementById('mobile-prev');
 const mobileNextButton = document.getElementById('mobile-next');
 
@@ -70,16 +64,14 @@ let svgArray = [
   
 ]
 
-let i = 0;
+
+
+// i = random number
+let i = Math.floor(Math.random() * 3);
 
 //default color variables
 let defaultBlack = "#000000";
 let defaultWhite = "#ffffff";
-
-//wait for editor to load
-// window.addEventListener("load", primarySelect, false);
-// window.addEventListener("load", secondarySelect, false);
-// window.addEventListener("load", backgroundSelect, false);
 
 //mutation observer
 const targetNode = inlineContainer; // Or any other parent element where SVGs might be injected
@@ -107,6 +99,7 @@ const callback = function(mutationsList, observer) {
 const observer = new MutationObserver(callback);
 observer.observe(targetNode, config);
 //interesting but don't know if useful
+//it was very useful
 
 
 //insert inline svg
@@ -116,10 +109,7 @@ function loadSvg(index) {
      console.log('SVG LOADED');
   }
 
-//load random svg
-//loadSvg(Math.floor(Math.random() * 2));
-
-//load svg from array on load
+//load svg from array
 loadSvg(i);
 
 //get random hex 
@@ -148,7 +138,6 @@ const resetColors = () => {
 }
 
 //previous and next buttons
-// let i = 0;
 
 nextButton.addEventListener("click", () => {
   if (i < svgArray.length - 1) {
@@ -200,33 +189,6 @@ mobilePreviousButton.addEventListener("click", () => {
   resetColors();
 })
 
-//declare svg selectors after functions
-//const svgTarget = document.getElementById('a');
-// const secondaryTarget = document.getElementById('c');
-
-//alternate declarations
-// let svgTarget = document.querySelector('.a');
-// let secondaryTarget = document.querySelector('.c');
-
-//toggle editor/select
-// toggleView.addEventListener("click", () => {
-//   editorWindow.style.display = editorWindow.style.display == "none" ? "block" : "none"; 
-//   svgSelectWindow.style.display = svgSelectWindow.style.display == "grid" ? "none" : helpWindow.style.display == "block" ? 'none' : "grid";
-//   helpWindow.style.display = "none";
-// })
-
-// //refresh page when home button is clicked
-// homeButton.addEventListener("click", () => {
-//   window.location.reload();
-// })
-
-// //toggle editor/help
-// helpButton.addEventListener("click", () => {
-//   editorWindow.style.display = editorWindow.style.display == "none" && svgSelectWindow.style.display == "none" ? "block" : "none";
-//   helpWindow.style.display = helpWindow.style.display == "block" ? "none" : "block";
-//   svgSelectWindow.style.display = "none";
-// })
-
 //zoom features for inline container
 let zoom = 0.8;
 let zoomStep = 0.4;
@@ -261,7 +223,6 @@ function primarySelect() {
     primaryColor.value = randomHex();
     document.querySelector('.a').style.fill = primaryColor.value;
     primaryColor.addEventListener("input", updateContinue, false);
-    //primaryColor.addEventListener("change", updateSVGAll, false);
     primaryColor.select();
     console.log("primary select activated");
   }
@@ -271,7 +232,6 @@ function secondarySelect() {
     secondaryColor.value = randomHex();
     document.querySelector('.c').style.fill = secondaryColor.value;
     secondaryColor.addEventListener("input", updateContinueSecond, false);
-    //secondaryColor.addEventListener("change", updateSecondAll, false);
     secondaryColor.select();
     console.log("secondary select activated");
   }
@@ -281,24 +241,9 @@ function backgroundSelect() {
     backgroundColor.value = randomHex();
     background.style.background = backgroundColor.value
     backgroundColor.addEventListener("input", updateBackgroundFirst, false);
-    //backgroundColor.addEventListener("change", updateBackgroundAll, false);
     backgroundColor.select();
     console.log("background select activated");
   }
-
-// function updateSVGFirst(event) {
-//     if (svgTarget) {
-//       svgTarget.style.fill = event.target.value;
-//       console.log('change detected - primary color')
-//     }
-//   }
-  
-//   function updateSecondFirst(event) {
-//     if (secondaryTarget) {
-//       secondaryTarget.style.fill = event.target.value;
-//       console.log('change detected - secondary color')
-//     }
-//   }
   
   function updateBackgroundFirst(event) {
     if (background) {
@@ -313,57 +258,6 @@ function backgroundSelect() {
   }
 
   function updateContinueSecond(event) {
-    document.querySelector('.C').style.fill = event.target.value;
+    document.querySelector('.c').style.fill = event.target.value;
       console.log('change detected - special color')
   }
-
-//DOES NOT WORK - RETURNS NOT A FUNCTION
-  // function updateSVGAll(event) {
-//     svgTarget.forEach((g) => {
-//       g.style.fill = event.target.value;
-//     });
-//   }
-
-// function updateSecondAll(event) {
-//   secondaryTarget.forEach((g) => {
-//       g.style.fill = event.target.value;
-//     });
-//   }
-  
-// function updateBackgroundAll(event) {
-//     background.forEach((b) => {
-//       b.style.background = event.target.value;
-//     });
-//   }
-
-//svgArray iteration
-// function printSvg() {
-//   svgArray.forEach(element => {
-//     console.log((element.inline).includes('class="a"'));
-//   })
-// }
-
-//test functions
-
-function printSvg() {
-  svgArray.forEach(element => {
-    (element.inline).includes('class="a"') ?
-    console.log(element.name) : 
-    console.log('error');
-  })
-}
-
-function printTarget() {
-  console.log(svgTarget)
-}
-
-function printLength() {
-  console.log(svgArray)
-}
-
-function printInline() {
-  console.log(svgArray[0].inline)
-}
-
-//research addEventListener "events"
-//event delegation
