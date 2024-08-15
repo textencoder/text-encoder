@@ -1,5 +1,5 @@
 :root {
-    --font-main: "lores-9-plus-narrow",monospace, sans-serif;
+    --font-main: monospace;
     --color-bg: #161616;
     --color-dark-blue: #774289;
     --color-light-blue: #b59cc4;
@@ -67,15 +67,23 @@ body {
 }
 
 #logo {
-    background-color: var(--color-white);
+    border: 2px solid var(--color-white);
+    color: var(--color-white);
+    background: none;
     width: 20%;
     height: 10%;
     border-radius: 10px; 
+    font-family: "dm-sans", sans-serif;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #logo:hover {
-    background-color: lawngreen;
+    border-color: lawngreen;
     cursor: pointer;
+    color: lawngreen;
 }
 
 
@@ -125,6 +133,7 @@ svg {
 #file-name {
     color: var(--color-white);
     background-color: var(--color-bg);
+    border: none;
     border-radius: 10px;
     width: 30%;
     height: 70%;
@@ -317,7 +326,7 @@ footer {
     position: fixed;
 }
 
-@media screen and (min-width: 500px) and (max-width: 1375px) {
+@media screen and (min-width: 500px) and (max-width: 1200px) {
     #main-menu {
         display: none;
     }
@@ -357,7 +366,6 @@ footer {
     #editor-window {
         width: 90vw;
         height: 80vh;
-        margin-top: 50px;
     }
 
     #editor-header {
@@ -395,6 +403,10 @@ footer {
         width: 80%;
         background: none;
         color: var(--color-bg)
+    }
+
+    #file-name:hover {
+        background: none;
     }
 
     svg {
