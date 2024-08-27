@@ -199,7 +199,7 @@ inline: `<?xml version="1.0" encoding="UTF-8"?>
 },
 
 {
-  name: "russian.svg",
+  name: "roulette.svg",
   inline: `<?xml version="1.0" encoding="UTF-8"?>
   <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 694.91 772.78">
   <g class="a">
@@ -306,7 +306,7 @@ const callback = function(mutationsList, observer) {
         if (node.nodeName === 'svg') {
           // document.querySelector('.a').style.fill = primaryColor.value;
           // document.querySelector('.c').style.fill = secondaryColor.value;
-          console.log('New SVG element:', node);
+          //console.log('New SVG element:', node);
           primarySelect();
           backgroundSelect();
           try {
