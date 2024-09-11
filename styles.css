@@ -350,6 +350,12 @@ footer {
     }
 }
 
+@media screen and (min-width: 540px) and (max-width: 1080px) {
+    #color-pickers {
+        top: 140px;
+    }
+}
+
 @media screen and (max-width: 540px) {
     svg {
         width: 200px;

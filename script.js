@@ -336,19 +336,18 @@ function loadSvg(index) {
 //load svg from array
 loadSvg(i);
 
-//get random hex 
+//get random hex code
 const randomHex = () => {
   const characters = 'ABCDEF0123456789';
-  const hexArray = ['#'];
+  let hexString = '#';
   const randomHexCode = () => {
     let randomNumber = Math.floor(Math.random() * 16);
     return characters.charAt(randomNumber)
 }
   for (let i = 0; i < 6; i++) {
-    hexArray.push(randomHexCode())
+    hexString += randomHexCode();
 }
-  const finalHex = hexArray.join('');
-  return finalHex;
+  return hexString;
 }
 
 //reset color picker and fill values
