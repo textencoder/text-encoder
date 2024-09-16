@@ -19,6 +19,10 @@ const mobileNextButton = document.getElementById('mobile-next');
 
 const logoButton = document.getElementById('logo');
 
+//color picker containers
+const primaryColorContainer = document.getElementById('primary-color-container');
+const secondaryColorContainer = document.getElementById('secondary-color-container');
+
 //start inline svg code array
 
 let svgArray = [
@@ -311,10 +315,14 @@ const callback = function(mutationsList, observer) {
           backgroundSelect();
           try {
             secondarySelect(); 
+            secondaryColor.style.display = 'grid';
+            secondaryColorContainer.style.visibility = 'visible';
           } catch {
+            secondaryColor.style.display = 'none';
+            secondaryColorContainer.style.visibility = 'hidden';
             console.error('No secondary target available');
           }
-                
+               
         }
       }
     }
