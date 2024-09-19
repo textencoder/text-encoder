@@ -17,6 +17,7 @@ const nextButton = document.getElementById('next');
 const mobilePreviousButton = document.getElementById('mobile-prev');
 const mobileNextButton = document.getElementById('mobile-next');
 
+//home button
 const logoButton = document.getElementById('logo');
 
 //color picker containers
