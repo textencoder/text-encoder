@@ -340,6 +340,11 @@ function loadSvg(index) {
      fileNameContainer.innerText = svgArray[index].name;
      inlineContainer.innerHTML = svgArray[index].inline;
      console.log('SVG LOADED');
+
+    //  fetch("./vectors.json")
+    //  .then(res => res.json())
+    //  .then(data => fileNameContainer.innerText = data[index].name)
+    //  .then(data => inlineContainer.innerHTML = data[index].inline)
   }
 
 //load svg from array
@@ -491,3 +496,6 @@ function backgroundSelect() {
     document.querySelector('.c').style.fill = event.target.value;
       console.log('change detected - special color')
   }
+
+
+  

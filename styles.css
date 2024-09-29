@@ -317,12 +317,6 @@ input {
     place-items: center;
 }
 
-footer {
-    display: none;
-    color: white;
-    position: fixed;
-}
-
 @media screen and (min-width: 540px) and (max-width: 1200px) {
     svg {
         width: 250px;
@@ -343,11 +337,6 @@ footer {
     #file-name {
         width: 25%;
     }
-
-    footer {
-        display: block;
-        bottom: 25px;
-    }
 }
 
 @media screen and (min-width: 540px) and (max-width: 1080px) {
@@ -367,11 +356,6 @@ footer {
 
     #information-block {
         display: none;
-    }
-
-    footer {
-        display: none;
-        bottom: 25px;
     }
 
     #editor-window {
