@@ -108,7 +108,7 @@ svg {
 }
 
 #editor-window {
-    border: 5px solid var(--color-bg);  
+    border: 2px solid var(--color-bg);  
     width: 50vw;
     height: 90vh;
     margin-top: 10px;
@@ -122,7 +122,7 @@ svg {
     top: 0;
     height: 10%;
     width: 100%;
-    border-bottom: 5px solid var(--color-bg);
+    border-bottom: 2px solid var(--color-bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -160,7 +160,7 @@ svg {
 }
 
 #prev-next button {
-    border: 3px solid var(--color-bg);
+    border: 2px solid var(--color-bg);
     background-color: dodgerblue;
     color: var(--color-bg);
     border-radius: 10px;
@@ -254,7 +254,7 @@ svg {
     display: grid;
     place-items: center;
     background-color: var(--color-white);
-    border: 3px solid var(--color-bg);
+    border: 2px solid var(--color-bg);
     border-radius: 10px;
     cursor: pointer;
 }
@@ -296,7 +296,7 @@ input {
     font-weight: bold;
     border-radius: 10px;
     background-color: var(--color-white);
-    border: 3px solid var(--color-bg);
+    border: 2px solid var(--color-bg);
     color: var(--color-bg);
   
 }
@@ -383,7 +383,7 @@ input {
 
     #zoom {
         position: absolute;
-        bottom: 70px;
+        bottom: 15px;
         right: 0;
         border: none;
         width: 100%;
