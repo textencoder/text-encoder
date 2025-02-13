@@ -105,6 +105,7 @@ body {
 
 svg {
     height: 300px;
+    transition: fill 0.25s ease;
 }
 
 #editor-window {
@@ -140,6 +141,7 @@ svg {
     font-size: 1.3rem;
     font-weight: 900;
     margin-left: 20px;
+    transition: background-color 0.2s ease-in, color 0.2s ease-in;
 }
 
 #file-name:hover {
@@ -166,6 +168,7 @@ svg {
     border-radius: 10px;
     font-weight: 900;
     font-size: 1.1rem;
+    transition: background-color 0.2s ease-in, color 0.2s ease-in;
 }
 
 #prev-next button:hover {
@@ -218,6 +221,7 @@ svg {
     align-items: center;
     z-index: 0;
     cursor: crosshair;
+    transition: background 0.25s ease;
 }
 
 #inline-container {
@@ -257,6 +261,7 @@ svg {
     border: 2px solid var(--color-bg);
     border-radius: 10px;
     cursor: pointer;
+    transition: background-color 0.2s ease-in;
 }
 
 #primary-color-container:hover ,
@@ -298,7 +303,7 @@ input {
     background-color: var(--color-white);
     border: 2px solid var(--color-bg);
     color: var(--color-bg);
-  
+    transition: background-color 0.2s ease-in, color 0.2s ease-in;
 }
 
 #zoom button:hover {
