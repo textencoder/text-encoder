@@ -1,91 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TextEncoder</title>
-</head>    
-<header>
-    <nav></nav>
-</header>
-<body>
-
-    <div id="main-menu">
-        <button id="logo">
-    Te
-        </button>
-        
-        <p>
-            The <i>TextEncoder</i> is an interactive sandbox 
-            for viewing and modifying <u class="red-text">S</u>calable <u class="green-text">V</u>ector <u class="blue-text">G</u>raphics
-        </p>
-    </div>
-
-
-    <div id="editor-window">
-        <div id="editor-header">
-            <button id="mobile-prev" class="hover-style">
-                <
-            </button>
-            
-        
-            <button id="file-name">
-              
-            </button>
-        
-
-            <button id="mobile-next" class="hover-style">
-                >
-            </button>
-
-            <div id="prev-next">
-                <button id="prev" class="hover-style">
-                    < prev
-                </button>
-                <button id="next" class="hover-style">
-                    next >
-                </button>
-            </div>
-        </div>
-
-        <div id="editor-viewport">
-            <div id="color-pickers">
-                <div id="primary-color-container" class="hover-style">
-                    <input type="color" id="primary-color">
-                </div>
-                <div id="secondary-color-container" class="hover-style">
-                    <input type="color" id="secondary-color">
-                </div>
-                <div id="background-color-container" class="hover-style">
-                    <input type="color" id="background-color">
-                </div>
-            </div>
-
-            <div id="inline-container">
-                
-            </div>
-
-            <div id="zoom">
-                <button id="zoom-in" class="hover-style">
-                     +
-                </button>
-                <button id="zoom-out" class="hover-style">
-                     -
-                </button> 
-            </div>
-        </div>
-    </div>
-
-    <div id="information-block">
-        <p>Cycle through SVG files with the prev/next buttons</p>
-        
-        <p>
-            Zoom in or out to focus
-        </p>
-    </div>
-
-</body>
-
-<script src="script.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

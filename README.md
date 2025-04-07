@@ -1,11 +1,12 @@
-The TextEncoder is an interactive sandbox for viewing and modifying Scalable Vector Graphics.
+# React + Vite
 
-Begin by selecting a primary or secondary color in any order. You can also adjust the background color of the viewport that the SVG resides in. The freedom to change these colors at any time is a valuable tool at your disposal.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-You may cycle through SVG files with the previous & next buttons located at the top of the editor window. A random color palette will be automatically generated each time an SVG is loaded.
+Currently, two official plugins are available:
 
-In addition, you may focus the SVG target with the zoom buttons located at the bottom of the viewport. 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-With the TextEncoder, you are the artist. There are infinite combinations of colors that you can experiment with, so the possibilities are endless. 
+## Expanding the ESLint configuration
 
-What will you create today?
+If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
