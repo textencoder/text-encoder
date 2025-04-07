@@ -9,12 +9,9 @@ function App() {
   const [name, setName] = useState("");
   const [vector, setVector] = useState(null);
   const [count, setCount] = useState(0);
-  const [primaryColor, setPrimaryColor] = useState("#FF5C00")
-
-  function handleColorChange(event) {
-    //console.log(event.target.value);
-    setPrimaryColor(event.target.value);
-  }
+  const [primaryColor, setPrimaryColor] = useState({ r: 255, g: 92, b: 0, a: 1 });
+  const [secondaryColor, setSecondaryColor] = useState({ r: 255, g: 255, b: 255, a: 1 })
+  const [backgroundColor, setBackgroundColor] = useState({ r: 147, g: 161, b: 176, a: 0.05 })
 
   useEffect(() => {
     fetch("../public/db.json")
@@ -39,11 +36,14 @@ function App() {
       <Viewport 
       vector={vector}
       primaryColor={primaryColor}
+      backgroundColor={backgroundColor}
       />
       
       <Footer
       primaryColor={primaryColor}
-      handleColorChange={handleColorChange}
+      setPrimaryColor={setPrimaryColor}
+      backgroundColor={backgroundColor}
+      setBackgroundColor={setBackgroundColor}
       />
     </>
   );
