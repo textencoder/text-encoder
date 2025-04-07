@@ -9,6 +9,12 @@ function App() {
   const [name, setName] = useState("");
   const [vector, setVector] = useState(null);
   const [count, setCount] = useState(0);
+  const [primaryColor, setPrimaryColor] = useState("#FF5C00")
+
+  function handleColorChange(event) {
+    //console.log(event.target.value);
+    setPrimaryColor(event.target.value);
+  }
 
   useEffect(() => {
     fetch("../public/db.json")
@@ -32,9 +38,13 @@ function App() {
 
       <Viewport 
       vector={vector}
+      primaryColor={primaryColor}
       />
       
-      <Footer />
+      <Footer
+      primaryColor={primaryColor}
+      handleColorChange={handleColorChange}
+      />
     </>
   );
 }

@@ -12,6 +12,12 @@
     /* border: 1px solid black; */
 }
 
+.aktiv-regular {
+    font-family: aktiv-grotesk, sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -86,7 +92,15 @@ header {
 .file-info {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+
+    p:nth-of-type(1) {
+        font-size: 1.2rem;
+    }
+
+    p:nth-of-type(2) {
+        font-size: 0.8rem;
+        color: var(--color-gray)
+    }
 }
 
 .viewport-outer {

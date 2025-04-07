@@ -24,6 +24,10 @@ export default function Header(props) {
 function Button(props) {
   return (
     <button
+      title={
+        props.direction === "left" ? "Previous"
+        : "Next"
+      }
       onClick={
         props.direction == "left"
           ? () => props.setCount(props.count - 1)
@@ -56,7 +60,7 @@ function Button(props) {
 
 function FileInfo(props) {
   return (
-    <div className="file-info">
+    <div className="file-info aktiv-regular">
         <p>{props.name}</p>
         <p>{props.count + 1}/3</p>
     </div>

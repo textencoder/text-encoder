@@ -5,8 +5,8 @@ export default function Viewport(props) {
         <div className="viewport-outer">
         <ReactSVG
                 className="viewport-inner"
-                 beforeInjection={(svg) => {
-                   svg.setAttribute('style', 'fill: orange;');
+                 afterInjection={(svg) => {
+                   svg.setAttribute('style', `fill: ${props.primaryColor}`);
                  }}
                 src={`data:image/svg+xml;utf8,${encodeURIComponent(props.vector)}`}
               />
