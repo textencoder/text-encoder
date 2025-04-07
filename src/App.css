@@ -79,6 +79,12 @@ header {
     }
 }
 
+.file-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .viewport-outer {
     background: url("./assets/viewport_outer.svg");
     background-repeat: no-repeat;
