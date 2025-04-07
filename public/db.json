@@ -1,6 +1,6 @@
 [{
     "name": "d3.svg",
-    "data": {
+    "vector": {
       "name": "svg",
       "type": "element",
       "value": "",
@@ -49,7 +49,7 @@
   },
   {
     "name": "dnd.svg",
-    "data": {
+    "vector": {
       "name": "svg",
       "type": "element",
       "value": "",
@@ -108,7 +108,7 @@
   },
   {
     "name": "doa.svg",
-    "data": {
+    "vector": {
       "name": "svg",
       "type": "element",
       "value": "",
