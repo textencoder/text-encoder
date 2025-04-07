@@ -18,6 +18,10 @@ body {
     display: grid;
     place-items: center;
     background-color: var(--color-medium);
+    background-image: url("./assets/grid_test3x.png");
+    background-repeat: no-repeat;
+    background-position:bottom;
+    background-size: cover;
 }
 
 #root {
