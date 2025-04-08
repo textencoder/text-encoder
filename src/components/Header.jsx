@@ -1,10 +1,7 @@
 export default function Header(props) {
   return (
     <header>
-      <FileInfo 
-      name={props.name}
-      count={props.count}
-      />
+      <FileInfo name={props.name} count={props.count} />
       <div>
         <Button
           count={props.count}
@@ -24,10 +21,8 @@ export default function Header(props) {
 function Button(props) {
   return (
     <button
-      title={
-        props.direction === "left" ? "Previous"
-        : "Next"
-      }
+      className="prev-next"
+      title={props.direction === "left" ? "Previous" : "Next"}
       onClick={
         props.direction == "left"
           ? () => props.setCount(props.count - 1)
@@ -59,15 +54,26 @@ function Button(props) {
 }
 
 function FileInfo(props) {
+  function handleClick() {
+    console.log("button clicked")
+  }
+
   return (
-    <div className="file-info aktiv-regular">
+    <button onClick={handleClick} className="file-info aktiv-regular">
       <div>
-        <p>File: {props.name}</p>
-        <p>Number: {props.count + 1}/3</p>
-        </div>
-        <div>
-        <svg width="15" viewBox="0 0 15 15"  xmlns="http://www.w3.org/2000/svg"><path d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z" fill="white" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-        </div>
-    </div>
+        <p>{props.name}</p>
+        <p>{props.count + 1}/3</p>
+      </div>
+      <div>
+        <svg width="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z"
+            fill="white"
+            fillRule="evenodd"
+            clipRule="evenodd"
+          ></path>
+        </svg>
+      </div>
+    </button>
   );
 }

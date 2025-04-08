@@ -14,7 +14,7 @@ function App() {
   const [backgroundColor, setBackgroundColor] = useState({ r: 147, g: 161, b: 176, a: 0.05 })
 
   useEffect(() => {
-    fetch("../public/db.json")
+    fetch("/vectors.json")
       .then((response) => {
         return response.json();
       })
