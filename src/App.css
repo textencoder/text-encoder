@@ -42,7 +42,8 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
+  padding: 10px 0;
 
   p {
     color: white;
@@ -60,9 +61,10 @@ header {
     display: grid;
     place-items: center;
     cursor: pointer;
-    border: 1px solid white;
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-dark);
     border-radius: 5px;
-    background: none;
+    
 
     svg {
       width: 35%;
@@ -75,6 +77,7 @@ header {
 
   .prev-next:disabled {
     border-color: gray;
+    background: none;
 
     svg path {
       fill: gray;
@@ -236,6 +239,7 @@ footer {
   border-radius: 12px;
   background: var(--color-dark);
   box-shadow: 0 6px 12px var(--color-dark);
+  
 }
 
 .custom-layout .react-colorful__saturation {
@@ -335,7 +339,7 @@ footer {
 	overflow: hidden;
 	box-shadow: 0 2px 10px var(--color-dark);
 	background-color: var(--color-dark);
-	--scrollbar-size: 10px;
+	--scrollbar-size: 5px;
   color: white;
 }
 

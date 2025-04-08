@@ -33,7 +33,7 @@ function Button(props) {
           ? () => props.setCount(props.count - 1)
           : () => props.setCount(props.count + 1)
       }
-      disabled={props.direction == "left" ? props.count == 0 : props.count == 2}
+      disabled={props.direction == "left" ? props.count == 0 : props.count == 23}
     >
       {props.direction == "left" ? (
         <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +68,7 @@ function FileInfo(props) {
         return response.json();
       })
       .then((data) => {
-        //console.log(data);
+        console.log(data);
         setVectorArray(data);
       });
   }, []);
@@ -80,7 +80,7 @@ function FileInfo(props) {
         <button className="file-info aktiv-regular">
           <div>
             <p>{props.name}</p>
-            <p>{props.count + 1}/3</p>
+            <p>{props.count + 1}/{vectorArray.length}</p>
           </div>
           <div>
             <svg
