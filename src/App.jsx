@@ -32,6 +32,7 @@ function App() {
       vector={vector}
       count={count}
       setCount={setCount}
+      setVector={setVector}
       />
 
       <Viewport 
