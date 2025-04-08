@@ -1,3 +1,8 @@
+import { Popover, ScrollArea } from 'radix-ui';
+import { useState, useEffect } from 'react';
+import { stringify } from 'svgson';
+import { ReactSVG } from 'react-svg';
+
 export default function Header(props) {
   return (
     <header>
@@ -54,11 +59,27 @@ function Button(props) {
 }
 
 function FileInfo(props) {
+  const [vectorArray, setVectorArray] = useState([])
+
+  useEffect(() => {
+    fetch("/vectors.json")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        //console.log(data);
+        setVectorArray(data)
+      });
+  }, []);
+
   function handleClick() {
     console.log("button clicked")
   }
 
   return (
+
+    <Popover.Root>
+		<Popover.Trigger asChild>
     <button onClick={handleClick} className="file-info aktiv-regular">
       <div>
         <p>{props.name}</p>
@@ -75,5 +96,52 @@ function FileInfo(props) {
         </svg>
       </div>
     </button>
+    </Popover.Trigger>
+		<Popover.Portal>
+			<Popover.Content className="PopoverContent" sideOffset={5}>
+      <ScrollArea.Root className="ScrollAreaRoot">
+		<ScrollArea.Viewport className="ScrollAreaViewport">
+			<div style={{ padding: "15px 20px" }}>
+				{vectorArray.map((vector) => {
+					return <Thumbnail key={vector.name} name={vector.name} graphic={stringify(vector.vector)}/>
+        })}
+			</div>
+		</ScrollArea.Viewport>
+		<ScrollArea.Scrollbar
+			className="ScrollAreaScrollbar"
+			orientation="vertical"
+		>
+			<ScrollArea.Thumb className="ScrollAreaThumb" />
+		</ScrollArea.Scrollbar>
+		<ScrollArea.Scrollbar
+			className="ScrollAreaScrollbar"
+			orientation="horizontal"
+		>
+			<ScrollArea.Thumb className="ScrollAreaThumb" />
+		</ScrollArea.Scrollbar>
+		<ScrollArea.Corner className="ScrollAreaCorner" />
+	</ScrollArea.Root>
+			</Popover.Content>
+		</Popover.Portal>
+	</Popover.Root>
+
+    
   );
+}
+
+function Thumbnail(props) {
+  //console.log(props)
+
+  return (
+    <div style={{display: "flex"}}>
+    <ReactSVG 
+    className="vector-thumbnail"
+    src={`data:image/svg+xml;utf8,${encodeURIComponent(props.graphic)}`}
+    afterInjection={(svg) => {
+      svg.setAttribute("style", "fill:orange;")
+    }}
+    />
+    <p>{props.name}</p>
+    </div>
+  )
 }

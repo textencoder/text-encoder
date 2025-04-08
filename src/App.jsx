@@ -29,6 +29,7 @@ function App() {
     <>
       <Header 
       name={name}
+      vector={vector}
       count={count}
       setCount={setCount}
       />
