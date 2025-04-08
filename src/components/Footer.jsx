@@ -1,53 +1,59 @@
 import { Popover } from "radix-ui";
 import { RgbaColorPicker } from "react-colorful";
-import { useState } from "react";
 
 export default function Footer(props) {
-  const [activeColor, setActiveColor] = useState(null);
-
   return (
     <footer>
       <div>
-        <Popover.Root>
-          <Popover.Trigger asChild>
-            <button 
-            onClick={() => setActiveColor(1)}
-            className="picker-button"
-            aria-label="Change primary color">
-              1
-            </button>
-          </Popover.Trigger>
-          <Popover.Portal>
-            <Popover.Content className="PopoverContent" sideOffset={5}>
-              <section className="custom-layout example">
-                <RgbaColorPicker color={props.primaryColor} onChange={props.setPrimaryColor} />
-              </section>
-              <Popover.Arrow className="PopoverArrow" />
-            </Popover.Content>
-          </Popover.Portal>
-        </Popover.Root>
-
-        <button>2</button>
-        
-        <Popover.Root>
-          <Popover.Trigger asChild>
-            <button 
-            onClick={() => setActiveColor(3)}
-            className="picker-button"
-            aria-label="Change background color">
-              BG
-            </button>
-          </Popover.Trigger>
-          <Popover.Portal>
-            <Popover.Content className="PopoverContent" sideOffset={5}>
-              <section className="custom-layout example">
-                <RgbaColorPicker color={props.backgroundColor} onChange={props.setBackgroundColor} />
-              </section>
-              <Popover.Arrow className="PopoverArrow" />
-            </Popover.Content>
-          </Popover.Portal>
-        </Popover.Root>
+        {["primaryColor", "secondaryColor", "backgroundColor"].map(
+          (el, index) => {
+            return (
+              <ColorPickerButton
+                key={el}
+                number={index + 1}
+                layer={el}
+                primaryColor={props.primaryColor}
+                setPrimaryColor={props.setPrimaryColor}
+                secondaryColor={props.secondaryColor}
+                setSecondaryColor={props.setSecondaryColor}
+                backgroundColor={props.backgroundColor}
+                setBackgroundColor={props.setBackgroundColor}
+              />
+            );
+          }
+        )}
       </div>
     </footer>
+  );
+}
+
+function ColorPickerButton(props) {
+  return (
+    <Popover.Root>
+      <Popover.Trigger asChild>
+        <button className="picker-button" aria-label="Change primary color">
+          {props.number}
+        </button>
+      </Popover.Trigger>
+      <Popover.Portal>
+        <Popover.Content className="PopoverContent" sideOffset={5}>
+          <section className="custom-layout example">
+            <RgbaColorPicker
+              color={
+                props.layer === "primaryColor" ? props.primaryColor
+                : props.layer === "secondaryColor" ? props.secondaryColor
+                : props.backgroundColor
+              }
+              onChange={
+                props.layer === "primaryColor" ? props.setPrimaryColor
+                : props.layer === "secondaryColor" ? props.setSecondaryColor
+                : props.setBackgroundColor
+              }
+            />
+          </section>
+          <Popover.Arrow className="PopoverArrow" />
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
   );
 }
