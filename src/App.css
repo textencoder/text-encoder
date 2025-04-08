@@ -222,16 +222,12 @@ footer {
   }
 }
 
-.color-button:hover {
+.picker-button:hover {
   background-color: #ff5c00;
 }
 
-.color-button--active {
+.picker-button[data-state="open"] {
   background-color: #ff5c00;
-}
-
-.color-button--inactive {
-  background-color: #2b353f;
 }
 
 .custom-layout .react-colorful {

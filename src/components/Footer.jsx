@@ -12,7 +12,7 @@ export default function Footer(props) {
           <Popover.Trigger asChild>
             <button 
             onClick={() => setActiveColor(1)}
-            className={`color-button ${activeColor === 1 ? 'color-button--active' : 'color-button--inactive'}`}
+            className="picker-button"
             aria-label="Change primary color">
               1
             </button>
@@ -33,7 +33,7 @@ export default function Footer(props) {
           <Popover.Trigger asChild>
             <button 
             onClick={() => setActiveColor(3)}
-            className={`color-button ${activeColor === 3 ? 'color-button--active' : 'color-button--inactive'}`}
+            className="picker-button"
             aria-label="Change background color">
               BG
             </button>
