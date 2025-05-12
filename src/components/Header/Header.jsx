@@ -2,6 +2,7 @@ import { Popover, ScrollArea } from "radix-ui";
 import { useState, useEffect } from "react";
 import { stringify } from "svgson";
 import { ReactSVG } from "react-svg";
+import styles from "./Header.module.css"
 
 export default function Header(props) {
   return (
@@ -26,7 +27,7 @@ export default function Header(props) {
 function Button(props) {
   return (
     <button
-      className="prev-next"
+      className={styles.prevNext}
       title={props.direction === "left" ? "Previous" : "Next"}
       onClick={
         props.direction == "left"
@@ -77,7 +78,7 @@ function FileInfo(props) {
   return (
     <Popover.Root open={open} onOpenChange={setOpen}>
       <Popover.Trigger asChild>
-        <button className="file-info aktiv-regular">
+        <button className={`${styles.fileInfo} aktiv-regular`}>
           <div>
             <p>{props.name}</p>
             <p>{props.count + 1}/{vectorArray.length}</p>
@@ -149,9 +150,9 @@ function Thumbnail(props) {
   }
 
   return (
-    <button onClick={handleClick} className="thumbnail-wrapper">
+    <button onClick={handleClick} className={styles.thumbnailWrapper}>
       <ReactSVG
-        className="vector-thumbnail"
+        className={styles.vectorThumbnail}
         src={`data:image/svg+xml;utf8,${encodeURIComponent(props.graphic)}`}
         afterInjection={(svg) => {
           svg.setAttribute("style", "fill:white;");

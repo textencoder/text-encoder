@@ -1,5 +1,6 @@
 import { Popover } from "radix-ui";
 import { RgbaColorPicker } from "react-colorful";
+import styles from "./Footer.module.css"
 
 export default function Footer(props) {
   return (

@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { parse, stringify } from "svgson";
-import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Viewport from "./components/Viewport";
+//import "../../App.css";
+import "../../styles/App.css"
+//import styles from "./Lab.module.css"
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import Viewport from "../../components/Viewport/Viewport";
 
 function App() {
   const [name, setName] = useState("");

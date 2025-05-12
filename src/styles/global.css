@@ -1,0 +1,14 @@
+:root {
+  --color-orange: #ff5c00;
+  --color-dark: #1a1c1e;
+  --color-medium: #2b353f;
+  --color-gray: #93a1b0;
+  --color-gray-transparent: rgba(147, 161, 176, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid black; */
+  
+}
