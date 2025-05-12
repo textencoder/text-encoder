@@ -7,7 +7,7 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Viewport from "../../components/Viewport/Viewport";
 
-function App() {
+export default function Lab() {
   const [name, setName] = useState("");
   const [vector, setVector] = useState(null);
   const [count, setCount] = useState(0);
@@ -52,5 +52,3 @@ function App() {
     </>
   );
 }
-
-export default App;

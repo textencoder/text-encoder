@@ -1,4 +1,8 @@
 .splash {
     border: 1px solid white;
     height: 100%;
+    font-family: monospace;
+    display: grid;
+    place-items: center;
+    color: white;
 }
