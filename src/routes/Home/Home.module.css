@@ -11,7 +11,6 @@
         padding: 0 20px;
 
         ul {
-            /* width: 20%; */
             width: clamp(1rem, 40vw, 15rem);
             list-style-type: none;
             display: flex;
@@ -42,8 +41,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
-    
+    color: white;   
 
     h1 {
         font-size: clamp(3rem, 8.5vw, 10rem);
