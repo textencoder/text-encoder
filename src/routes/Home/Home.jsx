@@ -8,8 +8,9 @@ export default function Home() {
       <Nav />
 
       <div className={styles.splash}>
-        <h1>Language Arts</h1>
-        <h1>Redefined</h1>
+        <h1 className="alfabet-semibold">Language Arts</h1>
+        <h1 className="alfabet-semibold" style={{color: "#ff5c00"}}>Redefined</h1>
+        <a href="/lab"><button className="aktiv-regular">Enter the Lab</button></a>
       </div>
     </div>
   );
@@ -23,7 +24,7 @@ function Nav() {
         xmlns="http://www.w3.org/2000/svg"
         width="40"
         viewBox="0 0 583.4 583.4"
-        fill="#ff8c00"
+        fill="#ff5c00"
       >
         <g id="c">
           <path

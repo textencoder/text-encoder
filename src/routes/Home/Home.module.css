@@ -26,6 +26,11 @@
                 text-decoration: none;
                 color: white;
             }
+
+            li:hover,
+            a:hover {
+                color: var(--color-orange)
+            }
         }
     }
 }
@@ -38,4 +43,26 @@
     align-items: center;
     color: white;
     font-size: 3rem;
+
+    a {
+        display: grid;
+        place-items: center;
+        text-decoration: none;
+        margin-top: 25px;
+    }
+
+    button {
+        width: 150px;
+        height: 50px;
+        border-radius: 10px;
+        background: none;
+        font-size: 1rem;
+        border: 2px solid white;
+        color: white;
+    }
+
+    button:hover {
+        color: var(--color-orange);
+        border-color: var(--color-orange);
+    }
 }
