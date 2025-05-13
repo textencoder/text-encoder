@@ -44,7 +44,7 @@
     color: white;   
 
     h1 {
-        font-size: clamp(3rem, 8.5vw, 10rem);
+        font-size: clamp(2.5rem, 8.5vw, 10rem);
     }
 
     a {
@@ -57,7 +57,7 @@
     button {
         width: 150px;
         height: 50px;
-        border-radius: 10px;
+        border-radius: 5px;
         background: none;
         font-size: 1rem;
         border: 2px solid white;
@@ -66,7 +66,8 @@
     }
 
     button:hover {
-        color: var(--color-orange);
+        color: white;
         border-color: var(--color-orange);
+        background: var(--color-orange);
     }
 }

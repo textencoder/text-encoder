@@ -1,8 +1,10 @@
 .viewportOuter {
-  background: url("../../assets/viewport_outer.svg");
+  /* background: url("../../assets/viewport_outer.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: center; */
+  border: 1px solid var(--color-orange);
+  border-radius: 2.5px;
   padding: 25px;
   display: grid;
   place-items: center;
@@ -21,6 +23,6 @@
     } */
 
   svg {
-    width: 400px;
+    width: 300px;
   }
 }
