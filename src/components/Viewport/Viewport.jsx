@@ -3,7 +3,6 @@ import styles from "./Viewport.module.css"
 
 export default function Viewport(props) {
 
-  console.log(styles)
     return (
         <div className={styles.viewportOuter}>
         <ReactSVG

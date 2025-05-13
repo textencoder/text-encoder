@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { parse, stringify } from "svgson";
-//import "../../App.css";
 import "../../styles/App.css"
-//import styles from "./Lab.module.css"
+import styles from "./Lab.module.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Viewport from "../../components/Viewport/Viewport";
@@ -28,7 +27,8 @@ export default function Lab() {
   }, [count]);
 
   return (
-    <>
+    <div className={styles.labBackground}>
+      <div className={styles.labWrapper}>
       <Header 
       name={name}
       vector={vector}
@@ -49,6 +49,7 @@ export default function Lab() {
       backgroundColor={backgroundColor}
       setBackgroundColor={setBackgroundColor}
       />
-    </>
+    </div>
+    </div>
   );
 }
