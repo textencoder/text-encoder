@@ -11,7 +11,7 @@
         padding: 0 20px;
 
         ul {
-            width: clamp(1rem, 40vw, 15rem);
+            width: clamp(1rem, 40vw, 25rem);
             list-style-type: none;
             display: flex;
             justify-content: space-evenly;
@@ -20,6 +20,15 @@
 
             li {
                 cursor: pointer;
+              
+                border-radius: 50px;
+                width: 60px;
+                height: 80%;
+                display: flex;
+                justify-content: space-evenly;
+                background-color: var(--color-dark);
+                align-items: center;
+                padding: 5px 20px;
             }
 
             a {
@@ -29,7 +38,7 @@
 
             li:hover,
             a:hover {
-                color: var(--color-orange)
+                background-color: var(--color-orange);
             }
         }
     }
@@ -41,10 +50,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;   
+     
 
     h1 {
         font-size: clamp(2.5rem, 8.5vw, 10rem);
+        color: transparent;
+        background-clip: text;
+    }
+
+    h1:first-of-type {
+        background-image: linear-gradient(white 0%, white 60%, rgb(146, 146, 146) 100%);
+    }
+
+    h1:last-of-type {
+        padding-left: 20px;
+        background-image: linear-gradient(#ff5c00 0%, #ff5c00 60%, #652500 100%);
     }
 
     a {
@@ -55,14 +75,8 @@
     }
 
     button {
-<<<<<<< HEAD
-        width: 150px;
-        height: 50px;
-        border-radius: 5px;
-=======
         padding: 8px 24px;
         border-radius: 10px;
->>>>>>> afab89a6d223fb040c00927155aacf8ba8bc2f0a
         background: none;
         font-size: 1rem;
         border: 2px solid white;
@@ -83,15 +97,11 @@
     }
 
     button:hover {
-        color: white;
+        color: var(--color-orange);
         border-color: var(--color-orange);
-<<<<<<< HEAD
-        background: var(--color-orange);
-=======
 
         svg {
             fill: var(--color-orange)
         }
->>>>>>> afab89a6d223fb040c00927155aacf8ba8bc2f0a
     }
 }
