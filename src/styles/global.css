@@ -3,6 +3,7 @@
   --color-dark: #1a1c1e;
   --color-medium: #2b353f;
   --color-gray: #93a1b0;
+  --color-light-gray: hsla(211, 16%, 63%, 0.5);
   --color-gray-transparent: rgba(147, 161, 176, 0.05);
 }
 
