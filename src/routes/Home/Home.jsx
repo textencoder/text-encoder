@@ -79,7 +79,7 @@ function Nav() {
 }
 
 function Heading() {
-  const reWords = ["Redefined...", "Rewritten...", "Reimagined..."];
+  const reWords = ["Redefined", "Rewritten", "Reimagined"];
 
   return (
     <>
@@ -90,7 +90,6 @@ function Heading() {
             strings: reWords,
             autoStart: true,
             loop: true,
-            cursor: "/",
           }}
         />
       </h1>

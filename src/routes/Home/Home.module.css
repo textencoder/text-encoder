@@ -95,7 +95,8 @@
 
   h1:last-of-type {
     padding-left: 20px;
-    background-image: linear-gradient(#ff5c00 0%, #ff5c00 70%, #652500 100%);
+    color: var(--color-orange);
+    /* background-image: linear-gradient(#ff5c00 0%, #ff5c00 70%, #652500 100%); */
   }
 
   a {
@@ -135,4 +136,18 @@
       fill: var(--color-orange);
     }
   }
+}
+
+@media screen and (max-width: 768px) {
+  .homepage nav ul {
+    li {
+      width: 30px;
+      aspect-ratio: 1/1;
+      padding: 5px;
+    }
+
+    a {
+    display: none;
+  }
+}
 }
