@@ -14,6 +14,8 @@ export default function Lab() {
   const [secondaryColor, setSecondaryColor] = useState({ r: 255, g: 255, b: 255, a: 1 })
   const [backgroundColor, setBackgroundColor] = useState({ r: 147, g: 161, b: 176, a: 0.05 })
 
+  const [zoom, setZoom] = useState(100)
+
   const randomNumber = () => {
     return Math.floor(Math.random() * 24)
   }
@@ -43,12 +45,15 @@ export default function Lab() {
       />
 
       <Viewport 
+      zoom={zoom}
       vector={vector}
       primaryColor={primaryColor}
       backgroundColor={backgroundColor}
       />
       
       <Footer
+      zoom={zoom}
+      setZoom={setZoom}
       primaryColor={primaryColor}
       setPrimaryColor={setPrimaryColor}
       backgroundColor={backgroundColor}

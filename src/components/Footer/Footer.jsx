@@ -1,4 +1,4 @@
-import { Popover } from "radix-ui";
+import { Popover, Slider } from "radix-ui";
 import { RgbaColorPicker } from "react-colorful";
 import styles from "./Footer.module.css"
 
@@ -15,7 +15,7 @@ export default function Footer(props) {
   return (
     <footer className={styles.footer}>
       <div>
-        {quickActions.map(
+        {[quickActions[0], quickActions[1], quickActions[2]].map(
           (el) => {
             return (
               <ColorPickerButton
@@ -32,6 +32,26 @@ export default function Footer(props) {
             );
           }
         )}
+        {[quickActions[3]].map(el => {
+          return (
+            <SliderButton 
+            zoom={props.zoom}
+            setZoom={props.setZoom}
+                key={el.action}
+                icon={el.icon}
+                layer={el.action}
+                />
+          )
+        })}
+        {[quickActions[4]].map(el => {
+          return (
+            <RandomizeButton 
+            key={el.action}
+                icon={el.icon}
+                layer={el.action}
+            />
+          )
+        })}
       </div>
     </footer>
   );
@@ -66,4 +86,43 @@ function ColorPickerButton(props) {
       </Popover.Portal>
     </Popover.Root>
   );
+}
+
+function SliderButton(props) {
+  function handleSlider(event) {
+console.log(event.target.value)
+props.setZoom(event.target.value)
+  }
+
+  return (
+    <Popover.Root>
+      <Popover.Trigger asChild>
+        <button title={props.layer}>
+          {props.icon}
+        </button>
+      </Popover.Trigger>
+      <Popover.Portal>
+        <Popover.Content className="PopoverContent" sideOffset={5}>
+          <form>
+		<Slider.Root className={styles.SliderRoot} onChange={handleSlider} defaultValue={[props.zoom]} max={100} step={10}>
+			<Slider.Track className={styles.SliderTrack}>
+				<Slider.Range className={styles.SliderRange} />
+			</Slider.Track>
+			<Slider.Thumb className={styles.SliderThumb} aria-label="Volume" />
+		</Slider.Root>
+	</form>
+  <Popover.Arrow className={styles.PopoverArrow} />
+        </Popover.Content>
+        
+      </Popover.Portal>
+    </Popover.Root>
+  )
+}
+
+function RandomizeButton(props) {
+  return (
+    <button title={props.layer}>
+          {props.icon}
+        </button>
+  )
 }

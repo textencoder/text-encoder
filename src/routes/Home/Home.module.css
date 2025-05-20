@@ -94,7 +94,7 @@
   }
 
   h1:last-of-type {
-    padding-left: 20px;
+    padding-left: 12.5px;
     color: var(--color-orange);
     /* background-image: linear-gradient(#ff5c00 0%, #ff5c00 70%, #652500 100%); */
   }
