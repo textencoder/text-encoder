@@ -8,7 +8,7 @@ export default function Header(props) {
   return (
     <header>
       <FileInfo name={props.name} count={props.count} setCount={props.setCount} />
-      <div>
+      {/* <div>
         <Button
           count={props.count}
           setCount={props.setCount}
@@ -19,7 +19,7 @@ export default function Header(props) {
           setCount={props.setCount}
           direction="right"
         />
-      </div>
+      </div> */}
     </header>
   );
 }

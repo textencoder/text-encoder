@@ -23,7 +23,7 @@
     } */
 
   svg {
-    width: 250px;
+    width: clamp(100px, 30vw, 300px);
     max-height: 250px;
   }
 }

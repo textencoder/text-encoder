@@ -22,10 +22,10 @@
         cursor: pointer;
         border: 0.5px solid var(--color-light-gray);
         border-radius: 50px;
-        width: 60px;
-
+        width: 70px;
+        gap: 7px;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         background-color: var(--color-medium);
         /* background: linear-gradient(140deg, var(--color-medium) 0%, var(--color-medium) 40%, var(--color-gray-transparent) 45%, var(--color-gray-transparent) 60%, var(--color-medium) 65%, var(--color-medium) 100%); */
         align-items: center;
@@ -33,9 +33,14 @@
         transition: background-color 0.1s ease, border-color 0.1s ease;;
       }
 
+      svg {
+        min-width: 20px;
+      }
+
       a {
         text-decoration: none;
         color: white;
+        margin-top: 2px;
       }
 
       li:hover {
@@ -102,7 +107,7 @@
 
   button {
     padding: 8px 24px;
-    border-radius: 10px;
+    border-radius: 50px;
     background: none;
     font-size: 1rem;
     border: 2px solid white;

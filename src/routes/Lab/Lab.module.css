@@ -1,13 +1,14 @@
 .labBackground {
   width: 100%;
   height: 100%;
-  /* background-image: url("../../assets/grid_test3x.png"); */
+  /* background-image: url("../../assets/grid_test3x.png");  */
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
   display: grid;
   place-items: center;
-  
+  /* background-color: rgba(0, 0, 0, 0.1);
+    background-blend-mode:soft-light; */
 }
 
 .labWrapper {
@@ -17,4 +18,10 @@
   max-height: 100vh;
   display: grid;
   grid-template-rows: 1fr 4fr 1fr;
+}
+
+@media screen and (max-width: 768px) {
+  .labWrapper {
+    width: calc(100% - 50px);
+  }
 }
