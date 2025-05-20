@@ -9,11 +9,16 @@ import Viewport from "../../components/Viewport/Viewport";
 export default function Lab() {
   const [name, setName] = useState("");
   const [vector, setVector] = useState(null);
-  const [count, setCount] = useState(0);
+
   const [primaryColor, setPrimaryColor] = useState({ r: 255, g: 92, b: 0, a: 1 });
   const [secondaryColor, setSecondaryColor] = useState({ r: 255, g: 255, b: 255, a: 1 })
   const [backgroundColor, setBackgroundColor] = useState({ r: 147, g: 161, b: 176, a: 0.05 })
 
+  const randomNumber = () => {
+    return Math.floor(Math.random() * 24)
+  }
+
+    const [count, setCount] = useState(() => randomNumber());
   useEffect(() => {
     fetch("/vectors.json")
       .then((response) => {

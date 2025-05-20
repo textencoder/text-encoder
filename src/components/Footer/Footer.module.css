@@ -1,10 +1,10 @@
-footer {
+.footer {
   display: grid;
   place-items: center;
 
   div {
-    width: 150px;
-    height: 60%;
+    width: 300px;
+    height: 75%;
     background-color: var(--color-dark);
     border-radius: 10px;
     display: flex;
@@ -14,11 +14,20 @@ footer {
     button {
       background-color: var(--color-medium);
       aspect-ratio: 1/1;
-      width: 25%;
+      width: 15%;
       border: none;
       border-radius: 7.5px;
       cursor: pointer;
       color: white;
+      transition: background-color 0.1s ease;
+    }
+
+    button:hover {
+      background-color: #ff5c00;
+    }
+
+    button[data-state="open"] {
+      background-color: #ff5c00;
     }
   }
 }

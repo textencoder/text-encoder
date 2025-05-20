@@ -29,14 +29,6 @@ body {
   background: linear-gradient(150deg, var(--color-medium), var(--color-dark))
 }
 
-.picker-button:hover {
-  background-color: #ff5c00;
-}
-
-.picker-button[data-state="open"] {
-  background-color: #ff5c00;
-}
-
 .custom-layout .react-colorful {
   margin-bottom: 10px;
   padding: 16px;
