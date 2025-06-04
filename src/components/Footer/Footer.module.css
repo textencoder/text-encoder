@@ -1,6 +1,7 @@
 .footer {
   display: grid;
   place-items: center;
+  max-height: 150px;
 
   div {
     width: 325px;

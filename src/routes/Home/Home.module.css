@@ -33,14 +33,17 @@
         transition: background-color 0.1s ease, border-color 0.1s ease;;
       }
 
-      svg {
-        min-width: 20px;
-      }
-
       a {
         text-decoration: none;
         color: white;
+      }
+
+      p {
         margin-top: 2px;
+      }
+
+      svg {
+        min-width: 20px;
       }
 
       li:hover {
@@ -89,7 +92,7 @@
     background-image: linear-gradient(
       white 0%,
       white 70%,
-      rgb(146, 146, 146) 100%
+      rgb(200, 200, 200) 100%
     );
   }
 
@@ -122,10 +125,6 @@
     svg {
       transition: fill 0.1s ease;
     }
-
-    p {
-      margin-top: 1px;
-    }
   }
 
   button:hover {
@@ -146,7 +145,7 @@
       padding: 5px;
     }
 
-    a {
+    p {
     display: none;
   }
 }
