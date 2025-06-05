@@ -13,6 +13,11 @@
   /* border: 1px solid black; */
 }
 
+#root {
+  max-height: 100dvh;
+  max-width: 100vw;
+}
+
 button {
    cursor: pointer;
 }
