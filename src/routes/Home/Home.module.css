@@ -6,80 +6,53 @@
 
   nav {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
-
-    ul {
-      list-style-type: none;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      color: white;
-      gap: 11px;
-
-      li {
-        cursor: pointer;
-        border: 0.5px solid var(--color-light-gray);
-        border-radius: 50px;
-        width: 70px;
-        gap: 7px;
-        display: flex;
-        justify-content: center;
-        background-color: var(--color-medium);
-        /* background: linear-gradient(140deg, var(--color-medium) 0%, var(--color-medium) 40%, var(--color-gray-transparent) 45%, var(--color-gray-transparent) 60%, var(--color-medium) 65%, var(--color-medium) 100%); */
-        align-items: center;
-        padding: 2.5px 15px;
-        transition: background-color 0.1s ease, border-color 0.1s ease;;
-      }
-
-      a {
-        text-decoration: none;
-        color: white;
-      }
-
-      p {
-        margin-top: 2px;
-      }
-
-      svg {
-        min-width: 20px;
-      }
-
-      li:hover {
-        background-color: var(--color-orange);
-        border-color: var(--color-dark);
-      }
-    }
+    padding: 0 10px; 
   }
 }
 
-.background {
-  background-color: var(--color-dark);
-  padding: 0 12px;
-  height: 75%;
-  border-radius: 100px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 10px;
-  border: 0.5px solid var(--color-light-gray);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-}
-
 .logo:hover {
-  background-color: var(--color-orange);
+  border-color: var(--color-orange);
+
+  svg {
+    fill: var(--color-orange);
+  }
 }
 
 .logo {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  aspect-ratio: 1/1;
   border: 0.5px solid var(--color-light-gray);
-  background-color: var(--color-medium);
-  border-radius: 25px;
+  background-color: var(--color-dark);
+  border-radius: 30px;
   display: grid;
   place-items: center;
   cursor: pointer;
+  padding-right: 2px;
+}
+
+.labLink {
+  border: 0.5px solid var(--color-light-gray);
+  background-color: var(--color-dark);
+  width: 120px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+  border-radius: 50px; 
+}
+
+.labLink:hover {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+
+  svg {
+    fill: var(--color-orange);
+  }
 }
 
 .splash {
@@ -142,18 +115,4 @@
       fill: var(--color-orange);
     }
   }
-}
-
-@media screen and (max-width: 768px) {
-  .homepage nav ul {
-    li {
-      width: 30px;
-      aspect-ratio: 1/1;
-      padding: 5px;
-    }
-
-    p {
-    display: none;
-  }
-}
 }
