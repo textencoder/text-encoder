@@ -36,7 +36,6 @@
   padding: 18px;
   border-radius: 50px;
   background: none;
-
   color: white;
   display: flex;
   justify-content: space-evenly;
@@ -44,11 +43,11 @@
   gap: 12.5px;
   border: 0.5px solid var(--color-light-gray);
   background-color: var(--color-dark);
-
   gap: 15px;
   text-decoration: none;
   color: white;
   border-radius: 50px;
+  transition: border-color 0.1s ease;
 }
 
 .labLink:hover {
@@ -57,6 +56,7 @@
 
   svg {
     fill: var(--color-orange);
+    transition: fill 0.1s ease;
   }
 }
 
