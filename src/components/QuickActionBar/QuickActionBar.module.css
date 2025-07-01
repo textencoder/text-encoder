@@ -1,0 +1,30 @@
+.quickActionBar {
+    width: 325px;
+    aspect-ratio: 5/1;
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-medium);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 2.5px;
+
+    button {
+      background-color: var(--color-medium);
+      aspect-ratio: 1/1;
+      width: 15.5%;
+      border: none;
+      border-radius: 7.5px;
+      cursor: pointer;
+      color: white;
+      transition: background-color 0.1s ease;
+    }
+
+    button:hover {
+      background-color: #ff5c00;
+    }
+
+    button[data-state="open"] {
+      background-color: #ff5c00;
+    }
+}

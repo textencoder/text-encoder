@@ -1,9 +1,12 @@
 import ColorPickerButton from "./ColorPicker";
 import SliderButton from "./Slider";
 import RandomizeButton from "./Randomize";
-
+import { useState } from "react";
+import styles from "./QuickActionBar.module.css"
 
 export default function QuickActionBar(props) {
+    const [action, setAction] = useState(null)
+
     const quickActions = [
         {
           action: "primaryColor",
@@ -99,7 +102,7 @@ export default function QuickActionBar(props) {
       ];
       
       return (
-        <div>
+        <div className={styles.quickActionBar}>
                 {[quickActions[0], quickActions[1], quickActions[2]].map((el) => {
                   return (
                     <ColorPickerButton
