@@ -27,3 +27,37 @@ body {
 button {
    cursor: pointer;
 }
+
+.react-aria-ColorSlider {
+  display: grid;
+  grid-template-areas: "track track";
+  grid-template-columns: 1fr auto;
+  gap: 4px;
+  width: 190px;
+
+  .react-aria-SliderTrack {
+    grid-area: track;
+    border-radius: 2px;
+  }
+
+  &[data-orientation=horizontal] {
+    .react-aria-SliderTrack {
+      height: 50px;
+    }
+
+    .react-aria-ColorThumb {
+      top: 50%;
+    }
+  }
+}
+
+.react-aria-ColorThumb {
+  border: 4px solid rgba(255, 255, 255);
+  box-shadow: 0 0 0 1px black, inset 0 0 0 1px black;
+  width: 2px;
+  height: 80%;
+  border-radius: 1px;
+  box-sizing: border-box;
+
+  
+}
