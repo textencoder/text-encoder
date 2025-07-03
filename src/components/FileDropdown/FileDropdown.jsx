@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { stringify } from "svgson";
 import styles from "../Header/Header.module.css";
 import Thumbnail from "./Thumbnail";
+import { ReactSVG } from "react-svg";
 
 export default function FileDropdown(props) {
   const [vectorArray, setVectorArray] = useState([]);
@@ -23,10 +24,17 @@ export default function FileDropdown(props) {
     <Popover.Root open={open} onOpenChange={setOpen}>
       <Popover.Trigger asChild>
         <button className={`${styles.fileInfo} aktiv-regular`}>
+         
           <div>
-            <p><span>File: </span><span>{props.name}</span></p>
             <p>
-              <span>Number: </span><span>{props.count + 1}/{vectorArray.length}</span>
+              <span>File: </span>
+              <span>{props.name}</span>
+            </p>
+            <p>
+              <span>Number: </span>
+              <span>
+                {props.count + 1}/{vectorArray.length}
+              </span>
             </p>
           </div>
           <div>
