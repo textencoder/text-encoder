@@ -1,29 +1,21 @@
 .viewportOuter {
-  /* background: url("../../assets/viewport_outer.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center; */
-  border: 1px solid var(--color-orange);
-  border-radius: 2px;
-  padding: 20px;
+  border: 1px solid white;
+  padding: 12.5px;
   display: grid;
   place-items: center;
+  aspect-ratio: 1/1;
+  max-width: 100%;
+  max-height: 250px;
 }
 
 .viewportInner {
   display: grid;
   place-items: center;
-  border: 1px solid var(--color-gray);
-  border-radius: 2px;
+  border: 1px solid white;
   height: 100%;
   width: 100%;
 
-  /* div {
-        border: 1px solid white;
-    } */
-
   svg {
-    width: clamp(200px, 60vw, 600px);
-    max-height: 250px;
+    width: 100%;
   }
 }

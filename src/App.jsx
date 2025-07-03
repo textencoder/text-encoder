@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { parse, stringify } from "svgson";
-import "../../styles/App.css";
-import styles from "./Lab.module.css";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
-import Viewport from "../../components/Viewport/Viewport";
+import "./App.css";
+import Header from "./components/Header/Header";
+import Viewport from "./components/Viewport/Viewport";
+import ControlCenter from "./components/ControlCenter/ControlCenter";
 
-export default function Lab() {
+export default function App() {
   const [name, setName] = useState("");
   const [vector, setVector] = useState(null);
 
@@ -23,10 +22,10 @@ export default function Lab() {
     a: 1,
   });
   const [backgroundColor, setBackgroundColor] = useState({
-    r: 147,
-    g: 161,
-    b: 176,
-    a: 0.05,
+    r: 0,
+    g: 0,
+    b: 0,
+    a: 1,
   });
 
   const [zoom, setZoom] = useState(55);
@@ -49,8 +48,7 @@ export default function Lab() {
   }, [count]);
 
   return (
-    <div className={styles.labBackground}>
-      <div className={styles.labWrapper}>
+    <>
         <Header
           name={name}
           vector={vector}
@@ -66,15 +64,7 @@ export default function Lab() {
           backgroundColor={backgroundColor}
         />
 
-        <Footer
-          zoom={zoom}
-          setZoom={setZoom}
-          primaryColor={primaryColor}
-          setPrimaryColor={setPrimaryColor}
-          backgroundColor={backgroundColor}
-          setBackgroundColor={setBackgroundColor}
-        />
-      </div>
-    </div>
+        <ControlCenter />
+      </>
   );
 }
