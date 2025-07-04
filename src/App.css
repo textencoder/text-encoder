@@ -14,8 +14,9 @@
 }
 
 #root {
-  max-width: 100%;
+  max-width: 500px;
   max-height: 100%;
+  height: 100%;
   display: grid;
   grid-template-rows: 1fr 3fr 2fr;
   padding: 0 10px;

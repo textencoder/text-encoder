@@ -1,0 +1,27 @@
+.react-aria-Slider {
+  &[data-orientation=vertical] {
+    height: 150px;
+    display: block;
+
+    .react-aria-Label,
+    .react-aria-SliderOutput {
+      display: none;
+    }
+
+    .react-aria-SliderTrack {
+      width: 30px;
+      height: 100%;
+
+      &:before {
+        width: 3px;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .react-aria-SliderThumb {
+      left: 50%;
+    }
+  }
+}
