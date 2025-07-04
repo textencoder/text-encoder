@@ -1,6 +1,6 @@
 .controlCenter {
-  width: 500px;
-  max-height: 220px;
+  width: 400px;
+  max-height: 200px;
   border: 1px solid white;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -9,6 +9,7 @@
   box-sizing: border-box;
   position: fixed;
   bottom: 5px;
+  right: 5px;
 }
 
 .layerButtons {
