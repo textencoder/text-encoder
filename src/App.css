@@ -14,13 +14,11 @@
 }
 
 #root {
-  max-width: 500px;
-  max-height: 100%;
+  width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-rows: 0.5fr 2fr 1.5fr;
-  padding: 0 10px;
-  gap: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
@@ -37,6 +35,7 @@ button {
 
 .react-aria-Select {
   color: white;
+  
 
   .react-aria-Button {
     box-shadow: 0 1px 2px rgba(0 0 0 / 0.1);
@@ -49,6 +48,7 @@ button {
     align-items: center;
     height: 50px;
     color: white;
+    border-radius: 0px;
 
     &[data-focus-visible] {
       outline: 2px solid blue;
