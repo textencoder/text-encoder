@@ -3,6 +3,7 @@
   place-items: center;
   width: 100%;
   height: 100%;
+  cursor: grab;
 
   svg {
     width: 100%;
