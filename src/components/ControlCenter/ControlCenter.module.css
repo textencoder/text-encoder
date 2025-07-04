@@ -1,54 +1,56 @@
 .controlCenter {
-    width: 100%;
-    max-height: 220px;
-    border: 1px solid white;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    background-color: #1a1a1a;
+  width: 100%;
+  max-height: 220px;
+  border: 1px solid white;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  background-color: #1a1a1a;
+  box-sizing: border-box;
 }
 
 .layerButtons {
-    background-color: aliceblue;
-    grid-area: 1 / 1 / 2 / 8;
-    display: flex;
-    justify-content: space-evenly;
-
+  grid-area: 1 / 1 / 2 / 8;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid white;
 }
 
 .colorSliders {
-    /* background-color: bisque; */
-    grid-area: 2 / 1 / 5 / 8;
+  /* background-color: bisque; */
+  grid-area: 2 / 1 / 5 / 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 1px solid white;
+
+  span {
     display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
 
-    span {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
-
-        p {
-            background-color: white;
-            width: 30px;
-            aspect-ratio: 1;
-            display: grid;
-            place-items: center;
-            border-radius: 50px;
-        }
+    p {
+      background-color: white;
+      width: 30px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50px;
     }
+  }
 }
 
 .zoomSlider {
-    grid-area: 1 / 8 / 4 / 9;
-    display: grid;
-    place-items: center;
+  grid-area: 1 / 8 / 4 / 9;
+  display: grid;
+  place-items: center;
+  border: 1px solid white;
 }
 
 .randomButton {
-    background-color: cadetblue;
-    grid-area: 4 / 8 / 5 / 9;
-    display: grid;
-    place-items: center;
+  grid-area: 4 / 8 / 5 / 9;
+  display: grid;
+  place-items: center;
+  border: 1px solid white;
 }

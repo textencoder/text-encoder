@@ -5,7 +5,7 @@ import "./LayerButton.css";
 export default function LayerOneButton() {
   return (
     <Button>
-      <CircleIcon />
+      <CircleIcon color="white"/>
     </Button>
   );
 }

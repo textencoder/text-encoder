@@ -5,7 +5,7 @@ import "./LayerButton.css";
 export default function LayerTwoButton() {
   return (
     <Button>
-      <Half2Icon />
+      <Half2Icon color="white"/>
     </Button>
   );
 }

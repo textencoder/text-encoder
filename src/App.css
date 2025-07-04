@@ -20,6 +20,7 @@
   display: grid;
   grid-template-rows: 0.5fr 2fr 1.5fr;
   padding: 0 10px;
+  gap: 5px;
 }
 
 body {

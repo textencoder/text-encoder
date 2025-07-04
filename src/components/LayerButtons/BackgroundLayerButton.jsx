@@ -5,7 +5,7 @@ import "./LayerButton.css";
 export default function BackgroundLayerButton() {
   return (
     <Button>
-      <EnterFullScreenIcon />
+      <EnterFullScreenIcon color="white"/>
     </Button>
   );
 }

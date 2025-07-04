@@ -5,7 +5,7 @@ import "./RandomButton.css"
 export default function RandomButton() {
   return (
     <Button>
-      <ShuffleIcon />
+      <ShuffleIcon color="white"/>
     </Button>
   );
 }
