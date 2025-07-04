@@ -21,7 +21,7 @@
 
   &[data-orientation=horizontal] {
     .react-aria-SliderTrack {
-      height: 28px;
+      height: 7px;
     }
 
     .react-aria-ColorThumb {
@@ -33,9 +33,10 @@
 .react-aria-ColorThumb {
   border: 2px solid white;
   box-shadow: 0 0 0 1px black, inset 0 0 0 1px black;
-  width: 15px;
-  height: 100%;
+  width: 10px;
+  height: 30px;
   box-sizing: border-box;
+  cursor: pointer;
 
   &[data-focus-visible] {
     width: 24px;

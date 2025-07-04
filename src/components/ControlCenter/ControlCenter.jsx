@@ -7,6 +7,7 @@ import SaturationSlider from "../ColorSliders/SaturationSlider";
 import LightnessSlider from "../ColorSliders/LightnessSlider";
 import ZoomSlider from "../ZoomSlider/ZoomSlider";
 import RandomButton from "../RandomButton/RandomButton";
+import { BlendingModeIcon, ColorWheelIcon, SunIcon } from "@radix-ui/react-icons";
 
 export default function ControlCenter() {
     return (
@@ -18,9 +19,9 @@ export default function ControlCenter() {
             </div>
 
             <div className={styles.colorSliders}>
-                <span><p>H</p><HueSlider /></span>
-                <span><p>S</p><SaturationSlider /></span>
-                <span><p>L</p><LightnessSlider /></span>
+                <span><ColorWheelIcon color="white"/><HueSlider /></span>
+                <span><BlendingModeIcon  color="white"/><SaturationSlider /></span>
+                <span><SunIcon color="white"/><LightnessSlider /></span>
             </div>
 
             <div className={styles.zoomSlider}>
