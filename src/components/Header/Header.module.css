@@ -3,6 +3,7 @@ header {
   justify-content: space-between;
   align-items: center;  
   max-width: 100%;
+  max-height: 70px;
 }
 
 .logo {

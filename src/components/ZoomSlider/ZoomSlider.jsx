@@ -11,8 +11,6 @@ import {
 export default function ZoomSlider() {
   return (
     <Slider orientation="vertical" aria-label="Zoom">
-      <Label />
-      <SliderOutput />
       <SliderTrack>
         <SliderThumb />
         <SliderThumb>

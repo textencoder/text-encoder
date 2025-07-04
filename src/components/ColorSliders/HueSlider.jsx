@@ -11,8 +11,6 @@ import {
 export default function HueSlider() {
   return (
     <ColorSlider channel="hue" defaultValue="hsl(0, 100%, 50%)">
-      <Label />
-      <SliderOutput />
       <SliderTrack>
         <ColorThumb />
       </SliderTrack>

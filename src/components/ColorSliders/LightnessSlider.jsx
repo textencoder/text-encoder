@@ -11,8 +11,6 @@ import {
 export default function LightnessSlider() {
   return (
     <ColorSlider channel="lightness" defaultValue="hsl(0, 100%, 50%)">
-      <Label />
-      <SliderOutput />
       <SliderTrack>
         <ColorThumb />
       </SliderTrack>

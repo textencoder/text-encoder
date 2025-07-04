@@ -11,8 +11,6 @@ import {
 export default function SaturationSlider() {
   return (
     <ColorSlider channel="saturation" defaultValue="hsl(0, 100%, 50%)">
-      <Label />
-      <SliderOutput />
       <SliderTrack>
         <ColorThumb />
       </SliderTrack>

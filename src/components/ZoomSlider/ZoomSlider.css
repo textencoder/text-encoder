@@ -2,6 +2,7 @@
   &[data-orientation=vertical] {
     height: 150px;
     display: block;
+    
 
     .react-aria-Label,
     .react-aria-SliderOutput {
@@ -11,6 +12,7 @@
     .react-aria-SliderTrack {
       width: 30px;
       height: 100%;
+      
 
       &:before {
         width: 3px;
