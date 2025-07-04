@@ -19,8 +19,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("./assets/grid_test3x.png");
-  background-size: contain;
+  background-color: #000;
+  background-image: 
+    linear-gradient(to right, #222222 1px, transparent 1px),
+    linear-gradient(to bottom, #222222 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center;
 }
 
 body {
