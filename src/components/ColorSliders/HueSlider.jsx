@@ -8,9 +8,22 @@ import {
   SliderTrack,
 } from "react-aria-components";
 
-export default function HueSlider() {
+export default function HueSlider({ primaryColor, setPrimaryColor }) {
+  function handleChange(event) {
+    const newValues = {
+      ...primaryColor,
+      hue: event.hue
+    }
+
+    setPrimaryColor(newValues)
+  }
+
   return (
-    <ColorSlider channel="hue" defaultValue="hsl(0, 100%, 50%)">
+    <ColorSlider
+      channel="hue"
+      value={`hsl(${primaryColor.hue}, ${primaryColor.saturation}%, ${primaryColor.lightness}%)`}
+      onChange={(event) => handleChange(event)}
+    >
       <SliderTrack>
         <ColorThumb />
       </SliderTrack>

@@ -11,9 +11,8 @@ export default function Viewport(props) {
         afterInjection={(svg) => {
           svg.setAttribute(
             "style",
-            `fill: rgba(${props.primaryColor.r}, ${props.primaryColor.g}, ${
-              props.primaryColor.b
-            }, ${props.primaryColor.a}); transform: scale(${props.zoom / 100})`
+            `fill: hsl(${props.primaryColor.hue}, ${props.primaryColor.saturation}%, 
+            ${props.primaryColor.lightness}%); transform: scale(${props.zoom / 100})`
           );
           //svg.setAttribute('style', `transform: scale(${props.zoom / 100})`)
         }}

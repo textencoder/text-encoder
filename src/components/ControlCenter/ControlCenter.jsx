@@ -7,31 +7,56 @@ import SaturationSlider from "../ColorSliders/SaturationSlider";
 import LightnessSlider from "../ColorSliders/LightnessSlider";
 import ZoomSlider from "../ZoomSlider/ZoomSlider";
 import RandomButton from "../RandomButton/RandomButton";
-import { BlendingModeIcon, ColorWheelIcon, SunIcon } from "@radix-ui/react-icons";
+import {
+  BlendingModeIcon,
+  ColorWheelIcon,
+  SunIcon,
+} from "@radix-ui/react-icons";
 
-export default function ControlCenter() {
-    return (
-        <div className={styles.controlCenter}>
-            <div className={styles.layerButtons}>
-                <LayerOneButton />
-                <LayerTwoButton />
-                <BackgroundLayerButton />
-            </div>
+export default function ControlCenter({
+  primaryColor,
+  setPrimaryColor,
+  setSecondaryColor,
+}) {
+  return (
+    <div className={styles.controlCenter}>
+      <div className={styles.layerButtons}>
+        <LayerOneButton />
+        <LayerTwoButton />
+        <BackgroundLayerButton />
+      </div>
 
-            <div className={styles.colorSliders}>
-                <span><ColorWheelIcon color="white"/><HueSlider /></span>
-                <span><BlendingModeIcon  color="white"/><SaturationSlider /></span>
-                <span><SunIcon color="white"/><LightnessSlider /></span>
-            </div>
+      <div className={styles.colorSliders}>
+        <span>
+          <ColorWheelIcon color="white" />
+          <HueSlider
+            primaryColor={primaryColor}
+            setPrimaryColor={setPrimaryColor}
+          />
+        </span>
+        <span>
+          <BlendingModeIcon color="white" />
+          <SaturationSlider 
+          primaryColor={primaryColor}
+            setPrimaryColor={setPrimaryColor}
+          />
+        </span>
+        <span>
+          <SunIcon color="white" />
+          <LightnessSlider 
+          primaryColor={primaryColor}
+            setPrimaryColor={setPrimaryColor}
+          />
+        </span>
+      </div>
 
-            <div className={styles.zoomSlider}>
-                <ZoomSlider />
-            </div>
+      <div className={styles.zoomSlider}>
+        <ZoomSlider />
+      </div>
 
-            <div className={styles.randomButton}>
-                <RandomButton />
-            </div>
-
-        </div>
-    )
+      <div className={styles.randomButton}>
+        <RandomButton />
+      </div>
+    </div>
+  );
 }

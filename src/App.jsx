@@ -10,22 +10,19 @@ export default function App() {
   const [vector, setVector] = useState(null);
 
   const [primaryColor, setPrimaryColor] = useState({
-    r: 255,
-    g: 92,
-    b: 0,
-    a: 1,
+    hue: 50,
+    saturation: 100,
+    lightness: 50,
   });
   const [secondaryColor, setSecondaryColor] = useState({
-    r: 255,
-    g: 255,
-    b: 255,
-    a: 1,
+    hue: 255,
+    saturation: 255,
+    lightness: 255,
   });
   const [backgroundColor, setBackgroundColor] = useState({
-    r: 0,
-    g: 0,
-    b: 0,
-    a: 1,
+    hue: 0,
+    saturation: 0,
+    lightness: 0,
   });
 
   const [zoom, setZoom] = useState(55);
@@ -49,22 +46,27 @@ export default function App() {
 
   return (
     <>
-        <Header
-          name={name}
-          vector={vector}
-          count={count}
-          setCount={setCount}
-          setVector={setVector}
-        />
+      <Header
+        name={name}
+        vector={vector}
+        count={count}
+        setCount={setCount}
+        setVector={setVector}
+      />
 
-        <Viewport
-          zoom={zoom}
-          vector={vector}
-          primaryColor={primaryColor}
-          backgroundColor={backgroundColor}
-        />
+      <Viewport
+        zoom={zoom}
+        vector={vector}
+        primaryColor={primaryColor}
+        backgroundColor={backgroundColor}
+      />
 
-        <ControlCenter />
-      </>
+      <ControlCenter
+        primaryColor={primaryColor}
+        setPrimaryColor={setPrimaryColor}
+        secondaryColor={secondaryColor}
+        setSecondaryColor={setSecondaryColor}
+      />
+    </>
   );
 }
