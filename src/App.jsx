@@ -25,7 +25,7 @@ export default function App() {
     lightness: 0,
   });
 
-  const [zoom, setZoom] = useState(55);
+  const [zoom, setZoom] = useState(100);
 
   const randomNumber = () => {
     return Math.floor(Math.random() * 24);

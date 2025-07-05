@@ -1,6 +1,6 @@
 .controlCenter {
   width: 400px;
-  max-height: 200px;
+  max-height: 150px;
   border: 1px solid white;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -58,4 +58,10 @@
   display: grid;
   place-items: center;
   border: 1px solid white;
+}
+
+@media screen and (max-width: 450px) {
+  .controlCenter {
+    width: calc(100vw - 20px)
+  }
 }
