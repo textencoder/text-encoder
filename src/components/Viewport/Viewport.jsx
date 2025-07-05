@@ -1,13 +1,13 @@
 import { ReactSVG } from "react-svg";
 import styles from "./Viewport.module.css";
 
-function ViewportDep(props) {
+export default function Viewport(props) {
   return (
     <div className={styles.viewportOuter}>
       <ReactSVG
-        style={{
-          backgroundColor: `rgba(${props.backgroundColor.r}, ${props.backgroundColor.g}, ${props.backgroundColor.b}, ${props.backgroundColor.a})`,
-        }}
+        // style={{
+        //   backgroundColor: `rgba(${props.backgroundColor.r}, ${props.backgroundColor.g}, ${props.backgroundColor.b}, ${props.backgroundColor.a})`,
+        // }}
         afterInjection={(svg) => {
           svg.setAttribute(
             "style",
@@ -26,7 +26,7 @@ function ViewportDep(props) {
 import { useMove } from "react-aria";
 import React from "react";
 
-export default function Viewport(props) {
+function ViewportMove(props) {
   const CONTAINER_SIZE = 200;
   const BALL_SIZE = 30;
 
