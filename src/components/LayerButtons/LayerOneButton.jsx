@@ -3,8 +3,12 @@ import { CircleIcon } from "@radix-ui/react-icons";
 import "./LayerButton.css";
 
 export default function LayerOneButton() {
+  function handleClick(event) {
+    console.log(event)
+  }
+
   return (
-    <Button>
+    <Button onClick={(event) => handleClick(event)}>
       <CircleIcon color="white"/>
     </Button>
   );
