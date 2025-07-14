@@ -71,9 +71,9 @@ export default function ControlCenter({
   return (
     <div className={styles.controlCenter}>
       <div className={styles.layerButtons}>
-        <LayerOneButton setTargetLayer={setTargetLayer} />
-        <LayerTwoButton setTargetLayer={setTargetLayer} />
-        <BackgroundLayerButton setTargetLayer={setTargetLayer} />
+        <LayerOneButton setTargetLayer={setTargetLayer} style={targetLayer === "layerOne" ? {color: "black", backgroundColor: "white"} : null}/>
+        <LayerTwoButton setTargetLayer={setTargetLayer} style={targetLayer === "layerTwo" ? {color: "black", backgroundColor: "white"} : null}/>
+        <BackgroundLayerButton setTargetLayer={setTargetLayer} style={targetLayer === "backgroundLayer" ? {color: "black", backgroundColor: "white"} : null}/>
       </div>
 
       <div className={styles.colorSliders}>
