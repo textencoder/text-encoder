@@ -1,6 +1,6 @@
 import { Button } from "react-aria-components";
 import { GridIcon } from "@radix-ui/react-icons";
-import styles from "./gridToggleButton.module.css";
+import styles from "./GridToggleButton.module.css";
 
 export default function GridToggleButton({toggleGrid, setToggleGrid, style = {}}) {
   function handleClick() {
