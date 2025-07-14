@@ -76,7 +76,7 @@ export default function App() {
         style={{
           position: "fixed",
           height: "100dvh",
-          width: 65,
+          paddingRight: 10,
           right: 0,
           display: "grid",
           placeItems: "center",

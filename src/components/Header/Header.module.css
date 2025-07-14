@@ -2,10 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 97.5%;
+  top: 0;
+  right:0;
+  left: 0;
+  padding: 10px;
   height: 60px;
   position: fixed;
-  top: 10px;
   z-index: 5;
 }
 
