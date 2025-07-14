@@ -13,6 +13,14 @@
 
   svg {
     width: 100%;
+    max-height: 1000px;
+    max-width: 1000px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  svg {
+    width: 100%;
     max-height: 500px;
     max-width: 500px;
   }

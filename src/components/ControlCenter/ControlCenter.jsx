@@ -25,6 +25,49 @@ export default function ControlCenter({
   zoom,
   setZoom,
 }) {
+  const layerButtons = [
+    {
+      layer: "one",
+      button: <LayerOneButton setTargetLayer={setTargetLayer} />
+    },
+    {
+      layer: "two",
+      button: <LayerTwoButton setTargetLayer={setTargetLayer} />
+    },
+    {
+      layer: "background",
+      button: <BackgroundLayerButton setTargetLayer={setTargetLayer} />
+    }
+  ]
+
+  const sliderProps = {
+    primaryColor: primaryColor,
+    setPrimaryColor: setPrimaryColor,
+    secondaryColor: secondaryColor,
+    setSecondaryColor: setSecondaryColor,
+    backgroundColor: backgroundColor,
+    setBackgroundColor: setBackgroundColor,
+    targetLayer: targetLayer,
+  };
+
+  const colorSliderElements = [
+    {
+      type: "hue",
+      icon: <ColorWheelIcon color="white" />,
+      slider: <HueSlider {...sliderProps} />,
+    },
+    {
+      type: "saturation",
+      icon: <BlendingModeIcon color="white" />,
+      slider: <SaturationSlider {...sliderProps} />,
+    },
+    {
+      type: "lightness",
+      icon: <SunIcon color="white" />,
+      slider: <LightnessSlider {...sliderProps} />,
+    },
+  ];
+
   return (
     <div className={styles.controlCenter}>
       <div className={styles.layerButtons}>
@@ -34,42 +77,14 @@ export default function ControlCenter({
       </div>
 
       <div className={styles.colorSliders}>
-        <span>
-          <ColorWheelIcon color="white" />
-          <HueSlider
-            primaryColor={primaryColor}
-            setPrimaryColor={setPrimaryColor}
-            secondaryColor={secondaryColor}
-            setSecondaryColor={setSecondaryColor}
-            backgroundColor={backgroundColor}
-            setBackgroundColor={setBackgroundColor}
-            targetLayer={targetLayer}
-          />
-        </span>
-        <span>
-          <BlendingModeIcon color="white" />
-          <SaturationSlider
-            primaryColor={primaryColor}
-            setPrimaryColor={setPrimaryColor}
-            secondaryColor={secondaryColor}
-            setSecondaryColor={setSecondaryColor}
-            backgroundColor={backgroundColor}
-            setBackgroundColor={setBackgroundColor}
-            targetLayer={targetLayer}
-          />
-        </span>
-        <span>
-          <SunIcon color="white" />
-          <LightnessSlider
-            primaryColor={primaryColor}
-            setPrimaryColor={setPrimaryColor}
-            secondaryColor={secondaryColor}
-            setSecondaryColor={setSecondaryColor}
-            backgroundColor={backgroundColor}
-            setBackgroundColor={setBackgroundColor}
-            targetLayer={targetLayer}
-          />
-        </span>
+        {colorSliderElements.map(element => {
+          return (
+            <span key={element.type}>
+              {element.icon}
+              {element.slider}
+            </span>
+          )
+        })}
       </div>
 
       <div className={styles.zoomSlider}>
@@ -77,7 +92,11 @@ export default function ControlCenter({
       </div>
 
       <div className={styles.randomButton}>
-        <RandomButton setPrimaryColor={setPrimaryColor} setSecondaryColor={setSecondaryColor} setBackgroundColor={setBackgroundColor}/>
+        <RandomButton
+          setPrimaryColor={setPrimaryColor}
+          setSecondaryColor={setSecondaryColor}
+          setBackgroundColor={setBackgroundColor}
+        />
       </div>
     </div>
   );
