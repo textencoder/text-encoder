@@ -6,8 +6,8 @@ import Viewport from "./components/Viewport/Viewport";
 import ControlCenter from "./components/ControlCenter/ControlCenter";
 
 export default function App() {
-  const [name, setName] = useState("");
   const [vector, setVector] = useState(null);
+  const [targetLayer, setTargetLayer] = useState("layerOne");
 
   const [primaryColor, setPrimaryColor] = useState({
     hue: 50,
@@ -38,8 +38,7 @@ export default function App() {
         return response.json();
       })
       .then((data) => {
-        const { name, vector } = data[count];
-        setName(name);
+        const { vector } = data[count];
         setVector(stringify(vector));
       });
   }, [count]);
@@ -47,7 +46,6 @@ export default function App() {
   return (
     <>
       <Header
-        name={name}
         vector={vector}
         count={count}
         setCount={setCount}
@@ -66,6 +64,10 @@ export default function App() {
         setPrimaryColor={setPrimaryColor}
         secondaryColor={secondaryColor}
         setSecondaryColor={setSecondaryColor}
+        targetLayer={targetLayer}
+        setTargetLayer={setTargetLayer}
+        zoom={zoom}
+        setZoom={setZoom}
       />
     </>
   );

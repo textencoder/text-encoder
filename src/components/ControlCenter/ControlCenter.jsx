@@ -17,13 +17,16 @@ export default function ControlCenter({
   primaryColor,
   setPrimaryColor,
   setSecondaryColor,
+  setTargetLayer,
+  zoom,
+  setZoom
 }) {
   return (
     <div className={styles.controlCenter}>
       <div className={styles.layerButtons}>
-        <LayerOneButton />
-        <LayerTwoButton />
-        <BackgroundLayerButton />
+        <LayerOneButton setTargetLayer={setTargetLayer}/>
+        <LayerTwoButton setTargetLayer={setTargetLayer}/>
+        <BackgroundLayerButton setTargetLayer={setTargetLayer}/>
       </div>
 
       <div className={styles.colorSliders}>
@@ -51,7 +54,7 @@ export default function ControlCenter({
       </div>
 
       <div className={styles.zoomSlider}>
-        <ZoomSlider />
+        <ZoomSlider zoom={zoom} setZoom={setZoom}/>
       </div>
 
       <div className={styles.randomButton}>
