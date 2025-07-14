@@ -109,8 +109,7 @@ export default function App() {
         setBackgroundColor={setBackgroundColor}
         targetLayer={targetLayer}
         setTargetLayer={setTargetLayer}
-        zoom={zoom}
-        setZoom={setZoom}
+        numberOfLayers={numberOfLayers}
       />
     </>
   );

@@ -21,8 +21,7 @@ export default function ControlCenter({
   setBackgroundColor,
   targetLayer,
   setTargetLayer,
-  zoom,
-  setZoom,
+  numberOfLayers
 }) {
   const layerButtons = [
     {
@@ -85,6 +84,7 @@ export default function ControlCenter({
           }
         />
         <LayerTwoButton
+          disabled={numberOfLayers === 1}
           setTargetLayer={setTargetLayer}
           style={
             targetLayer === "layerTwo"

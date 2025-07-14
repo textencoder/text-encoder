@@ -23,36 +23,53 @@ export default function Header(props) {
           </g>
         </svg>
       </div> */}
-      <div className={styles.headerTop}>
-        <div style={{ display: "flex", gap: 10 }}>
-          <GridToggleButton
-            style={
-              props.toggleGrid
-                ? { color: "white", border: "1px solid white" }
-                : { color: "gray", border: "1px solid gray" }
-            }
-            setToggleGrid={props.setToggleGrid}
-          />
-          <RandomButton
-            setPrimaryColor={props.setPrimaryColor}
-            setSecondaryColor={props.setSecondaryColor}
-            setBackgroundColor={props.setBackgroundColor}
-          />
+
+      <div style={{ display: "flex", gap: 10 }}>
+        <GridToggleButton
+          style={
+            props.toggleGrid
+              ? { color: "white", border: "1px solid white" }
+              : { color: "gray", border: "1px solid gray" }
+          }
+          setToggleGrid={props.setToggleGrid}
+        />
+        <RandomButton
+          setPrimaryColor={props.setPrimaryColor}
+          setSecondaryColor={props.setSecondaryColor}
+          setBackgroundColor={props.setBackgroundColor}
+        />
+      </div>
+
+      <div style={{ display: "flex", gap: 10 }}>
+        <div className={styles.statContainer}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 5,
+            }}
+          >
+            <LayersIcon color="white" />
+            <div className={styles.layerCount}>{props.numberOfLayers}</div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 5,
+            }}
+          >
+            <FileIcon color="white" />
+            <div className={styles.fileCount}>
+              <span>{props.count + 1}</span>
+              <span>22</span>
+            </div>
+          </div>
         </div>
 
         <VectorSelect />
-      </div>
-
-      <div className={styles.headerBottom}>
-        <div className={styles.statContainer}>
-          <LayersIcon color="white"/>
-          <div className={styles.layerCount}>{props.numberOfLayers}</div>
-          <FileIcon color="white"/>
-          <div className={styles.fileCount}>
-            <span>{props.count + 1}</span>
-            <span>22</span>
-          </div>
-        </div>
       </div>
     </header>
   );
