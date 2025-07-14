@@ -11,6 +11,7 @@ export default function App() {
   const [vector, setVector] = useState(null);
   const [targetLayer, setTargetLayer] = useState("layerOne");
   const [toggleGrid, setToggleGrid] = useState(true);
+  const [numberOfLayers, setNumberOfLayers] = useState(null)
 
   const [primaryColor, setPrimaryColor] = useState({
     hue: Math.floor(Math.random() * 361),
@@ -58,6 +59,7 @@ export default function App() {
         setBackgroundColor={setBackgroundColor}
         toggleGrid={toggleGrid}
         setToggleGrid={setToggleGrid}
+        numberOfLayers={numberOfLayers}
       />
 
       <Viewport
@@ -67,6 +69,7 @@ export default function App() {
         secondaryColor={secondaryColor}
         backgroundColor={backgroundColor}
         toggleGrid={toggleGrid}
+        setNumberOfLayers={setNumberOfLayers}
       />
 
       <div
