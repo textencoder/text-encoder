@@ -8,14 +8,35 @@ import {
   SliderTrack,
 } from "react-aria-components";
 
-export default function HueSlider({ primaryColor, setPrimaryColor }) {
+export default function HueSlider({
+  primaryColor,
+  setPrimaryColor,
+  secondaryColor,
+  setSecondaryColor,
+  backgroundColor,
+  setBackgroundColor,
+  targetLayer,
+}) {
   function handleChange(event) {
-    const newValues = {
-      ...primaryColor,
-      hue: event.hue
+    if (targetLayer === "layerOne") {
+      const newValues = {
+        ...primaryColor,
+        hue: event.hue,
+      };
+      setPrimaryColor(newValues);
+    } else if (targetLayer === "layerTwo") {
+      const newValues = {
+        ...secondaryColor,
+        hue: event.hue,
+      };
+      setSecondaryColor(newValues);
+    } else if (targetLayer === "backgroundLayer") {
+      const newValues = {
+        ...backgroundColor,
+        hue: event.hue,
+      };
+      setBackgroundColor(newValues);
     }
-
-    setPrimaryColor(newValues)
   }
 
   return (

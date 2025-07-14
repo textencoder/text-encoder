@@ -16,17 +16,21 @@ import {
 export default function ControlCenter({
   primaryColor,
   setPrimaryColor,
+  secondaryColor,
   setSecondaryColor,
+  backgroundColor,
+  setBackgroundColor,
+  targetLayer,
   setTargetLayer,
   zoom,
-  setZoom
+  setZoom,
 }) {
   return (
     <div className={styles.controlCenter}>
       <div className={styles.layerButtons}>
-        <LayerOneButton setTargetLayer={setTargetLayer}/>
-        <LayerTwoButton setTargetLayer={setTargetLayer}/>
-        <BackgroundLayerButton setTargetLayer={setTargetLayer}/>
+        <LayerOneButton setTargetLayer={setTargetLayer} />
+        <LayerTwoButton setTargetLayer={setTargetLayer} />
+        <BackgroundLayerButton setTargetLayer={setTargetLayer} />
       </div>
 
       <div className={styles.colorSliders}>
@@ -35,30 +39,45 @@ export default function ControlCenter({
           <HueSlider
             primaryColor={primaryColor}
             setPrimaryColor={setPrimaryColor}
+            secondaryColor={secondaryColor}
+            setSecondaryColor={setSecondaryColor}
+            backgroundColor={backgroundColor}
+            setBackgroundColor={setBackgroundColor}
+            targetLayer={targetLayer}
           />
         </span>
         <span>
           <BlendingModeIcon color="white" />
-          <SaturationSlider 
-          primaryColor={primaryColor}
+          <SaturationSlider
+            primaryColor={primaryColor}
             setPrimaryColor={setPrimaryColor}
+            secondaryColor={secondaryColor}
+            setSecondaryColor={setSecondaryColor}
+            backgroundColor={backgroundColor}
+            setBackgroundColor={setBackgroundColor}
+            targetLayer={targetLayer}
           />
         </span>
         <span>
           <SunIcon color="white" />
-          <LightnessSlider 
-          primaryColor={primaryColor}
+          <LightnessSlider
+            primaryColor={primaryColor}
             setPrimaryColor={setPrimaryColor}
+            secondaryColor={secondaryColor}
+            setSecondaryColor={setSecondaryColor}
+            backgroundColor={backgroundColor}
+            setBackgroundColor={setBackgroundColor}
+            targetLayer={targetLayer}
           />
         </span>
       </div>
 
       <div className={styles.zoomSlider}>
-        <ZoomSlider zoom={zoom} setZoom={setZoom}/>
+        <ZoomSlider zoom={zoom} setZoom={setZoom} />
       </div>
 
       <div className={styles.randomButton}>
-        <RandomButton setPrimaryColor={setPrimaryColor}/>
+        <RandomButton setPrimaryColor={setPrimaryColor} />
       </div>
     </div>
   );

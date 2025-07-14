@@ -28,7 +28,7 @@ export default function App() {
   const [zoom, setZoom] = useState(50);
 
   const randomNumber = () => {
-    return Math.floor(Math.random() * 24);
+    return Math.floor(Math.random() * 22);
   };
 
   const [count, setCount] = useState(() => randomNumber());
@@ -64,6 +64,8 @@ export default function App() {
         setPrimaryColor={setPrimaryColor}
         secondaryColor={secondaryColor}
         setSecondaryColor={setSecondaryColor}
+        backgroundColor={backgroundColor}
+        setBackgroundColor={setBackgroundColor}
         targetLayer={targetLayer}
         setTargetLayer={setTargetLayer}
         zoom={zoom}
