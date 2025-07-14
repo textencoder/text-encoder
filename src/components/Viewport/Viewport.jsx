@@ -3,7 +3,7 @@ import styles from "./Viewport.module.css";
 
 export default function Viewport(props) {
   return (
-    <div className={styles.viewportOuter} style={{
+    <div className={styles.viewport} style={{
           backgroundColor: `hsl(${props.backgroundColor.hue}, ${props.backgroundColor.saturation}%,
              ${props.backgroundColor.lightness}%)`
         }}>
