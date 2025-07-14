@@ -5,7 +5,7 @@ import GridToggleButton from "../GridToggleButton/GridToggleButton";
 
 export default function Header(props) {
   return (
-    <header>
+    <header className={styles.header}>
       {/* <div className={styles.logo}>
         <svg
           id="b"

@@ -1,4 +1,4 @@
-header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;  
@@ -7,11 +7,4 @@ header {
   position: fixed;
   top: 15px;
   z-index: 5;
-}
-
-.logo {
-  height: 50px;
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
 }
