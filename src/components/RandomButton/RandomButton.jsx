@@ -23,7 +23,7 @@ export default function RandomButton({setPrimaryColor, setSecondaryColor, setBac
 
   return (
     <Button className={styles.randomButton} onClick={handleClick}>
-      <ShuffleIcon color="white" />
+      <ShuffleIcon color="white" width={25} height={25}/>
     </Button>
   );
 }

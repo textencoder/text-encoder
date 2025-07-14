@@ -1,10 +1,12 @@
 import styles from "./Header.module.css";
 import VectorSelect from "../VectorSelect/VectorSelect";
+import RandomButton from "../RandomButton/RandomButton";
+import GridToggleButton from "../GridToggleButton/GridToggleButton";
 
 export default function Header(props) {
   return (
     <header>
-      <div className={styles.logo}>
+      {/* <div className={styles.logo}>
         <svg
           id="b"
           data-name="Layer 2"
@@ -19,6 +21,15 @@ export default function Header(props) {
             />
           </g>
         </svg>
+      </div> */}
+
+    <div style={{display: "flex", gap: 10}}>
+      <GridToggleButton />
+      <RandomButton
+        setPrimaryColor={props.setPrimaryColor}
+        setSecondaryColor={props.setSecondaryColor}
+        setBackgroundColor={props.setBackgroundColor}
+      />
       </div>
 
       <VectorSelect />

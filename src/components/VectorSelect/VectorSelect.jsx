@@ -14,7 +14,9 @@ export default function VectorSelect() {
   return (
     <Select className={styles.vectorSelect} aria-label="Vector Select" shouldFlip={false}>
       <Button className={styles.selectButton}>
-        <SelectValue className={styles.selectValue}/>
+        <SelectValue className={styles.selectValue}>
+          Vec
+          </SelectValue>
         <span aria-hidden="true">▼</span>
       </Button>
       <Popover>

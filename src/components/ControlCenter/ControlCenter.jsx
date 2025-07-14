@@ -5,8 +5,7 @@ import BackgroundLayerButton from "../LayerButtons/BackgroundLayerButton";
 import HueSlider from "../ColorSliders/HueSlider";
 import SaturationSlider from "../ColorSliders/SaturationSlider";
 import LightnessSlider from "../ColorSliders/LightnessSlider";
-import ZoomSlider from "../ZoomSlider/ZoomSlider";
-import RandomButton from "../RandomButton/RandomButton";
+
 import {
   BlendingModeIcon,
   ColorWheelIcon,
@@ -28,17 +27,23 @@ export default function ControlCenter({
   const layerButtons = [
     {
       layer: "one",
-      button: <LayerOneButton setTargetLayer={setTargetLayer} />
+      button: <LayerOneButton setTargetLayer={setTargetLayer} />,
     },
     {
       layer: "two",
-      button: <LayerTwoButton setTargetLayer={setTargetLayer} />
+      button: <LayerTwoButton setTargetLayer={setTargetLayer} />,
     },
     {
       layer: "background",
-      button: <BackgroundLayerButton setTargetLayer={setTargetLayer} />
-    }
-  ]
+      button: <BackgroundLayerButton setTargetLayer={setTargetLayer} />,
+    },
+  ];
+
+  const sliderIconProps = {
+    color: "white",
+    height: 18,
+    width: 18,
+  };
 
   const sliderProps = {
     primaryColor: primaryColor,
@@ -53,17 +58,17 @@ export default function ControlCenter({
   const colorSliderElements = [
     {
       type: "hue",
-      icon: <ColorWheelIcon color="white" />,
+      icon: <ColorWheelIcon {...sliderIconProps} />,
       slider: <HueSlider {...sliderProps} />,
     },
     {
       type: "saturation",
-      icon: <BlendingModeIcon color="white" />,
+      icon: <BlendingModeIcon {...sliderIconProps} />,
       slider: <SaturationSlider {...sliderProps} />,
     },
     {
       type: "lightness",
-      icon: <SunIcon color="white" />,
+      icon: <SunIcon {...sliderIconProps} />,
       slider: <LightnessSlider {...sliderProps} />,
     },
   ];
@@ -71,19 +76,40 @@ export default function ControlCenter({
   return (
     <div className={styles.controlCenter}>
       <div className={styles.layerButtons}>
-        <LayerOneButton setTargetLayer={setTargetLayer} style={targetLayer === "layerOne" ? {color: "black", backgroundColor: "white"} : null}/>
-        <LayerTwoButton setTargetLayer={setTargetLayer} style={targetLayer === "layerTwo" ? {color: "black", backgroundColor: "white"} : null}/>
-        <BackgroundLayerButton setTargetLayer={setTargetLayer} style={targetLayer === "backgroundLayer" ? {color: "black", backgroundColor: "white"} : null}/>
+        <LayerOneButton
+          setTargetLayer={setTargetLayer}
+          style={
+            targetLayer === "layerOne"
+              ? { color: "black", backgroundColor: "white" }
+              : null
+          }
+        />
+        <LayerTwoButton
+          setTargetLayer={setTargetLayer}
+          style={
+            targetLayer === "layerTwo"
+              ? { color: "black", backgroundColor: "white" }
+              : null
+          }
+        />
+        <BackgroundLayerButton
+          setTargetLayer={setTargetLayer}
+          style={
+            targetLayer === "backgroundLayer"
+              ? { color: "black", backgroundColor: "white" }
+              : null
+          }
+        />
       </div>
 
       <div className={styles.colorSliders}>
-        {colorSliderElements.map(element => {
+        {colorSliderElements.map((element) => {
           return (
             <span key={element.type}>
               {element.icon}
               {element.slider}
             </span>
-          )
+          );
         })}
       </div>
     </div>

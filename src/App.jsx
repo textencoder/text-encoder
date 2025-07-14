@@ -10,16 +10,17 @@ import { ZoomInIcon, ZoomOutIcon } from "@radix-ui/react-icons";
 export default function App() {
   const [vector, setVector] = useState(null);
   const [targetLayer, setTargetLayer] = useState("layerOne");
+  const [toggleGrid, setToggleGrid] = useState(true);
 
   const [primaryColor, setPrimaryColor] = useState({
     hue: Math.floor(Math.random() * 361),
     saturation: Math.floor(Math.random() * 101),
-    lightness: Math.floor(Math.random() * 101)
+    lightness: Math.floor(Math.random() * 101),
   });
   const [secondaryColor, setSecondaryColor] = useState({
     hue: Math.floor(Math.random() * 361),
     saturation: Math.floor(Math.random() * 101),
-    lightness: Math.floor(Math.random() * 101)
+    lightness: Math.floor(Math.random() * 101),
   });
   const [backgroundColor, setBackgroundColor] = useState({
     hue: 180,
@@ -52,6 +53,9 @@ export default function App() {
         count={count}
         setCount={setCount}
         setVector={setVector}
+        setPrimaryColor={setPrimaryColor}
+        setSecondaryColor={setSecondaryColor}
+        setBackgroundColor={setBackgroundColor}
       />
 
       <Viewport
@@ -62,12 +66,32 @@ export default function App() {
         backgroundColor={backgroundColor}
       />
 
-      <div style={{position: "fixed", height: "100dvh", width: 65, right: 0, display: "grid", placeItems: "center"}}>
-        <div style={{border: "1px solid white", width: 50, height: 225, backgroundColor: "black", display: "flex", flexDirection: "column", justifyContent: "space-evenly", alignItems: "center"}}>
-          <ZoomInIcon color="white"/>
-      <ZoomSlider zoom={zoom} setZoom={setZoom}/>
-      <ZoomOutIcon color="white"/>
-      </div>
+      <div
+        style={{
+          position: "fixed",
+          height: "100dvh",
+          width: 65,
+          right: 0,
+          display: "grid",
+          placeItems: "center",
+        }}
+      >
+        <div
+          style={{
+            border: "1px solid white",
+            width: 50,
+            height: 225,
+            backgroundColor: "black",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+          }}
+        >
+          <ZoomInIcon color="white" />
+          <ZoomSlider zoom={zoom} setZoom={setZoom} />
+          <ZoomOutIcon color="white" />
+        </div>
       </div>
 
       <ControlCenter

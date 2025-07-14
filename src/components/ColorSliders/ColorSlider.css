@@ -1,7 +1,8 @@
 .react-aria-ColorSlider {
   display: grid;
-  grid-template-areas: "label output"
-                       "track track";
+  grid-template-areas:
+    "label output"
+    "track track";
   grid-template-columns: 1fr auto;
   gap: 4px;
   max-width: 300px;
@@ -19,7 +20,7 @@
     grid-area: track;
   }
 
-  &[data-orientation=horizontal] {
+  &[data-orientation="horizontal"] {
     .react-aria-SliderTrack {
       height: 10.5px;
     }
@@ -36,10 +37,14 @@
   width: 21px;
   height: 21px;
   box-sizing: border-box;
-  cursor: pointer;
+  cursor: grab;
 
   &[data-focus-visible] {
     width: 24px;
     height: 24px;
+  }
+
+  &[data-dragging] {
+    cursor: grabbing;
   }
 }
