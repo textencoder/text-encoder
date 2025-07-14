@@ -91,7 +91,7 @@ export default function ControlCenter({
         <ZoomSlider zoom={zoom} setZoom={setZoom} />
       </div>
 
-      <div className={styles.randomButton}>
+      <div className={styles.randomButtonWrapper}>
         <RandomButton
           setPrimaryColor={setPrimaryColor}
           setSecondaryColor={setSecondaryColor}

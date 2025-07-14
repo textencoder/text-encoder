@@ -1,3 +1,5 @@
+import styles from "./VectorSelect.module.css"
+
 import {
   Button,
   Label,
@@ -10,9 +12,9 @@ import {
 
 export default function VectorSelect() {
   return (
-    <Select aria-label="Vector Select" shouldFlip={false}>
-      <Button>
-        <SelectValue />
+    <Select className={styles.vectorSelect} aria-label="Vector Select" shouldFlip={false}>
+      <Button className={styles.selectButton}>
+        <SelectValue className={styles.selectValue}/>
         <span aria-hidden="true">▼</span>
       </Button>
       <Popover>

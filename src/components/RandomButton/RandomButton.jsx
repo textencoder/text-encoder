@@ -1,6 +1,6 @@
 import { Button } from "react-aria-components";
 import { ShuffleIcon } from "@radix-ui/react-icons";
-//import "./RandomButton.css";
+import styles from "./RandomButton.module.css";
 
 export default function RandomButton({setPrimaryColor, setSecondaryColor, setBackgroundColor}) {
   function handleClick() {
@@ -22,7 +22,7 @@ export default function RandomButton({setPrimaryColor, setSecondaryColor, setBac
   }
 
   return (
-    <Button onClick={handleClick}>
+    <Button className={styles.randomButton} onClick={handleClick}>
       <ShuffleIcon color="white" />
     </Button>
   );

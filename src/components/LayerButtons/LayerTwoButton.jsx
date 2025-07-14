@@ -1,6 +1,6 @@
 import { Button } from "react-aria-components";
 import { Half2Icon } from "@radix-ui/react-icons";
-import "./LayerButton.css";
+import styles from "./LayerButton.module.css";
 
 export default function LayerTwoButton({setTargetLayer, style= {}}) {
   function handleClick() {
@@ -8,7 +8,7 @@ export default function LayerTwoButton({setTargetLayer, style= {}}) {
   }
 
   return (
-    <Button style={style} onClick={(event) => handleClick(event)}>
+    <Button className={styles.layerButton} style={style} onClick={(event) => handleClick(event)}>
       <Half2Icon color="currentColor" />
     </Button>
   );

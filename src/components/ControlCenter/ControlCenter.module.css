@@ -54,7 +54,7 @@
   border: 1px solid white;
 }
 
-.randomButton {
+.randomButtonWrapper {
   grid-area: 4 / 8 / 5 / 9;
   display: grid;
   place-items: center;

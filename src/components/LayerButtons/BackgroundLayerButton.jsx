@@ -1,6 +1,6 @@
 import { Button } from "react-aria-components";
 import { EnterFullScreenIcon } from "@radix-ui/react-icons";
-import "./LayerButton.css";
+import styles from "./LayerButton.module.css";
 
 export default function BackgroundLayerButton({setTargetLayer, style= {}}) {
 function handleClick() {
@@ -8,7 +8,7 @@ function handleClick() {
   }
 
   return (
-    <Button style={style} onClick={(event) => handleClick(event)}>
+    <Button className={styles.layerButton} style={style} onClick={(event) => handleClick(event)}>
       <EnterFullScreenIcon color="currentColor"/>
     </Button>
   );
