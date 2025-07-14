@@ -10,22 +10,22 @@ export default function App() {
   const [targetLayer, setTargetLayer] = useState("layerOne");
 
   const [primaryColor, setPrimaryColor] = useState({
-    hue: 50,
+    hue: 150,
     saturation: 100,
     lightness: 50,
   });
   const [secondaryColor, setSecondaryColor] = useState({
     hue: 255,
-    saturation: 255,
-    lightness: 255,
+    saturation: 100,
+    lightness: 50,
   });
   const [backgroundColor, setBackgroundColor] = useState({
-    hue: 0,
-    saturation: 0,
-    lightness: 0,
+    hue: 100,
+    saturation: 100,
+    lightness: 50,
   });
 
-  const [zoom, setZoom] = useState(100);
+  const [zoom, setZoom] = useState(50);
 
   const randomNumber = () => {
     return Math.floor(Math.random() * 24);

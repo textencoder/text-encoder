@@ -58,7 +58,7 @@ export default function ControlCenter({
       </div>
 
       <div className={styles.randomButton}>
-        <RandomButton />
+        <RandomButton setPrimaryColor={setPrimaryColor}/>
       </div>
     </div>
   );
