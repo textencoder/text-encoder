@@ -1,8 +1,8 @@
 .react-aria-Slider {
   &[data-orientation=vertical] {
-    height: 150px;
+    height: 100px;
     display: block;
-    
+    background: white;
 
     .react-aria-Label,
     .react-aria-SliderOutput {
@@ -10,9 +10,9 @@
     }
 
     .react-aria-SliderTrack {
-      width: 30px;
+      width: 10px;
       height: 100%;
-      
+      background: gray;
 
       &:before {
         width: 3px;
@@ -24,6 +24,9 @@
 
     .react-aria-SliderThumb {
       left: 50%;
+      background: white;
+      width: 25px;
+      height: 25px;
     }
   }
 }
