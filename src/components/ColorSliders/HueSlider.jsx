@@ -42,7 +42,11 @@ export default function HueSlider({
   return (
     <ColorSlider
       channel="hue"
-      value={`hsl(${primaryColor.hue}, ${primaryColor.saturation}%, ${primaryColor.lightness}%)`}
+      value={targetLayer === "layerOne" ? `hsl(${primaryColor.hue}, ${primaryColor.saturation}%, ${primaryColor.lightness}%)`
+    : targetLayer === "layerTwo" ? `hsl(${secondaryColor.hue}, ${secondaryColor.saturation}%, ${secondaryColor.lightness}%)`
+    : targetLayer === "backgroundLayer" ? `hsl(${backgroundColor.hue}, ${backgroundColor.saturation}%, ${backgroundColor.lightness}%)`
+    : null
+    }
       onChange={(event) => handleChange(event)}
     >
       <SliderTrack>

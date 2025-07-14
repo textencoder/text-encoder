@@ -56,6 +56,7 @@ export default function App() {
         zoom={zoom}
         vector={vector}
         primaryColor={primaryColor}
+        secondaryColor={secondaryColor}
         backgroundColor={backgroundColor}
       />
 
