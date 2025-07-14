@@ -86,18 +86,6 @@ export default function ControlCenter({
           )
         })}
       </div>
-
-      <div className={styles.zoomSlider}>
-        <ZoomSlider zoom={zoom} setZoom={setZoom} />
-      </div>
-
-      <div className={styles.randomButtonWrapper}>
-        <RandomButton
-          setPrimaryColor={setPrimaryColor}
-          setSecondaryColor={setSecondaryColor}
-          setBackgroundColor={setBackgroundColor}
-        />
-      </div>
     </div>
   );
 }

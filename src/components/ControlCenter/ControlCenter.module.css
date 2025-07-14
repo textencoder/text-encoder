@@ -1,10 +1,9 @@
 .controlCenter {
   width: 400px;
-  max-height: 150px;
+  height: 125px;
   border: 1px solid white;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  display: flex;
+  flex-direction: column;
   background-color: black;
   box-sizing: border-box;
   position: fixed;
@@ -14,16 +13,15 @@
 }
 
 .layerButtons {
-  grid-area: 1 / 1 / 2 / 8;
   display: flex;
   justify-content: space-around;
   align-items: center;
   border: 1px solid white;
+  height: 60px;
 }
 
 .colorSliders {
-  /* background-color: bisque; */
-  grid-area: 2 / 1 / 5 / 8;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -45,20 +43,6 @@
       font-family: sans-serif;
     }
   }
-}
-
-.zoomSlider {
-  grid-area: 1 / 8 / 4 / 9;
-  display: grid;
-  place-items: center;
-  border: 1px solid white;
-}
-
-.randomButtonWrapper {
-  grid-area: 4 / 8 / 5 / 9;
-  display: grid;
-  place-items: center;
-  border: 1px solid white;
 }
 
 @media screen and (max-width: 450px) {

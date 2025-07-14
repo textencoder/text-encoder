@@ -4,6 +4,8 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Viewport from "./components/Viewport/Viewport";
 import ControlCenter from "./components/ControlCenter/ControlCenter";
+import ZoomSlider from "./components/ZoomSlider/ZoomSlider";
+import { ZoomInIcon, ZoomOutIcon } from "@radix-ui/react-icons";
 
 export default function App() {
   const [vector, setVector] = useState(null);
@@ -59,6 +61,14 @@ export default function App() {
         secondaryColor={secondaryColor}
         backgroundColor={backgroundColor}
       />
+
+      <div style={{position: "fixed", height: "100dvh", width: 65, right: 0, display: "grid", placeItems: "center"}}>
+        <div style={{border: "1px solid white", width: 50, height: 225, backgroundColor: "black", display: "flex", flexDirection: "column", justifyContent: "space-evenly", alignItems: "center"}}>
+          <ZoomInIcon color="white"/>
+      <ZoomSlider zoom={zoom} setZoom={setZoom}/>
+      <ZoomOutIcon color="white"/>
+      </div>
+      </div>
 
       <ControlCenter
         primaryColor={primaryColor}
