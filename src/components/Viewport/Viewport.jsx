@@ -3,12 +3,17 @@ import styles from "./Viewport.module.css";
 
 export default function Viewport(props) {
   return (
-    <div className={styles.viewport} style={{
-          backgroundColor: `hsl(${props.backgroundColor.hue}, ${props.backgroundColor.saturation}%,
-             ${props.backgroundColor.lightness}%)`
-        }}>
+    <div
+      className={styles.viewport}
+      style={{
+        backgroundColor: `hsl(${props.backgroundColor.hue}, ${props.backgroundColor.saturation}%,
+             ${props.backgroundColor.lightness}%)`,
+        backgroundImage: props.toggleGrid
+          ? "linear-gradient(to right, #222222 1px, transparent 1px), linear-gradient(to bottom, #222222 1px, transparent 1px)"
+          : "none",
+      }}
+    >
       <ReactSVG
-        
         afterInjection={(svg) => {
           const layerOne = svg.querySelector('[data-name="layerOne"]');
           const layerTwo = svg.querySelector('[data-name="layerTwo"]');
@@ -24,10 +29,7 @@ export default function Viewport(props) {
              ${props.secondaryColor.lightness}%);`
             );
           }
-          svg.setAttribute(
-            "style",
-            `transform: scale(${props.zoom / 100});`
-          );
+          svg.setAttribute("style", `transform: scale(${props.zoom / 100});`);
         }}
         src={`data:image/svg+xml;utf8,${encodeURIComponent(props.vector)}`}
       />

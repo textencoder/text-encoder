@@ -23,13 +23,20 @@ export default function Header(props) {
         </svg>
       </div> */}
 
-    <div style={{display: "flex", gap: 10}}>
-      <GridToggleButton />
-      <RandomButton
-        setPrimaryColor={props.setPrimaryColor}
-        setSecondaryColor={props.setSecondaryColor}
-        setBackgroundColor={props.setBackgroundColor}
-      />
+      <div style={{ display: "flex", gap: 10 }}>
+        <GridToggleButton
+          style={
+            props.toggleGrid
+              ? { color: "white", border: "1px solid white" }
+              : { color: "gray", border: "1px solid gray" }
+          }
+          setToggleGrid={props.setToggleGrid}
+        />
+        <RandomButton
+          setPrimaryColor={props.setPrimaryColor}
+          setSecondaryColor={props.setSecondaryColor}
+          setBackgroundColor={props.setBackgroundColor}
+        />
       </div>
 
       <VectorSelect />

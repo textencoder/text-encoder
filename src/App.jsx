@@ -56,6 +56,8 @@ export default function App() {
         setPrimaryColor={setPrimaryColor}
         setSecondaryColor={setSecondaryColor}
         setBackgroundColor={setBackgroundColor}
+        toggleGrid={toggleGrid}
+        setToggleGrid={setToggleGrid}
       />
 
       <Viewport
@@ -64,6 +66,7 @@ export default function App() {
         primaryColor={primaryColor}
         secondaryColor={secondaryColor}
         backgroundColor={backgroundColor}
+        toggleGrid={toggleGrid}
       />
 
       <div
