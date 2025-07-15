@@ -5,7 +5,7 @@ import GridToggleButton from "../GridToggleButton/GridToggleButton";
 import {
   LayersIcon,
   FileIcon,
-  Crosshair1Icon,
+  Crosshair2Icon,
   MagnifyingGlassIcon,
 } from "@radix-ui/react-icons";
 
@@ -32,7 +32,7 @@ export default function Header(props) {
       <div className={styles.headerTop}>
         <div className={styles.statContainerLeft}>
           <div className={styles.attributes}>
-            <Crosshair1Icon />
+            <Crosshair2Icon />
             <div className={styles.measurements}>
               <span>{Number(props.vectorAttributes.width).toFixed(2)}</span>
               <span>{Number(props.vectorAttributes.height).toFixed(2)}</span>
