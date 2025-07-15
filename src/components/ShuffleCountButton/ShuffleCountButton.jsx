@@ -1,6 +1,5 @@
 import { Button } from "react-aria-components";
 import { SymbolIcon } from "@radix-ui/react-icons";
-import styles from "./ShuffleCountButton.module.css";
 
 export default function ShuffleCountButton({ count, setCount }) {
   function handleClick() {
@@ -14,8 +13,8 @@ export default function ShuffleCountButton({ count, setCount }) {
   }
 
   return (
-    <Button onClick={handleClick} className={styles.shuffleCountButton}>
-      <SymbolIcon color="currentColor" width={25} height={25} />
+    <Button onClick={handleClick} className="header-button">
+      <SymbolIcon color="currentColor" width={25} height={25} style={{transform: "rotate(90deg)"}}/>
     </Button>
   );
 }
