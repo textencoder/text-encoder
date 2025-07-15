@@ -6,6 +6,7 @@ import Viewport from "./components/Viewport/Viewport";
 import ControlCenter from "./components/ControlCenter/ControlCenter";
 import ZoomSlider from "./components/ZoomSlider/ZoomSlider";
 import { ZoomInIcon, ZoomOutIcon } from "@radix-ui/react-icons";
+import Statistics from "./components/Statistics/Statistics";
 
 export default function App() {
   const [vector, setVector] = useState(null);
@@ -56,7 +57,6 @@ export default function App() {
     <>
       <Header
         vector={vector}
-        count={count}
         setCount={setCount}
         setVector={setVector}
         setPrimaryColor={setPrimaryColor}
@@ -64,9 +64,12 @@ export default function App() {
         setBackgroundColor={setBackgroundColor}
         toggleGrid={toggleGrid}
         setToggleGrid={setToggleGrid}
-        vectorAttributes={vectorAttributes}
-        zoom={zoom}
       />
+
+      <div style={{position: "fixed", left: 0, height: "100dvh", width: 200, display: "flex", flexDirection: "column", padding: 10}}>
+        <Statistics vectorAttributes={vectorAttributes}
+        zoom={zoom} count={count}/>
+      </div>
 
       <Viewport
         zoom={zoom}
@@ -97,6 +100,7 @@ export default function App() {
             flexDirection: "column",
             justifyContent: "space-evenly",
             alignItems: "center",
+            marginBottom: 25,
           }}
         >
           <ZoomInIcon color="white" />
