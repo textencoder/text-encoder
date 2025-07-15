@@ -2,6 +2,8 @@ import styles from "./Header.module.css";
 import VectorSelect from "../VectorSelect/VectorSelect";
 import RandomButton from "../RandomButton/RandomButton";
 import GridToggleButton from "../GridToggleButton/GridToggleButton";
+import StatsToggleButton from "../StatsToggleButton/StatsToggleButton";
+import ShuffleCountButton from "../ShuffleCountButton/ShuffleCountButton";
 
 export default function Header(props) {
   return (
@@ -23,24 +25,35 @@ export default function Header(props) {
         </svg>
       </div> */}
 
-        <div style={{ display: "flex", gap: 10 }}>
-          <GridToggleButton
-            style={
-              props.toggleGrid
-                ? { color: "white", border: "1px solid white" }
-                : { color: "gray", border: "1px solid gray" }
-            }
-            setToggleGrid={props.setToggleGrid}
-          />
-          <RandomButton
-            setPrimaryColor={props.setPrimaryColor}
-            setSecondaryColor={props.setSecondaryColor}
-            setBackgroundColor={props.setBackgroundColor}
-          />
-        </div>
+      <div style={{ display: "flex", gap: 10 }}>
+        <StatsToggleButton
+          style={
+            props.toggleStats
+              ? { color: "white", border: "1px solid white" }
+              : { color: "gray", border: "1px solid gray" }
+          }
+          setToggleStats={props.setToggleStats}
+        />
+        <GridToggleButton
+          style={
+            props.toggleGrid
+              ? { color: "white", border: "1px solid white" }
+              : { color: "gray", border: "1px solid gray" }
+          }
+          setToggleGrid={props.setToggleGrid}
+        />
+        <RandomButton
+          setPrimaryColor={props.setPrimaryColor}
+          setSecondaryColor={props.setSecondaryColor}
+          setBackgroundColor={props.setBackgroundColor}
+        />
+      </div>
+
+      <div style={{display: "flex", gap: 10}}>
+        <ShuffleCountButton count={props.count} setCount={props.setCount} />
 
         <VectorSelect />
-
+      </div>
     </header>
   );
 }

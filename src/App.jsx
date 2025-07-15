@@ -13,10 +13,11 @@ export default function App() {
   const [vectorAttributes, setVectorAttributes] = useState({
     width: null,
     height: null,
-    layers: null
-  })
+    layers: null,
+  });
   const [targetLayer, setTargetLayer] = useState("layerOne");
   const [toggleGrid, setToggleGrid] = useState(true);
+  const [toggleStats, setToggleStats] = useState(true);
 
   const [primaryColor, setPrimaryColor] = useState({
     hue: Math.floor(Math.random() * 361),
@@ -48,7 +49,11 @@ export default function App() {
       })
       .then((data) => {
         const { vector } = data[count];
-        setVectorAttributes({width: vector.attributes.width, height: vector.attributes.height, layers: vector.children.length})
+        setVectorAttributes({
+          width: vector.attributes.width,
+          height: vector.attributes.height,
+          layers: vector.children.length,
+        });
         setVector(stringify(vector));
       });
   }, [count]);
@@ -57,6 +62,7 @@ export default function App() {
     <>
       <Header
         vector={vector}
+        count={count}
         setCount={setCount}
         setVector={setVector}
         setPrimaryColor={setPrimaryColor}
@@ -64,11 +70,27 @@ export default function App() {
         setBackgroundColor={setBackgroundColor}
         toggleGrid={toggleGrid}
         setToggleGrid={setToggleGrid}
+        toggleStats={toggleStats}
+        setToggleStats={setToggleStats}
       />
 
-      <div style={{position: "fixed", left: 0, height: "100dvh", width: 200, display: "flex", flexDirection: "column", padding: 10}}>
-        <Statistics vectorAttributes={vectorAttributes}
-        zoom={zoom} count={count}/>
+      <div
+        style={{
+          position: "fixed",
+          left: 0,
+          height: "100dvh",
+          width: 200,
+          display: "flex",
+          flexDirection: "column",
+          padding: 10,
+        }}
+      >
+        <Statistics
+          vectorAttributes={vectorAttributes}
+          zoom={zoom}
+          count={count}
+          toggleStats={toggleStats}
+        />
       </div>
 
       <Viewport
@@ -100,7 +122,7 @@ export default function App() {
             flexDirection: "column",
             justifyContent: "space-evenly",
             alignItems: "center",
-            marginBottom: 25,
+            marginBottom: 20,
           }}
         >
           <ZoomInIcon color="white" />

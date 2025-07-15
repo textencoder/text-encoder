@@ -8,7 +8,7 @@ import {
 
 export default function Statistics(props) {
   return (
-    <div className={styles.statWrapper}>
+    <div className={styles.statWrapper} style={{visibility: props.toggleStats ? "visible" : "hidden"}}>
       <div className={styles.attributes}>
         <Crosshair2Icon />
         <div className={styles.measurements}>
