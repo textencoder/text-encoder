@@ -1,8 +1,7 @@
 .react-aria-Slider {
-  &[data-orientation=vertical] {
+  &[data-orientation="vertical"] {
     height: 160px;
     display: block;
-    
 
     .react-aria-Label,
     .react-aria-SliderOutput {
@@ -29,9 +28,14 @@
       width: 25px;
       height: 25px;
       cursor: grab;
-      
+
       &[data-dragging] {
         cursor: grabbing;
+      }
+
+      &[data-focus-visible] {
+        outline: 2px solid blue;
+        outline-offset: -1px;
       }
     }
   }
