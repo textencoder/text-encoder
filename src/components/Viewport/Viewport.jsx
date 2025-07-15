@@ -17,14 +17,12 @@ export default function Viewport(props) {
         afterInjection={(svg) => {
           const layerOne = svg.querySelector('[data-name="layerOne"]');
           const layerTwo = svg.querySelector('[data-name="layerTwo"]');
-          props.setNumberOfLayers(1)
           layerOne.setAttribute(
             "style",
             `fill: hsl(${props.primaryColor.hue}, ${props.primaryColor.saturation}%,
              ${props.primaryColor.lightness}%);`
           );
           if (layerTwo) {
-            props.setNumberOfLayers(2)
             layerTwo.setAttribute(
               "style",
               `fill: hsl(${props.secondaryColor.hue}, ${props.secondaryColor.saturation}%,

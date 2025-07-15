@@ -9,9 +9,13 @@ import { ZoomInIcon, ZoomOutIcon } from "@radix-ui/react-icons";
 
 export default function App() {
   const [vector, setVector] = useState(null);
+  const [vectorAttributes, setVectorAttributes] = useState({
+    width: null,
+    height: null,
+    layers: null
+  })
   const [targetLayer, setTargetLayer] = useState("layerOne");
   const [toggleGrid, setToggleGrid] = useState(true);
-  const [numberOfLayers, setNumberOfLayers] = useState(null)
 
   const [primaryColor, setPrimaryColor] = useState({
     hue: Math.floor(Math.random() * 361),
@@ -43,6 +47,7 @@ export default function App() {
       })
       .then((data) => {
         const { vector } = data[count];
+        setVectorAttributes({width: vector.attributes.width, height: vector.attributes.height, layers: vector.children.length})
         setVector(stringify(vector));
       });
   }, [count]);
@@ -59,7 +64,8 @@ export default function App() {
         setBackgroundColor={setBackgroundColor}
         toggleGrid={toggleGrid}
         setToggleGrid={setToggleGrid}
-        numberOfLayers={numberOfLayers}
+        vectorAttributes={vectorAttributes}
+        zoom={zoom}
       />
 
       <Viewport
@@ -69,7 +75,6 @@ export default function App() {
         secondaryColor={secondaryColor}
         backgroundColor={backgroundColor}
         toggleGrid={toggleGrid}
-        setNumberOfLayers={setNumberOfLayers}
       />
 
       <div
@@ -109,7 +114,7 @@ export default function App() {
         setBackgroundColor={setBackgroundColor}
         targetLayer={targetLayer}
         setTargetLayer={setTargetLayer}
-        numberOfLayers={numberOfLayers}
+        numberOfLayers={vectorAttributes.layers}
       />
     </>
   );

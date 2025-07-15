@@ -2,7 +2,12 @@ import styles from "./Header.module.css";
 import VectorSelect from "../VectorSelect/VectorSelect";
 import RandomButton from "../RandomButton/RandomButton";
 import GridToggleButton from "../GridToggleButton/GridToggleButton";
-import { LayersIcon, FileIcon } from "@radix-ui/react-icons";
+import {
+  LayersIcon,
+  FileIcon,
+  Crosshair1Icon,
+  MagnifyingGlassIcon,
+} from "@radix-ui/react-icons";
 
 export default function Header(props) {
   return (
@@ -24,24 +29,22 @@ export default function Header(props) {
         </svg>
       </div> */}
 
-      <div style={{ display: "flex", gap: 10 }}>
-        <GridToggleButton
-          style={
-            props.toggleGrid
-              ? { color: "white", border: "1px solid white" }
-              : { color: "gray", border: "1px solid gray" }
-          }
-          setToggleGrid={props.setToggleGrid}
-        />
-        <RandomButton
-          setPrimaryColor={props.setPrimaryColor}
-          setSecondaryColor={props.setSecondaryColor}
-          setBackgroundColor={props.setBackgroundColor}
-        />
-      </div>
+      <div className={styles.headerTop}>
+        <div className={styles.statContainerLeft}>
+          <div className={styles.attributes}>
+            <Crosshair1Icon />
+            <div className={styles.measurements}>
+              <span>{Number(props.vectorAttributes.width).toFixed(2)}</span>
+              <span>{Number(props.vectorAttributes.height).toFixed(2)}</span>
+            </div>
+          </div>
+          <div className={styles.zoom}>
+            <MagnifyingGlassIcon width={16} height={16}/>
+            <p>{props.zoom}%</p>
+          </div>
+        </div>
 
-      <div style={{ display: "flex", gap: 10 }}>
-        <div className={styles.statContainer}>
+        <div className={styles.statContainerRight}>
           <div
             style={{
               display: "flex",
@@ -51,7 +54,9 @@ export default function Header(props) {
             }}
           >
             <LayersIcon color="white" />
-            <div className={styles.layerCount}>{props.numberOfLayers}</div>
+            <div className={styles.layerCount}>
+              {props.vectorAttributes.layers}
+            </div>
           </div>
           <div
             style={{
@@ -68,9 +73,29 @@ export default function Header(props) {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className={styles.headerBottom}>
+        <div style={{ display: "flex", gap: 10 }}>
+          <GridToggleButton
+            style={
+              props.toggleGrid
+                ? { color: "white", border: "1px solid white" }
+                : { color: "gray", border: "1px solid gray" }
+            }
+            setToggleGrid={props.setToggleGrid}
+          />
+          <RandomButton
+            setPrimaryColor={props.setPrimaryColor}
+            setSecondaryColor={props.setSecondaryColor}
+            setBackgroundColor={props.setBackgroundColor}
+          />
+        </div>
 
         <VectorSelect />
       </div>
+
+      
     </header>
   );
 }
