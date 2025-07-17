@@ -1,12 +1,28 @@
-# React + Vite
+# TextEncoder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**TextEncoder** is a minimalist web-based logo editor built to showcase my personal portfolio of typographic logo designs. Each logo is loaded as layered SVG markup, allowing simple edits like color adjustments, scaling, and layer visibility toggling.
 
-Currently, two official plugins are available:
+This project, encapsulated within a clean, accessible UI, reflects both my design philosophy and front-end development skills.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🔗 Live Site
+https://textencoder.net
 
-## Expanding the ESLint configuration
+# ✨ Features
+- 🎨 **Live SVG Editing:** Interact with preloaded vector logos using a minimal toolset.
+- 🧱 **Layer Controls:** Toggle visibility and lock layers during editing.
+- 💻 **Accessibility-First:** Built using React Aria Components for seamless keyboard navigation.
+- 🧬 **SVG as Data:** All logos are rendered using `react-svg` and managed as modular vector layers.
+- 🎮 **Minimal UI:** Designed for clarity, speed, and intentional interaction.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# 🛠️ Built With
+- ⚛️ **React:** Component-based architecture for dynamic UI
+- ⚡ **Vite:** Fast, modern build tooling
+- 🧩 **React Aria Components:** Accessible, composable UI primitives
+- 🧼 **Vanilla CSS:** Handcrafted, scoped styles with CSS Modules
+- 🖼 **ReactSVG:** SVG rendering via `<ReactSVG />` for inline markup
+
+# 📄 License
+This project is open source under the MIT License.
+
+# 🤝 Contributing
+This is a personal creative project, but feedback, ideas, and contributions are always welcome.
