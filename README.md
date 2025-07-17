@@ -4,25 +4,25 @@
 
 This project, encapsulated within a clean, accessible UI, reflects both my design philosophy and front-end development skills.
 
-# 🔗 Live Site
+## 🔗 Live Site
 https://textencoder.net
 
-# ✨ Features
+## ✨ Features
 - 🎨 **Live SVG Editing:** Interact with preloaded vector logos using a minimal toolset.
 - 🧱 **Layer Controls:** Toggle visibility and lock layers during editing.
-- 💻 **Accessibility-First:** Built using React Aria Components for seamless keyboard navigation.
-- 🧬 **SVG as Data:** All logos are rendered using `react-svg` and managed as modular vector layers.
+- 💻 **Accessibility-First:** Built using [React Aria Components](https://react-spectrum.adobe.com/react-aria/index.html) for seamless keyboard navigation.
+- 🧬 **SVG as Data:** All logos are rendered using [react-svg](https://github.com/tanem/react-svg) and managed as modular vector layers.
 - 🎮 **Minimal UI:** Designed for clarity, speed, and intentional interaction.
 
-# 🛠️ Built With
+## 🛠️ Built With
 - ⚛️ **React:** Component-based architecture for dynamic UI
 - ⚡ **Vite:** Fast, modern build tooling
 - 🧩 **React Aria Components:** Accessible, composable UI primitives
-- 🧼 **Vanilla CSS:** Handcrafted, scoped styles with CSS Modules
+- 🧼 **Vanilla CSS:** Handcrafted, scoped styles using CSS Modules
 - 🖼 **ReactSVG:** SVG rendering via `<ReactSVG />` for inline markup
 
-# 📄 License
+## 📄 License
 This project is open source under the MIT License.
 
-# 🤝 Contributing
+## 🤝 Contributing
 This is a personal creative project, but feedback, ideas, and contributions are always welcome.
