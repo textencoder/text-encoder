@@ -52,7 +52,7 @@ export default function Header(props) {
       <div style={{display: "flex", gap: 10}}>
         <ShuffleCountButton count={props.count} setCount={props.setCount} />
 
-        <VectorSelect />
+        {/* <VectorSelect /> */}
       </div>
     </header>
   );
