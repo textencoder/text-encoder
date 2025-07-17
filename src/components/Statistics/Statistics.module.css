@@ -5,11 +5,10 @@
    align-items: flex-start;
    gap: 10px;
    margin-top: 70px;
+   cursor: default;
 }
 
-
 .attributes {
-  color: white;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -18,7 +17,8 @@
 .measurements {
   display: flex;
   align-items: center;
-  border: 1px solid white;
+  border-width: 1px;
+  border-style: solid;
 
   span {
     width: 50%;
@@ -26,30 +26,28 @@
     place-items: center;
     padding: 0 5px;
   }
+}
+
+.fileCount {
+  border-width: 1px;
+  border-style: solid;
+  width: 50px;
+  display: flex;
 
   span:nth-of-type(1) {
-    background-color: white;
-    color: black;
+    width: 50%;
+    display: grid;
+    place-items: center;
   }
 
   span:nth-of-type(2) {
-    color: white;
-  }
-}
-
-.zoom {
-  display: flex;
-  color: white;
-  gap: 5px;
-
-  p {
-    border: 1px solid white;
-    padding: 0 5px;
+    width: 50%;
+    display: grid;
+    place-items: center;
   }
 }
 
 .layerCount {
-  background: white;
   width: 17.5px;
   aspect-ratio: 1;
   border-radius: 10px;
@@ -57,22 +55,13 @@
   place-items: center;
 }
 
-.fileCount {
-  border: 1px solid white;
-  width: 50px;
+.zoom {
   display: flex;
+  gap: 5px;
 
-  span:nth-of-type(1) {
-    background-color: white;
-    width: 50%;
-    display: grid;
-    place-items: center;
-  }
-
-  span:nth-of-type(2) {
-    color: white;
-    width: 50%;
-    display: grid;
-    place-items: center;
+  p {
+    border-width: 1px;
+    border-style: solid;
+    padding: 0 5px;
   }
 }

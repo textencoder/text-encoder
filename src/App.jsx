@@ -90,6 +90,7 @@ export default function App() {
           zoom={zoom}
           count={count}
           toggleStats={toggleStats}
+          lightness={backgroundColor.lightness}
         />
       </div>
 

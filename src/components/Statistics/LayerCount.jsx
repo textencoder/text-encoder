@@ -9,10 +9,11 @@ export default function LayerCount(props) {
         justifyContent: "center",
         alignItems: "center",
         gap: 5,
+        color: props.lightness < 70 ? "white" : "black"
       }}
     >
-      <LayersIcon color="white" />
-      <div className={styles.layerCount}>{props.layers}</div>
+      <LayersIcon />
+      <div className={styles.layerCount} style={props.lightness < 70 ? {backgroundColor: "white", color: "black"} : {backgroundColor: "black", color: "white"}}>{props.layers}</div>
     </div>
   );
 }
