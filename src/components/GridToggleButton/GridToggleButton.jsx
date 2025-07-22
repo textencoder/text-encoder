@@ -7,7 +7,7 @@ export default function GridToggleButton({toggleGrid, setToggleGrid, style = {}}
   }
 
   return (
-    <Button style={style} className="header-button" onClick={handleClick}>
+    <Button aria-label="Toggle Grid Visibility" style={style} className="header-button" onClick={handleClick}>
       <GridIcon color="currentColor" width={25} height={25}/>
     </Button>
   );

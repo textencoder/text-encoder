@@ -21,7 +21,7 @@ export default function RandomButton({setPrimaryColor, setSecondaryColor, setBac
   }
 
   return (
-    <Button className="header-button" onClick={handleClick}>
+    <Button aria-label="Generate Random Colors" className="header-button" onClick={handleClick}>
       <ShuffleIcon color="white" width={25} height={25}/>
     </Button>
   );

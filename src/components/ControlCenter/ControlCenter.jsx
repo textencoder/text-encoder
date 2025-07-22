@@ -76,6 +76,7 @@ export default function ControlCenter({
     <div className={styles.controlCenter}>
       <div className={styles.layerButtons}>
         <LayerOneButton
+        aria-label="Layer One Controls"
           setTargetLayer={setTargetLayer}
           style={
             targetLayer === "layerOne"
@@ -84,6 +85,7 @@ export default function ControlCenter({
           }
         />
         <LayerTwoButton
+         aria-label="Layer Two Controls"
           disabled={numberOfLayers === 1}
           setTargetLayer={setTargetLayer}
           style={
@@ -93,6 +95,7 @@ export default function ControlCenter({
           }
         />
         <BackgroundLayerButton
+         aria-label="Background Layer Controls"
           setTargetLayer={setTargetLayer}
           style={
             targetLayer === "backgroundLayer"

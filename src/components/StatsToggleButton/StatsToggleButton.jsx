@@ -7,7 +7,7 @@ export default function StatsToggleButton({setToggleStats, style = {}}) {
     }
 
     return (
-        <Button style={style} onClick={handleClick} className="header-button">
+        <Button aria-label="Toggle Controls Visibility" style={style} onClick={handleClick} className="header-button">
             <MixerHorizontalIcon color="currentColor" width={25} height={25} />
         </Button>
     )

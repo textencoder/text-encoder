@@ -13,7 +13,7 @@ export default function ShuffleCountButton({ count, setCount }) {
   }
 
   return (
-    <Button onClick={handleClick} className="header-button">
+    <Button aria-label="Generate Random Vector" onClick={handleClick} className="header-button">
       <SymbolIcon color="currentColor" width={25} height={25} style={{transform: "rotate(90deg)"}}/>
     </Button>
   );
