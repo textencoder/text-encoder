@@ -1,5 +1,6 @@
 import { ReactSVG } from "react-svg";
 import styles from "./Viewport.module.css";
+import LoadingBar from "../Loading/LoadingBar";
 
 export default function Viewport(props) {
   return (
@@ -13,7 +14,7 @@ export default function Viewport(props) {
           : "none",
       }}
     >
-      <ReactSVG
+      {props.vector ? <ReactSVG
         afterInjection={(svg) => {
           const layerOne = svg.querySelector('[data-name="layerOne"]');
           const layerTwo = svg.querySelector('[data-name="layerTwo"]');
@@ -33,6 +34,8 @@ export default function Viewport(props) {
         }}
         src={`data:image/svg+xml;utf8,${encodeURIComponent(props.vector)}`}
       />
+    : <LoadingBar />
+    }
     </div>
   );
 }

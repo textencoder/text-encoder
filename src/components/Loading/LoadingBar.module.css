@@ -1,0 +1,49 @@
+.loadingBar {
+  display: grid;
+  grid-template-areas:
+    "bar bar";
+  grid-template-columns: auto;
+  width: 250px;
+  color: blue;
+}
+
+.value {
+  grid-area: value;
+}
+
+.bar {
+  grid-area: bar;
+  box-shadow: inset 0px 0px 0px 1px white;
+  forced-color-adjust: none;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.fill {
+  background: lawngreen;
+  height: 100%;
+}
+
+
+.loadingBar {
+  &:not([aria-valuenow]) {
+    .fill {
+      width: 120px;
+      border-radius: inherit;
+      animation: indeterminate 1.5s infinite ease-in-out;
+      will-change: transform;
+    }
+  }
+}
+
+@keyframes indeterminate {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(250px);
+  }
+}
