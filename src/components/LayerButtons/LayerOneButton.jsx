@@ -8,7 +8,7 @@ export default function LayerOneButton({setTargetLayer, style= {}}) {
   }
 
   return (
-    <Button className={styles.layerButton} style={style} onClick={(event) => handleClick(event)}>
+    <Button aria-label="Layer One Controls" className={styles.layerButton} style={style} onClick={(event) => handleClick(event)}>
       <CircleIcon color="currentColor"/>
     </Button>
   );

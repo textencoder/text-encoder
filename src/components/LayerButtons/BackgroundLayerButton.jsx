@@ -8,7 +8,7 @@ function handleClick() {
   }
 
   return (
-    <Button className={styles.layerButton} style={style} onClick={(event) => handleClick(event)}>
+    <Button aria-label="Background Layer Controls" className={styles.layerButton} style={style} onClick={(event) => handleClick(event)}>
       <EnterFullScreenIcon color="currentColor"/>
     </Button>
   );

@@ -8,7 +8,7 @@ export default function LayerTwoButton({setTargetLayer, style= {}, disabled}) {
   }
 
   return (
-    <Button isDisabled={disabled} className={styles.layerButton} style={style} onClick={(event) => handleClick(event)}>
+    <Button aria-label="Layer Two Controls" isDisabled={disabled} className={styles.layerButton} style={style} onClick={(event) => handleClick(event)}>
       <Half2Icon color="currentColor" />
     </Button>
   );
