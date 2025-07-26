@@ -1,8 +1,19 @@
 import { ReactSVG } from "react-svg";
 import styles from "./Viewport.module.css";
 import LoadingBar from "../Loading/LoadingBar";
+import { stringify } from "svgson";
+import { useState, useEffect } from "react";
 
 export default function Viewport(props) {
+  const [vector, setVector] = useState('')
+  
+  useEffect(() => {
+    if (props.vectorArray) {
+   setVector(stringify(props.vectorArray[props.count].vector))
+   console.log("viewport props: ", props)
+    }
+  }, [props.count])
+
   return (
     <div
       className={styles.viewport}
@@ -14,7 +25,7 @@ export default function Viewport(props) {
           : "none",
       }}
     >
-      {props.vector ? <ReactSVG
+      {vector ? <ReactSVG
         afterInjection={(svg) => {
           const layerOne = svg.querySelector('[data-name="layerOne"]');
           const layerTwo = svg.querySelector('[data-name="layerTwo"]');
@@ -32,7 +43,7 @@ export default function Viewport(props) {
           }
           svg.setAttribute("style", `transform: scale(${props.zoom / 100});`);
         }}
-        src={`data:image/svg+xml;utf8,${encodeURIComponent(props.vector)}`}
+        src={`data:image/svg+xml;utf8,${encodeURIComponent(vector)}`}
       />
     : <LoadingBar />
     }

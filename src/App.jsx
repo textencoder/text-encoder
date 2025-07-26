@@ -9,7 +9,9 @@ import { ZoomInIcon, ZoomOutIcon } from "@radix-ui/react-icons";
 import Statistics from "./components/Statistics/Statistics";
 
 export default function App() {
-  const [vector, setVector] = useState(null);
+  const [vectorArray, setVectorArray] = useState([])
+
+  //const [vector, setVector] = useState(null);
   const [vectorAttributes, setVectorAttributes] = useState({
     width: null,
     height: null,
@@ -48,23 +50,23 @@ export default function App() {
         return response.json();
       })
       .then((data) => {
-        const { vector } = data[count];
+        console.log("vectorArray: ", data[count])
+        setVectorArray(data)
+        //const { vector } = data[count];
         setVectorAttributes({
-          width: vector.attributes.width,
-          height: vector.attributes.height,
-          layers: vector.children.length,
+          width: data[count].vector.attributes.width,
+          height: data[count].vector.attributes.height,
+          layers: data[count].vector.children.length,
         });
-        setVector(stringify(vector));
       });
-  }, [count]);
+  }, []);
 
   return (
     <>
-      <Header
-        vector={vector}
+      {vectorArray.length > 0 && <Header
         count={count}
+        vectorArray={vectorArray}
         setCount={setCount}
-        setVector={setVector}
         setPrimaryColor={setPrimaryColor}
         setSecondaryColor={setSecondaryColor}
         setBackgroundColor={setBackgroundColor}
@@ -72,7 +74,7 @@ export default function App() {
         setToggleGrid={setToggleGrid}
         toggleStats={toggleStats}
         setToggleStats={setToggleStats}
-      />
+      />}
 
       <div
         style={{
@@ -94,14 +96,16 @@ export default function App() {
         />
       </div>
 
-      <Viewport
+      {vectorArray.length > 0 && <Viewport
         zoom={zoom}
-        vector={vector}
+        //vector={vector}
+        vectorArray={vectorArray}
+        count={count}
         primaryColor={primaryColor}
         secondaryColor={secondaryColor}
         backgroundColor={backgroundColor}
         toggleGrid={toggleGrid}
-      />
+      />}
 
       <div
         style={{
