@@ -1,6 +1,8 @@
 import { Button, Dialog, DialogTrigger, Modal } from "react-aria-components";
 import { GlobeIcon } from "@radix-ui/react-icons";
 import "./ModalMenu.css";
+import { ReactSVG } from "react-svg";
+import { stringify } from "svgson";
 
 export default function ModalMenu({ vectorArray }) {
   console.log("modal menu array: ", vectorArray);
@@ -8,7 +10,7 @@ export default function ModalMenu({ vectorArray }) {
   const vectorList = vectorArray.map((vector) => {
     return (
       <>
-    <ModalMenuListItem key={vector.name} name={vector.name} />
+    <ModalMenuListItem key={vector.name} name={vector.name} vector={vector.vector}/>
       <hr />
       </>
     );
@@ -30,7 +32,7 @@ export default function ModalMenu({ vectorArray }) {
   );
 }
 
-function ModalMenuListItem({ name }) {
+function ModalMenuListItem({ name, vector }) {
   function handleClick() {
     console.log("modal menu list item clicked: ", name)
   }
@@ -41,13 +43,38 @@ function ModalMenuListItem({ name }) {
       style={{
         height: 80,
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "space-between",
         alignItems: "center",
         fontFamily: "monospace",
         cursor: "pointer",
+        padding: "0 20px"
       }}
+      key={name}
     >
+      <ListItemThumbnail vector={vector}/>
       {name}
     </li>
   );
+}
+
+function ListItemThumbnail({vector}) {
+  return (
+    <ReactSVG
+        afterInjection={(svg) => {
+          const layerOne = svg.querySelector('[data-name="layerOne"]');
+          const layerTwo = svg.querySelector('[data-name="layerTwo"]');
+          layerOne.setAttribute(
+            "style",
+            `fill: #ffffff`
+          );
+          if (layerTwo) {
+            layerTwo.setAttribute(
+              "style",
+              `fill: gray`
+            );
+          }
+        }}
+        src={`data:image/svg+xml;utf8,${encodeURIComponent(stringify(vector))}`}
+      />
+  )
 }
