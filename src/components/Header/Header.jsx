@@ -4,6 +4,7 @@ import RandomButton from "../RandomButton/RandomButton";
 import GridToggleButton from "../GridToggleButton/GridToggleButton";
 import StatsToggleButton from "../StatsToggleButton/StatsToggleButton";
 import ShuffleCountButton from "../ShuffleCountButton/ShuffleCountButton";
+import ModalMenu from "../ModalMenu/ModalMenu";
 
 export default function Header(props) {
   return (
@@ -49,8 +50,10 @@ export default function Header(props) {
         />
       </div>
 
-      <div style={{display: "flex", gap: 10}}>
-        <ShuffleCountButton count={props.count} setCount={props.setCount} />
+      <div>
+        {/* <ShuffleCountButton count={props.count} setCount={props.setCount} /> */}
+
+          <ModalMenu />
 
         {/* <VectorSelect /> */}
       </div>
