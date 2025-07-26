@@ -1,5 +1,5 @@
 import { Button, Dialog, DialogTrigger, Modal } from "react-aria-components";
-import { GlobeIcon } from "@radix-ui/react-icons";
+import { GlobeIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import "./ModalMenu.css";
 import { ReactSVG } from "react-svg";
 import { stringify } from "svgson";
@@ -21,7 +21,7 @@ export default function ModalMenu({ vectorArray }) {
   return (
     <DialogTrigger>
       <Button className="header-button">
-        <GlobeIcon width={25} height={25} />
+        <HamburgerMenuIcon width={25} height={25} />
       </Button>
       <Modal isDismissable>
         <Dialog>
@@ -49,7 +49,6 @@ function ModalMenuListItem({ name, vector }) {
         cursor: "pointer",
         padding: "0 20px"
       }}
-      key={name}
     >
       <ListItemThumbnail vector={vector}/>
       {name}
@@ -70,7 +69,7 @@ function ListItemThumbnail({vector}) {
           if (layerTwo) {
             layerTwo.setAttribute(
               "style",
-              `fill: gray`
+              `fill: silver`
             );
           }
         }}
