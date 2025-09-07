@@ -84,3 +84,10 @@ ul {
     max-height: 50px;
   }
 }
+
+.modal-menu-button {
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+}

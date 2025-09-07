@@ -1,4 +1,5 @@
 [{
+  "id": 0,
   "name": "black_tar_beach.svg",
   "vector": {
     "name": "svg",
@@ -34,11 +35,11 @@
         },
         "children": []
       }
-    ],
-    "id": 1
+    ]
   }
 },
 {
+  "id": 1,
   "name": "cubist.svg",
   "vector": {
     "name": "svg",
@@ -75,11 +76,11 @@
         },
         "children": []
       }
-    ],
-    "id": 2
+    ]
   }
 },
 {
+  "id": 2,
   "name": "d3.svg",
   "vector": {
     "name": "svg",
@@ -104,11 +105,11 @@
         },
         "children": []
       }
-    ],
-    "id": 3
+    ]
   }
 },
 {
+  "id": 3,
   "name": "deja_vu.svg",
   "vector": {
     "name": "svg",
@@ -144,11 +145,11 @@
         },
         "children": []
       }
-    ],
-    "id": 4
+    ]
   }
 },
 {
+  "id": 4,
   "name": "dnd.svg",
   "vector": {
     "name": "svg",
@@ -184,11 +185,11 @@
         },
         "children": []
       }
-    ],
-    "id": 5
+    ]
   }
 },
 {
+  "id": 5,
   "name": "doa.svg",
   "vector": {
     "name": "svg",
@@ -225,11 +226,11 @@
         },
         "children": []
       }
-    ],
-    "id": 6
+    ]
   }
 },
 {
+  "id": 6,
   "name": "dream.svg",
   "vector": {
     "name": "svg",
@@ -266,11 +267,11 @@
         },
         "children": []
       }
-    ],
-    "id": 7
+    ]
   }
 },
 {
+  "id": 7,
   "name": "elyahu.svg",
   "vector": {
     "name": "svg",
@@ -295,11 +296,11 @@
         },
         "children": []
       }
-    ],
-    "id": 8
+    ]
   }
 },
 {
+  "id": 8,
   "name": "get_him_back.svg",
   "vector": {
     "name": "svg",
@@ -335,11 +336,11 @@
         },
         "children": []
       }
-    ],
-    "id": 9
+    ]
   }
 },
 {
+  "id": 9,
   "name": "hex_gen.svg",
   "vector": {
     "name": "svg",
@@ -364,11 +365,11 @@
         },
         "children": []
       }
-    ],
-    "id": 10
+    ]
   }
 },
 {
+  "id": 10,
   "name": "mia.svg",
   "vector": {
     "name": "svg",
@@ -393,11 +394,11 @@
         },
         "children": []
       }
-    ],
-    "id": 11
+    ]
   }
 },
 {
+  "id": 11,
   "name": "minutes_xm.svg",
   "vector": {
     "name": "svg",
@@ -433,11 +434,11 @@
         },
         "children": []
       }
-    ],
-    "id": 12
+    ]
   }
 },
 {
+  "id": 12,
   "name": "nerve.svg",
   "vector": {
     "name": "svg",
@@ -474,11 +475,11 @@
         },
         "children": []
       }
-    ],
-    "id": 13
+    ]
   }
 },
 {
+  "id": 13,
   "name": "oc.svg",
   "vector": {
     "name": "svg",
@@ -515,11 +516,11 @@
         },
         "children": []
       }
-    ],
-    "id": 14
+    ]
   }
 },
 {
+  "id": 14,
   "name": "octo.svg",
   "vector": {
     "name": "svg",
@@ -555,11 +556,11 @@
         },
         "children": []
       }
-    ],
-    "id": 15
+    ]
   }
 },
 {
+  "id": 15,
   "name": "opaque.svg",
   "vector": {
     "name": "svg",
@@ -596,11 +597,11 @@
         },
         "children": []
       }
-    ],
-    "id": 16
+    ]
   }
 },
 {
+  "id": 16,
   "name": "proper_dose.svg",
   "vector": {
     "name": "svg",
@@ -637,11 +638,11 @@
         },
         "children": []
       }
-    ],
-    "id": 17
+    ]
   }
 },
 {
+  "id": 17,
   "name": "quintana.svg",
   "vector": {
     "name": "svg",
@@ -678,11 +679,11 @@
         },
         "children": []
       }
-    ],
-    "id": 18
+    ]
   }
 },
 {
+  "id": 18,
   "name": "roulette.svg",
   "vector": {
     "name": "svg",
@@ -719,11 +720,11 @@
         },
         "children": []
       }
-    ],
-    "id": 19
+    ]
   }
 },
 {
+  "id": 19,
   "name": "sleepless.svg",
   "vector": {
     "name": "svg",
@@ -760,11 +761,11 @@
         },
         "children": []
       }
-    ],
-    "id": 20
+    ]
   }
 },
 {
+  "id": 20,
   "name": "time_flies.svg",
   "vector": {
     "name": "svg",
@@ -800,11 +801,11 @@
         },
         "children": []
       }
-    ],
-    "id": 21
+    ]
   }
 },
 {
+  "id": 21,
   "name": "wolves.svg",
   "vector": {
     "name": "svg",
@@ -841,8 +842,7 @@
         },
         "children": []
       }
-    ],
-    "id": 22
+    ]
   }
 }
 ]
