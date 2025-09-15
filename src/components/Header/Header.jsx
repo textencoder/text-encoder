@@ -19,6 +19,7 @@ export default function Header(props) {
               ? { color: "white", border: "1px solid white" }
               : { color: "gray", border: "1px solid gray" }
           }
+          toggleControls={props.toggleControls}
           setToggleControls={props.setToggleControls}
         />
         <GridToggleButton
