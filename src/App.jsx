@@ -19,7 +19,7 @@ export default function App() {
   });
   const [targetLayer, setTargetLayer] = useState("layerOne");
   const [toggleGrid, setToggleGrid] = useState(true);
-  const [toggleStats, setToggleStats] = useState(true);
+  const [toggleControls, setToggleControls] = useState(true);
 
   const [primaryColor, setPrimaryColor] = useState({
     hue: Math.floor(Math.random() * 361),
@@ -72,8 +72,8 @@ export default function App() {
         setBackgroundColor={setBackgroundColor}
         toggleGrid={toggleGrid}
         setToggleGrid={setToggleGrid}
-        toggleStats={toggleStats}
-        setToggleStats={setToggleStats}
+        toggleControls={toggleControls}
+        setToggleControls={setToggleControls}
       />}
 
       <div
@@ -91,7 +91,7 @@ export default function App() {
           vectorAttributes={vectorAttributes}
           zoom={zoom}
           count={count}
-          toggleStats={toggleStats}
+          toggleControls={toggleControls}
           lightness={backgroundColor.lightness}
         />
       </div>
@@ -115,6 +115,7 @@ export default function App() {
           right: 0,
           display: "grid",
           placeItems: "center",
+          visibility: toggleControls ? "visible" : "hidden"
         }}
       >
         <div
@@ -137,6 +138,7 @@ export default function App() {
       </div>
 
       <ControlCenter
+        toggleControls={toggleControls}
         primaryColor={primaryColor}
         setPrimaryColor={setPrimaryColor}
         secondaryColor={secondaryColor}

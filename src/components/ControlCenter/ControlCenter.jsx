@@ -21,7 +21,8 @@ export default function ControlCenter({
   setBackgroundColor,
   targetLayer,
   setTargetLayer,
-  numberOfLayers
+  numberOfLayers,
+  toggleControls
 }) {
   const layerButtons = [
     {
@@ -73,7 +74,7 @@ export default function ControlCenter({
   ];
 
   return (
-    <div className={styles.controlCenter}>
+    <div className={styles.controlCenter} style={{visibility: toggleControls ? "visible" : "hidden"}}>
       <div className={styles.layerButtons}>
         <LayerOneButton
           setTargetLayer={setTargetLayer}

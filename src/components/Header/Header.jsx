@@ -15,11 +15,11 @@ export default function Header(props) {
       <div style={{ display: "flex", gap: 10 }}>
         <StatsToggleButton
           style={
-            props.toggleStats
+            props.toggleControls
               ? { color: "white", border: "1px solid white" }
               : { color: "gray", border: "1px solid gray" }
           }
-          setToggleStats={props.setToggleStats}
+          setToggleControls={props.setToggleControls}
         />
         <GridToggleButton
           style={

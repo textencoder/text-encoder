@@ -7,7 +7,7 @@ import ZoomTracker from "./ZoomTracker";
 export default function Statistics(props) {
 
   return (
-    <div className={styles.statWrapper} style={{visibility: props.toggleStats ? "visible" : "hidden"}}>
+    <div className={styles.statWrapper} style={{visibility: props.toggleControls ? "visible" : "hidden"}}>
       <Measurements style={{gap: 5}} vectorAttributes={props.vectorAttributes} lightness={props.lightness}/>
 
       <FileCount count={props.count} lightness={props.lightness}/>
