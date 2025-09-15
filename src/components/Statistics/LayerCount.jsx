@@ -6,10 +6,9 @@ export default function LayerCount(props) {
     <div
       style={{
         display: "flex",
-        justifyContent: "center",
         alignItems: "center",
-        gap: 5,
-        color: props.lightness < 70 ? "white" : "black"
+        color: props.lightness < 70 ? "white" : "black",
+        ...props.style
       }}
     >
       <LayersIcon />

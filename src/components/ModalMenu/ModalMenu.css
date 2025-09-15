@@ -80,7 +80,6 @@ ul {
   list-style-type: none;
 
   svg {
-    width: 65px;
     max-height: 50px;
   }
 }
@@ -90,4 +89,27 @@ ul {
   background: none;
   border: none;
   color: white;
+}
+
+.attribute-container {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.count-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.list-count {
+  border: 1px solid white;
+  font-size: 0.75rem;
+  width: 17.5px;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
 }
