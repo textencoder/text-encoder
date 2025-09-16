@@ -102,9 +102,17 @@ export default function ControlCenter({
           />
         </Button>
 
-        <div style={{ display: "flex", gap: 5 }}>
+        <div style={{ display: "flex", gap: 5, color: "white" }}>
+          {targetLayer ? (
+            layerButtons[0].icon,
+            targetLayer
+          )
+        : (
+          <>
           <GearIcon />
           <p>Control Center</p>
+          </>
+        )}
         </div>
 
         <Cross2Icon />
@@ -119,11 +127,7 @@ export default function ControlCenter({
                 layer={layer.layer}
                 icon={layer.icon}
                 setTargetLayer={setTargetLayer}
-                style={
-                  targetLayer === "layerOne"
-                    ? { color: "black", backgroundColor: "white" }
-                    : null
-                }
+                style={{borderBottom: layer.layer !== "Background" ? "1px solid white" : null}}
               />
             );
           })}
