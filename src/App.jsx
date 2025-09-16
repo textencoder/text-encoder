@@ -50,7 +50,7 @@ export default function App() {
         return response.json();
       })
       .then((data) => {
-        console.log("vectorArray: ", data[count])
+        console.log("vector data fetched")
         setVectorArray(data)
         //const { vector } = data[count];
         setVectorAttributes({
@@ -59,7 +59,7 @@ export default function App() {
           layers: data[count].vector.children.length,
         });
       });
-  }, []);
+  }, [count]);
 
   return (
     <>
@@ -138,6 +138,7 @@ export default function App() {
       </div>
 
       <ControlCenter
+        vectorArray={vectorArray}
         toggleControls={toggleControls}
         primaryColor={primaryColor}
         setPrimaryColor={setPrimaryColor}

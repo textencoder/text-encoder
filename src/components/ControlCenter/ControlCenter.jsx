@@ -1,7 +1,5 @@
 import styles from "./ControlCenter.module.css";
-import LayerOneButton from "../LayerButtons/LayerOneButton";
-import LayerTwoButton from "../LayerButtons/LayerTwoButton";
-import BackgroundLayerButton from "../LayerButtons/BackgroundLayerButton";
+import LayerButton from "../LayerButtons/LayerButton";
 import HueSlider from "../ColorSliders/HueSlider";
 import SaturationSlider from "../ColorSliders/SaturationSlider";
 import LightnessSlider from "../ColorSliders/LightnessSlider";
@@ -12,7 +10,10 @@ import {
   ColorWheelIcon,
   Cross2Icon,
   GearIcon,
+  Half2Icon,
   SunIcon,
+  CircleIcon,
+  EnterFullScreenIcon,
 } from "@radix-ui/react-icons";
 import { Button } from "react-aria-components";
 
@@ -27,19 +28,20 @@ export default function ControlCenter({
   setTargetLayer,
   numberOfLayers,
   toggleControls,
+  vectorArray,
 }) {
   const layerButtons = [
     {
-      layer: "one",
-      button: <LayerOneButton setTargetLayer={setTargetLayer} />,
+      layer: "Two",
+      icon: <Half2Icon color="currentColor" />,
     },
     {
-      layer: "two",
-      button: <LayerTwoButton setTargetLayer={setTargetLayer} />,
+      layer: "One",
+      icon: <CircleIcon color="currentColor" />,
     },
     {
-      layer: "background",
-      button: <BackgroundLayerButton setTargetLayer={setTargetLayer} />,
+      layer: "Background",
+      icon: <EnterFullScreenIcon color="currentColor" />,
     },
   ];
 
@@ -77,14 +79,27 @@ export default function ControlCenter({
     },
   ];
 
+  //console.log("currentVector: ", vectorArray[count]);
+
   return (
     <div
       className={styles.controlCenter}
       style={{ visibility: toggleControls ? "visible" : "hidden" }}
     >
       <div className={styles.controlCenterHeader}>
-        <Button onClick={() => setTargetLayer(null)} style={{background: "none", border: "none", display: "grid", placeItems: "center"}}>
-        <ArrowLeftIcon color="white" style={{visibility: targetLayer ? "visible" : "hidden"}} />
+        <Button
+          onClick={() => setTargetLayer(null)}
+          style={{
+            background: "none",
+            border: "none",
+            display: "grid",
+            placeItems: "center",
+          }}
+        >
+          <ArrowLeftIcon
+            color="white"
+            style={{ visibility: targetLayer ? "visible" : "hidden" }}
+          />
         </Button>
 
         <div style={{ display: "flex", gap: 5 }}>
@@ -97,31 +112,21 @@ export default function ControlCenter({
 
       {!targetLayer && (
         <div className={styles.layerList}>
-          <LayerOneButton
-            setTargetLayer={setTargetLayer}
-            style={
-              targetLayer === "layerOne"
-                ? { color: "black", backgroundColor: "white" }
-                : null
-            }
-          />
-          <LayerTwoButton
-            disabled={numberOfLayers === 1}
-            setTargetLayer={setTargetLayer}
-            style={
-              targetLayer === "layerTwo"
-                ? { color: "black", backgroundColor: "white" }
-                : null
-            }
-          />
-          <BackgroundLayerButton
-            setTargetLayer={setTargetLayer}
-            style={
-              targetLayer === "backgroundLayer"
-                ? { color: "black", backgroundColor: "white" }
-                : null
-            }
-          />
+          {layerButtons.map((layer) => {
+            return (
+              <LayerButton
+                numberOfLayers={numberOfLayers}
+                layer={layer.layer}
+                icon={layer.icon}
+                setTargetLayer={setTargetLayer}
+                style={
+                  targetLayer === "layerOne"
+                    ? { color: "black", backgroundColor: "white" }
+                    : null
+                }
+              />
+            );
+          })}
         </div>
       )}
 

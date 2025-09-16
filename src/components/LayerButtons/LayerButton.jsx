@@ -10,12 +10,24 @@ import {
 } from "@radix-ui/react-icons";
 import styles from "./LayerButton.module.css";
 
-export default function LayerOneButton({ setTargetLayer, style = {} }) {
+export default function LayerButton({
+  setTargetLayer,
+  icon,
+  layer,
+  numberOfLayers,
+  style = {},
+}) {
   const [layerVisibility, setLayerVisibility] = useState(true);
-  const [layerLock, setLayerLock] = useState(false)
+  const [layerLock, setLayerLock] = useState(false);
 
   function handleClick() {
-    setTargetLayer("layerOne");
+    if (layer === "Two") {
+      setTargetLayer("layerTwo");
+    } else if (layer === "One") {
+      setTargetLayer("layerOne");
+    } else if (layer === "Background") {
+      setTargetLayer("backgroundLayer");
+    }
   }
 
   return (
@@ -24,6 +36,7 @@ export default function LayerOneButton({ setTargetLayer, style = {} }) {
       className={styles.layerButton}
       style={style}
       onClick={(event) => handleClick(event)}
+      isDisabled={numberOfLayers < 2 && layer === "Two"}
     >
       <div className={styles.layerInfo}>
         <div className={styles.layerControls}>
@@ -34,8 +47,8 @@ export default function LayerOneButton({ setTargetLayer, style = {} }) {
           <LayerLockButton layerLock={layerLock} setLayerLock={setLayerLock} />
         </div>
         <div style={{ display: "flex", gap: 5 }}>
-          <CircleIcon color="currentColor" />
-          <p>Layer One</p>
+          {icon}
+          <p>{layer === "Background" ? layer : "Layer " + layer}</p>
         </div>
       </div>
       <ChevronRightIcon />
@@ -54,9 +67,12 @@ function LayerVisibilityButton({ layerVisibility, setLayerVisibility }) {
   );
 }
 
-function LayerLockButton({layerLock, setLayerLock}) {
+function LayerLockButton({ layerLock, setLayerLock }) {
   return (
-    <Button onClick={() => setLayerLock(prevValue => !prevValue)} className={styles.layerControl}>
+    <Button
+      onClick={() => setLayerLock((prevValue) => !prevValue)}
+      className={styles.layerControl}
+    >
       {layerLock ? <LockClosedIcon /> : <LockOpen1Icon />}
     </Button>
   );
