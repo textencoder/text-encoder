@@ -7,10 +7,14 @@ import SaturationSlider from "../ColorSliders/SaturationSlider";
 import LightnessSlider from "../ColorSliders/LightnessSlider";
 
 import {
+  ArrowLeftIcon,
   BlendingModeIcon,
   ColorWheelIcon,
+  Cross2Icon,
+  GearIcon,
   SunIcon,
 } from "@radix-ui/react-icons";
+import { Button } from "react-aria-components";
 
 export default function ControlCenter({
   primaryColor,
@@ -22,7 +26,7 @@ export default function ControlCenter({
   targetLayer,
   setTargetLayer,
   numberOfLayers,
-  toggleControls
+  toggleControls,
 }) {
   const layerButtons = [
     {
@@ -74,45 +78,65 @@ export default function ControlCenter({
   ];
 
   return (
-    <div className={styles.controlCenter} style={{visibility: toggleControls ? "visible" : "hidden"}}>
-      <div className={styles.layerButtons}>
-        <LayerOneButton
-          setTargetLayer={setTargetLayer}
-          style={
-            targetLayer === "layerOne"
-              ? { color: "black", backgroundColor: "white" }
-              : null
-          }
-        />
-        <LayerTwoButton
-          disabled={numberOfLayers === 1}
-          setTargetLayer={setTargetLayer}
-          style={
-            targetLayer === "layerTwo"
-              ? { color: "black", backgroundColor: "white" }
-              : null
-          }
-        />
-        <BackgroundLayerButton
-          setTargetLayer={setTargetLayer}
-          style={
-            targetLayer === "backgroundLayer"
-              ? { color: "black", backgroundColor: "white" }
-              : null
-          }
-        />
+    <div
+      className={styles.controlCenter}
+      style={{ visibility: toggleControls ? "visible" : "hidden" }}
+    >
+      <div className={styles.controlCenterHeader}>
+        <Button onClick={() => setTargetLayer(null)} style={{background: "none", border: "none", display: "grid", placeItems: "center"}}>
+        <ArrowLeftIcon color="white" style={{visibility: targetLayer ? "visible" : "hidden"}} />
+        </Button>
+
+        <div style={{ display: "flex", gap: 5 }}>
+          <GearIcon />
+          <p>Control Center</p>
+        </div>
+
+        <Cross2Icon />
       </div>
 
-      <div className={styles.colorSliders}>
-        {colorSliderElements.map((element) => {
-          return (
-            <span key={element.type}>
-              {element.icon}
-              {element.slider}
-            </span>
-          );
-        })}
-      </div>
+      {!targetLayer && (
+        <div className={styles.layerList}>
+          <LayerOneButton
+            setTargetLayer={setTargetLayer}
+            style={
+              targetLayer === "layerOne"
+                ? { color: "black", backgroundColor: "white" }
+                : null
+            }
+          />
+          <LayerTwoButton
+            disabled={numberOfLayers === 1}
+            setTargetLayer={setTargetLayer}
+            style={
+              targetLayer === "layerTwo"
+                ? { color: "black", backgroundColor: "white" }
+                : null
+            }
+          />
+          <BackgroundLayerButton
+            setTargetLayer={setTargetLayer}
+            style={
+              targetLayer === "backgroundLayer"
+                ? { color: "black", backgroundColor: "white" }
+                : null
+            }
+          />
+        </div>
+      )}
+
+      {targetLayer && (
+        <div className={styles.colorSliders}>
+          {colorSliderElements.map((element) => {
+            return (
+              <span key={element.type}>
+                {element.icon}
+                {element.slider}
+              </span>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

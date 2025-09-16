@@ -17,7 +17,7 @@ export default function App() {
     height: null,
     layers: null,
   });
-  const [targetLayer, setTargetLayer] = useState("layerOne");
+  const [targetLayer, setTargetLayer] = useState(null);
   const [toggleGrid, setToggleGrid] = useState(true);
   const [toggleControls, setToggleControls] = useState(true);
 

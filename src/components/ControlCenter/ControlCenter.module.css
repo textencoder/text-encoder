@@ -1,6 +1,6 @@
 .controlCenter {
   width: 350px;
-  height: 150px;
+  height: 190px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -8,23 +8,35 @@
   bottom: 10px;
   left: 10px;
   z-index: 5;
-  gap: 5px;
+  font-family: monospace, monospace;
 }
 
-.layerButtons {
+.layerList {
+  height: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid white;
+  background-color: black;
+}
+
+.controlCenterHeader {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   border: 1px solid white;
-  height: 60px;
+  height: 40px;
   background-color: black;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0 10px;
 }
 
 .colorSliders {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   border: 1px solid white;
   background-color: black;
 

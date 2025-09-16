@@ -5,7 +5,7 @@
   grid-template-columns: auto;
   gap: 4px;
   max-width: 300px;
-  width: 100%;
+  width: 80%;
 
   .react-aria-Label {
     grid-area: label;
@@ -34,7 +34,7 @@
   border: 2px solid white;
   box-shadow: 0 0 0 1px black, inset 0 0 0 1px black;
   width: 21px;
-  height: 21px;
+  aspect-ratio: 1;
   box-sizing: border-box;
   cursor: grab;
 
