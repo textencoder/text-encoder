@@ -85,6 +85,7 @@ export default function App() {
           display: "flex",
           flexDirection: "column",
           padding: 10,
+          zIndex: 10
         }}
       >
         <Statistics
