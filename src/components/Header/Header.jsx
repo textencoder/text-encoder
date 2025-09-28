@@ -1,9 +1,8 @@
 import styles from "./Header.module.css";
-import VectorSelect from "../VectorSelect/VectorSelect";
-import RandomButton from "../RandomButton/RandomButton";
-import GridToggleButton from "../GridToggleButton/GridToggleButton";
-import StatsToggleButton from "../StatsToggleButton/StatsToggleButton";
-import ShuffleCountButton from "../ShuffleCountButton/ShuffleCountButton";
+import RandomButton from "../ToolbarButtons/RandomButton/RandomButton";
+import GridToggleButton from "../ToolbarButtons/GridToggleButton/GridToggleButton";
+import StatsToggleButton from "../ToolbarButtons/StatsToggleButton/StatsToggleButton";
+import ShuffleCountButton from "../ToolbarButtons/ShuffleCountButton/ShuffleCountButton";
 import ModalMenu from "../ModalMenu/ModalMenu";
 
 export default function Header(props) {
