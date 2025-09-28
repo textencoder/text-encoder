@@ -12,7 +12,7 @@ export default function StatsToggleButton({ toggleControls, setToggleControls, s
   }
 
   return (
-    <TooltipTrigger>
+    <TooltipTrigger delay={0}>
       <Button
         aria-label="View/Hide Controls"
         style={style}

@@ -16,7 +16,7 @@ export default function GridToggleButton({
   }
 
   return (
-    <TooltipTrigger>
+    <TooltipTrigger delay={0}>
       <Button
         aria-label="Toggle Grid Visibility"
         style={style}

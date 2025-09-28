@@ -1,10 +1,17 @@
-import { Button, Dialog, DialogTrigger, Modal } from "react-aria-components";
+import {
+  Button,
+  Dialog,
+  DialogTrigger,
+  Modal,
+  OverlayArrow,
+  Tooltip,
+  TooltipTrigger,
+} from "react-aria-components";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import "./ModalMenu.css";
 import { ReactSVG } from "react-svg";
 import { stringify } from "svgson";
 import LayerCount from "../Statistics/LayerCount";
-import FileCount from "../Statistics/FileCount";
 import Measurements from "../Statistics/Measurements";
 
 export default function ModalMenu({ vectorArray, setCount }) {
@@ -30,16 +37,26 @@ export default function ModalMenu({ vectorArray, setCount }) {
   console.log("vectorList: ", vectorList);
 
   return (
-    <DialogTrigger>
-      <Button className="header-button">
-        <HamburgerMenuIcon width={25} height={25} />
-      </Button>
-      <Modal isDismissable>
-        <Dialog>
-          <ul>{vectorList}</ul>
-        </Dialog>
-      </Modal>
-    </DialogTrigger>
+    <TooltipTrigger delay={0}>
+      <DialogTrigger>
+        <Button className="header-button">
+          <HamburgerMenuIcon width={25} height={25} />
+        </Button>
+        <Modal isDismissable>
+          <Dialog>
+            <ul>{vectorList}</ul>
+          </Dialog>
+        </Modal>
+      </DialogTrigger>
+      <Tooltip>
+        <OverlayArrow>
+          <svg width={8} height={8} viewBox="0 0 8 8">
+            <path d="M0 0 L4 4 L8 0" />
+          </svg>
+        </OverlayArrow>
+        Open Menu
+      </Tooltip>
+    </TooltipTrigger>
   );
 }
 

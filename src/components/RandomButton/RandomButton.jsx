@@ -30,7 +30,7 @@ export default function RandomButton({
   }
 
   return (
-    <TooltipTrigger>
+    <TooltipTrigger delay={0}>
       <Button
         aria-label="Generate Random Colors"
         className="header-button"
