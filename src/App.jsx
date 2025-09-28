@@ -7,6 +7,7 @@ import ControlCenter from "./components/ControlCenter/ControlCenter";
 import ZoomSlider from "./components/ZoomSlider/ZoomSlider";
 import { ZoomInIcon, ZoomOutIcon } from "@radix-ui/react-icons";
 import Statistics from "./components/Statistics/Statistics";
+import WelcomeDialog from "./components/WelcomeDialog/WelcomeDialog";
 
 export default function App() {
   const [vectorArray, setVectorArray] = useState([])
@@ -63,6 +64,8 @@ export default function App() {
 
   return (
     <>
+    <WelcomeDialog />
+
       {vectorArray.length > 0 && <Header
         count={count}
         vectorArray={vectorArray}
