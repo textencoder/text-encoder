@@ -10,7 +10,7 @@ import Statistics from "./components/Statistics/Statistics";
 import WelcomeDialog from "./components/WelcomeDialog/WelcomeDialog";
 
 export default function App() {
-  const [vectorArray, setVectorArray] = useState([])
+  const [vectorArray, setVectorArray] = useState([]);
 
   //const [vector, setVector] = useState(null);
   const [vectorAttributes, setVectorAttributes] = useState({
@@ -51,8 +51,8 @@ export default function App() {
         return response.json();
       })
       .then((data) => {
-        console.log("vector data fetched")
-        setVectorArray(data)
+        console.log("vector data fetched");
+        setVectorArray(data);
         //const { vector } = data[count];
         setVectorAttributes({
           width: data[count].vector.attributes.width,
@@ -64,20 +64,22 @@ export default function App() {
 
   return (
     <>
-    <WelcomeDialog />
+      <WelcomeDialog />
 
-      {vectorArray.length > 0 && <Header
-        count={count}
-        vectorArray={vectorArray}
-        setCount={setCount}
-        setPrimaryColor={setPrimaryColor}
-        setSecondaryColor={setSecondaryColor}
-        setBackgroundColor={setBackgroundColor}
-        toggleGrid={toggleGrid}
-        setToggleGrid={setToggleGrid}
-        toggleControls={toggleControls}
-        setToggleControls={setToggleControls}
-      />}
+      {vectorArray.length > 0 && (
+        <Header
+          count={count}
+          vectorArray={vectorArray}
+          setCount={setCount}
+          setPrimaryColor={setPrimaryColor}
+          setSecondaryColor={setSecondaryColor}
+          setBackgroundColor={setBackgroundColor}
+          toggleGrid={toggleGrid}
+          setToggleGrid={setToggleGrid}
+          toggleControls={toggleControls}
+          setToggleControls={setToggleControls}
+        />
+      )}
 
       <div
         style={{
@@ -88,7 +90,7 @@ export default function App() {
           display: "flex",
           flexDirection: "column",
           padding: 10,
-          zIndex: 10
+          zIndex: 10,
         }}
       >
         <Statistics
@@ -100,16 +102,18 @@ export default function App() {
         />
       </div>
 
-      {vectorArray.length > 0 && <Viewport
-        zoom={zoom}
-        //vector={vector}
-        vectorArray={vectorArray}
-        count={count}
-        primaryColor={primaryColor}
-        secondaryColor={secondaryColor}
-        backgroundColor={backgroundColor}
-        toggleGrid={toggleGrid}
-      />}
+      {vectorArray.length > 0 && (
+        <Viewport
+          zoom={zoom}
+          //vector={vector}
+          vectorArray={vectorArray}
+          count={count}
+          primaryColor={primaryColor}
+          secondaryColor={secondaryColor}
+          backgroundColor={backgroundColor}
+          toggleGrid={toggleGrid}
+        />
+      )}
 
       <div
         style={{
@@ -119,7 +123,7 @@ export default function App() {
           right: 0,
           display: "grid",
           placeItems: "center",
-          visibility: toggleControls ? "visible" : "hidden"
+          visibility: toggleControls ? "visible" : "hidden",
         }}
       >
         <div

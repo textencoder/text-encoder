@@ -62,7 +62,11 @@ function LayerVisibilityButton({ layerVisibility, setLayerVisibility }) {
       onClick={() => setLayerVisibility((prevValue) => !prevValue)}
       className={styles.layerControl}
     >
-      {layerVisibility ? <EyeOpenIcon /> : <EyeNoneIcon />}
+      {layerVisibility ? (
+        <EyeOpenIcon color="white" />
+      ) : (
+        <EyeNoneIcon color="gray" />
+      )}
     </Button>
   );
 }
@@ -73,7 +77,11 @@ function LayerLockButton({ layerLock, setLayerLock }) {
       onClick={() => setLayerLock((prevValue) => !prevValue)}
       className={styles.layerControl}
     >
-      {layerLock ? <LockClosedIcon /> : <LockOpen1Icon />}
+      {layerLock ? (
+        <LockClosedIcon color="white" />
+      ) : (
+        <LockOpen1Icon color="gray" />
+      )}
     </Button>
   );
 }
