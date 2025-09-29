@@ -21,7 +21,11 @@ export default function WelcomeDialog() {
   const [isOpen, setOpen] = useState(true);
 
   return (
-    <Modal isOpen={isOpen} onOpenChange={setOpen}>
+    <Modal
+      isOpen={isOpen}
+      onOpenChange={setOpen}
+      className={styles.reactAriaModalWelcome}
+    >
       <Dialog className={styles.welcomeDialog}>
         <Heading slot="title" className={styles.header}>
           <p>
@@ -77,17 +81,7 @@ export default function WelcomeDialog() {
             <p>Open Select Menu</p>
           </div>
         </div>
-        <Button
-          style={{
-            padding: "10px 15px",
-            background: "black",
-            color: "white",
-            fontFamily: "monospace, monospace",
-            border: "1px solid white",
-            fontWeight: 700,
-          }}
-          slot="close"
-        >
+        <Button className={styles.confirmButton} slot="close">
           Let's Go!
         </Button>
       </Dialog>

@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100dvh;
-  background: rgba(0 0 0 / .5);
+  background: rgba(0 0 0 / 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@
   }
 }
 
-.react-aria-Modal {
+.reactAriaModalMenu {
   box-shadow: 0 8px 20px rgba(0 0 0 / 0.1);
   background: black;
   color: white;
@@ -28,7 +28,6 @@
   width: 375px;
   height: calc(100% - 100px);
   overflow-y: auto;
-  
 
   &[data-entering] {
     animation: modal-zoom 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -44,15 +43,14 @@
   }
 }
 
-.react-aria-Modal::-webkit-scrollbar {
-    background-color: transparent;
-    width: 6px;
-  }
+.reactAriaModalMenu::-webkit-scrollbar {
+  background-color: transparent;
+  width: 6px;
+}
 
-  .react-aria-Modal::-webkit-scrollbar-thumb {
-    background: white;
-   
-  }
+.reactAriaModalMenu::-webkit-scrollbar-thumb {
+  background: white;
+}
 
 @keyframes modal-fade {
   from {

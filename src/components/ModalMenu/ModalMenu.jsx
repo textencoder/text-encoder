@@ -38,7 +38,7 @@ export default function ModalMenu({ vectorArray, setCount }) {
         <Button className="header-button">
           <HamburgerMenuIcon width={25} height={25} />
         </Button>
-        <Modal isDismissable>
+        <Modal isDismissable className={"reactAriaModalMenu"}>
           <Dialog>
             <ul>{vectorList}</ul>
           </Dialog>
