@@ -14,6 +14,7 @@ import {
   SunIcon,
   CircleIcon,
   EnterFullScreenIcon,
+  ChevronDownIcon,
 } from "@radix-ui/react-icons";
 import { Button } from "react-aria-components";
 
@@ -115,7 +116,7 @@ export default function ControlCenter({
         )}
         </div>
 
-        <Cross2Icon />
+        <ChevronDownIcon />
       </div>
 
       {!targetLayer && (
