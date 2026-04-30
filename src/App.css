@@ -149,3 +149,10 @@ button {
     fill: white;
   }
 }
+
+.inter-medium {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
