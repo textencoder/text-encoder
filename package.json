@@ -15,6 +15,7 @@
     "react-aria": "^3.41.1",
     "react-aria-components": "^1.10.1",
     "react-dom": "^19.0.0",
+    "react-router": "^7.14.2",
     "react-svg": "^16.3.0",
     "svgson": "^5.3.1"
   },

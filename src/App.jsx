@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { stringify } from "svgson";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Viewport from "./components/Viewport/Viewport";
