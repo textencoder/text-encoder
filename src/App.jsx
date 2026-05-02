@@ -83,7 +83,7 @@ export default function App() {
       <div
         style={{
           position: "fixed",
-          left: 0,
+          right: 0,
           height: "100dvh",
           width: 200,
           display: "flex",
@@ -114,7 +114,7 @@ export default function App() {
         />
       )}
 
-      <div
+      {/* <div
         style={{
           position: "fixed",
           height: "100dvh",
@@ -142,7 +142,7 @@ export default function App() {
           <ZoomSlider zoom={zoom} setZoom={setZoom} />
           <ZoomOutIcon color="white" />
         </div>
-      </div>
+      </div> */}
 
       <ControlCenter
         vectorArray={vectorArray}

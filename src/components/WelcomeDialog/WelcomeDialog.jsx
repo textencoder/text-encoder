@@ -31,7 +31,7 @@ export default function WelcomeDialog() {
           <p>Welcome to the lab!</p>
         </Heading>
         <p style={{ textAlign: "center", lineHeight: 1.25 }}>
-          This is a minimalist vector editor built to showcase my personal
+          The lab is a minimalist vector editor built to showcase my personal
           portfolio of typographic logo designs.
         </p>
         {/* <p style={{textAlign: "center"}}>

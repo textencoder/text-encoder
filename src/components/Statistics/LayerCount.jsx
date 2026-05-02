@@ -8,11 +8,20 @@ export default function LayerCount(props) {
         display: "flex",
         alignItems: "center",
         color: props.lightness < 70 ? "white" : "black",
-        ...props.style
+        ...props.style,
       }}
     >
+      <div
+        className={styles.layerCount}
+        style={
+          props.lightness < 70
+            ? { backgroundColor: "white", color: "black" }
+            : { backgroundColor: "black", color: "white" }
+        }
+      >
+        {props.layers}
+      </div>
       <LayersIcon />
-      <div className={styles.layerCount} style={props.lightness < 70 ? {backgroundColor: "white", color: "black"} : {backgroundColor: "black", color: "white"}}>{props.layers}</div>
     </div>
   );
 }

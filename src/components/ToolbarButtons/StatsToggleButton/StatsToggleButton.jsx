@@ -19,7 +19,7 @@ export default function StatsToggleButton({ toggleControls, setToggleControls, s
         onClick={handleClick}
         className="header-button"
       >
-        <MixerHorizontalIcon color="currentColor" width={25} height={25} />
+        <MixerHorizontalIcon color="currentColor" />
       </Button>
       <Tooltip>
         <OverlayArrow>

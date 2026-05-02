@@ -6,12 +6,18 @@ import ShuffleCountButton from "../ToolbarButtons/ShuffleCountButton/ShuffleCoun
 import ModalMenu from "../ModalMenu/ModalMenu";
 
 export default function Header(props) {
-
-  console.log("header props: ", props)
+  console.log("header props: ", props);
   return (
     <header className={styles.header}>
-
-      <div style={{ display: "flex", gap: 10 }}>
+      <div
+        style={{
+          display: "flex",
+          gap: 10,
+          border: "1px solid white",
+          padding: 10,
+          backgroundColor: "black"
+        }}
+      >
         <StatsToggleButton
           style={
             props.toggleControls
@@ -34,15 +40,9 @@ export default function Header(props) {
           setSecondaryColor={props.setSecondaryColor}
           setBackgroundColor={props.setBackgroundColor}
         />
+
+        <ModalMenu vectorArray={props.vectorArray} setCount={props.setCount} />
       </div>
-
-      {/* <div style={{display: "flex", gap: 10}}>
-        <ShuffleCountButton count={props.count} setCount={props.setCount} /> */}
-
-          <ModalMenu vectorArray={props.vectorArray} setCount={props.setCount} />
-
-        {/* <VectorSelect /> */}
-      {/* </div> */}
     </header>
   );
 }

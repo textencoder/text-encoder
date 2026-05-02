@@ -15,6 +15,7 @@ import {
   CircleIcon,
   EnterFullScreenIcon,
   ChevronDownIcon,
+  LayersIcon,
 } from "@radix-ui/react-icons";
 import { Button } from "react-aria-components";
 
@@ -110,8 +111,8 @@ export default function ControlCenter({
           )
         : (
           <>
-          <GearIcon />
-          <p>Control Center</p>
+          <LayersIcon />
+          <p>Layers</p>
           </>
         )}
         </div>

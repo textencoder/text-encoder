@@ -23,7 +23,7 @@ export default function GridToggleButton({
         className="header-button"
         onClick={handleClick}
       >
-        <GridIcon color="currentColor" width={25} height={25} />
+        <GridIcon color="currentColor" />
       </Button>
       <Tooltip>
         <OverlayArrow>

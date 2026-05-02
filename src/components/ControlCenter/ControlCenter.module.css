@@ -6,7 +6,7 @@
   box-sizing: border-box;
   position: fixed;
   bottom: 10px;
-  left: 10px;
+  right: 10px;
   z-index: 15;
   font-family: monospace, monospace;
 }

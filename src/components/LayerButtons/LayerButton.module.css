@@ -13,7 +13,7 @@
   padding-right: 10px;
 
   &[data-hovered] {
-    background: #333333;
+    background: #222;
   }
 
   &[data-pressed] {
@@ -29,8 +29,9 @@
 }
 
 .layerButton:disabled {
-  color: gray;
-  background-color: hsl(180, 25%, 25%);
+  color: dimgray;
+  background-color: #222;
+  cursor: not-allowed;
 }
 
 .layerInfo {

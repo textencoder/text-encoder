@@ -36,7 +36,7 @@ export default function RandomButton({
         className="header-button"
         onClick={handleClick}
       >
-        <ShuffleIcon color="white" width={25} height={25} />
+        <ShuffleIcon color="currentColor" />
       </Button>
       <Tooltip>
         <OverlayArrow>

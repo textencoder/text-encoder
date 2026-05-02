@@ -21,7 +21,7 @@ export default function Viewport(props) {
         backgroundColor: `hsl(${props.backgroundColor.hue}, ${props.backgroundColor.saturation}%,
              ${props.backgroundColor.lightness}%)`,
         backgroundImage: props.toggleGrid
-          ? "linear-gradient(to right, #222222 1px, transparent 1px), linear-gradient(to bottom, #222222 1px, transparent 1px)"
+          ? "linear-gradient(to right, #111 1px, transparent 1px), linear-gradient(to bottom, #111   1px, transparent 1px)"
           : "none",
       }}
     >
